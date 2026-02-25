@@ -4,147 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>結帳 | 源點身&心靈工作坊</title>
+    <title>訂單結帳 | 源點身&心靈工作坊</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
         rel="stylesheet">
 </head>
 
-<body class="checkout-page">
+<body>
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="index.html" class="logo"><img src="assets/logo.png" alt="源點 logo">源點<span
+            <a href="index.html" class="logo"><img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">源點<span
                     class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
         </div>
     </nav>
 
-    <main class="container main-content">
-        <div class="checkout-layout">
-            <!-- Checkout Form -->
-            <section class="checkout-form-container">
-                <h2>填寫結帳資訊</h2>
+    <main class="container">
+        <div class="checkout-container">
+            <div class="checkout-card">
+                <h2>顧客資訊</h2>
                 <form id="checkout-form">
                     <div class="form-group">
-                        <label for="name">姓名</label>
-                        <input type="text" id="name" name="name" required placeholder="您的真實姓名">
+                        <label>姓名</label>
+                        <input type="text" name="name" class="form-control" placeholder="請輸入姓名" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">電子信箱</label>
-                        <input type="email" id="email" name="email" required placeholder="用於接收課程通知">
+                        <label>電子信箱</label>
+                        <input type="email" name="email" class="form-control" placeholder="example@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">電話</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="您的聯絡電話">
+                        <label>連絡電話</label>
+                        <input type="tel" name="phone" class="form-control" placeholder="0912-345-678" required>
                     </div>
-
-                    <div class="payment-methods">
-                        <h3>支付方式</h3>
-                        <div class="payment-option">
-                            <input type="radio" id="bank" name="payment" value="bank" checked>
-                            <label for="bank">銀行轉帳/匯款</label>
-                        </div>
-                        <div class="payment-option">
-                            <input type="radio" id="line" name="payment" value="line">
-                            <label for="line">Line Pay</label>
-                        </div>
+                    <div class="form-group">
+                        <label>備註 (如：預約時段偏好)</label>
+                        <textarea name="note" rows="4" class="form-control" placeholder="有任何特殊需求請告知我們..."></textarea>
                     </div>
-
-                    <p class="referral-notice" style="display: none;" id="ref-banner">
-                        ✨ 推薦代碼已套用：<span id="ref-code-display" style="font-weight: bold;">--</span>
-                    </p>
-
-                    <button type="submit" class="btn btn-primary" id="submit-order">確認購買並提交</button>
-                    <div id="form-status" style="margin-top: 1rem; text-align: center; display: none;"></div>
+                    <button type="submit" class="place-order-btn">
+                        <span>🚀 確認並送出訂單</span>
+                    </button>
                 </form>
-            </section>
+            </div>
 
-            <!-- Order Summary -->
-            <aside class="order-summary">
+            <div class="checkout-card">
                 <h3>訂單摘要</h3>
-                <div id="checkout-items" class="checkout-items">
-                    <!-- Injected by JS -->
+                <div id="checkout-items">
+                    <!-- Items injected by JS -->
                 </div>
-                <div class="summary-totals">
-                    <div class="summary-line">
-                        <span>小計</span>
-                        <span id="summary-subtotal">NT$ 0</span>
-                    </div>
-                    <div class="summary-line total">
-                        <span>總計</span>
-                        <span id="summary-total">NT$ 0</span>
-                    </div>
+                <div class="checkout-total-row">
+                    <span class="total-label">總計</span>
+                    <span id="checkout-total" class="total-amount">NT$ 0</span>
                 </div>
-                <p style="font-size: 0.8rem; color: #64748b; margin-top: 2rem;">提交後，我們的專人將在 24 小時內與您聯繫確認支付細節。</p>
-            </aside>
+            </div>
         </div>
     </main>
 
-    <!-- Supabase SDK -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+        </div>
+    </footer>
+
+    <!-- Supabase SDK & Config -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
 
+    <script src="cart.js"></script>
     <script>
-        // Inline script to render summary on load
+        // Checkout page specific logic
         document.addEventListener('DOMContentLoaded', () => {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const container = document.getElementById('checkout-items');
-            const subtotalEl = document.getElementById('summary-subtotal');
-            const totalEl = document.getElementById('summary-total');
+            renderCheckout();
 
-            if (cart.length === 0) {
-                window.location.href = 'academy.html';
-                return;
-            }
-
-            let total = 0;
-            container.innerHTML = cart.map(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                return `
-                    <div class="summary-item">
-                        <div class="item-info">
-                            <strong>${item.name}</strong>
-                            <p>${item.option || ''} x ${item.quantity}</p>
-                        </div>
-                        <span class="item-price">NT$ ${itemTotal.toLocaleString()}</span>
-                    </div>
-                `;
-            }).join('');
-
-            subtotalEl.innerText = `NT$ ${total.toLocaleString()}`;
-            totalEl.innerText = `NT$ ${total.toLocaleString()}`;
-
-            // Referral Detection
-            const refId = localStorage.getItem('referralId');
-            if (refId) {
-                document.getElementById('ref-banner').style.display = 'block';
-                document.getElementById('ref-code-display').innerText = refId;
-            }
-
-            // Form Submission
-            const form = document.getElementById('checkout-form');
-            form.addEventListener('submit', async (e) => {
+            document.getElementById('checkout-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const submitBtn = document.getElementById('submit-order');
-                const statusDiv = document.getElementById('form-status');
+                const btn = e.target.querySelector('.place-order-btn');
+                const btnText = btn.querySelector('span');
+                const originalText = btnText.innerText;
 
-                submitBtn.disabled = true;
-                submitBtn.innerText = '處理中...';
+                // Loading State
+                btn.disabled = true;
+                btnText.innerText = '⏳ 處理中...';
+
+                const formData = new FormData(e.target);
+                const referralId = localStorage.getItem('yuan_point_ref');
+                const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
 
                 const orderData = {
-                    customer_name: document.getElementById('name').value,
-                    customer_email: document.getElementById('email').value,
-                    customer_phone: document.getElementById('phone').value,
-                    payment_method: document.querySelector('input[name="payment"]:checked').value,
+                    customer_name: formData.get('name'),
+                    customer_email: formData.get('email'),
+                    customer_phone: formData.get('phone'),
+                    customer_address: formData.get('note'), // 使用備註作為地址/需求
                     items: cart,
                     total_amount: total,
-                    referral_id: localStorage.getItem('referralId'),
+                    referral_id: referralId || null,
                     status: 'pending'
                 };
 
                 try {
-                    // Save to Supabase
                     const { data, error } = await supabaseClient
                         .from('orders')
                         .insert([orderData])
@@ -152,25 +115,47 @@
 
                     if (error) throw error;
 
-                    statusDiv.innerHTML = '<p style="color: #10b981; font-weight: 600;">✅ 訂單正式提交成功！2秒後將跳轉至感謝頁面。</p>';
-                    statusDiv.style.display = 'block';
+                    // Success Flow
+                    alert(`✅ 訂單已成功送出！\n訂單編號：${data[0].id.slice(0, 8)}...`);
 
-                    // Clear Cart
-                    localStorage.removeItem('cart');
-
-                    setTimeout(() => {
-                        window.location.href = 'index.html'; // Redirect to home or success page
-                    }, 3000);
+                    // Clear cart
+                    localStorage.removeItem('yuan_point_cart');
+                    window.location.href = 'index.html';
 
                 } catch (err) {
-                    console.error('Submission error:', err);
-                    statusDiv.innerHTML = `<p style="color: #ef4444;">❌ 提交失敗：${err.message}</p>`;
-                    statusDiv.style.display = 'block';
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = '重試提交';
+                    console.error('Supabase Error:', err);
+                    alert('❌ 訂單送出失敗，請稍後再試：' + err.message);
+                    btn.disabled = false;
+                    btnText.innerText = originalText;
                 }
             });
         });
+
+        function renderCheckout() {
+            const container = document.getElementById('checkout-items');
+            const totalEl = document.getElementById('checkout-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart-msg">您的購物車是空的</p>';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const itemTotal = item.price * (item.quantity || 1);
+                total += itemTotal;
+                return `
+                    <div class="order-summary-item">
+                        <div class="item-info">
+                            <span class="item-name">${item.name}</span>
+                            <span class="item-meta">${item.option} x ${item.quantity || 1}</span>
+                        </div>
+                        <span class="item-price">NT$ ${itemTotal.toLocaleString()}</span>
+                    </div>
+                `;
+            }).join('');
+            totalEl.textContent = `NT$ ${total.toLocaleString()}`;
+        }
     </script>
 </body>
 
