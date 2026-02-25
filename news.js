@@ -1,51 +1,45 @@
-// news.js - Dynamic news fetching and rendering
+// 最新消息自動化抓取
 document.addEventListener('DOMContentLoaded', async () => {
     const newsGrid = document.getElementById('news-grid');
     if (!newsGrid) return;
 
     try {
-        console.log('Fetching latest news from Supabase...');
-        const { data: news, error } = await supabaseClient
-            .from('news')
+        const { data, error } = await supabase
+            .from('latest_news')
             .select('*')
-            .order('published_at', { ascending: false });
+            .order('publish_date', { ascending: false })
+            .limit(6);
 
         if (error) throw error;
 
-        if (!news || news.length === 0) {
-            newsGrid.innerHTML = '<p style="text-align: center; color: #64748b; padding: 2rem;">目前尚無新聞，請稍後再回來查看。</p>';
-            return;
+        if (data && data.length > 0) {
+            newsGrid.innerHTML = '';
+            data.forEach(news => {
+                const newsCard = document.createElement('article');
+                newsCard.className = 'course-card';
+                
+                newsCard.innerHTML = `
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="${news.image_url}" alt="${news.title}" class="course-img" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-body">
+                        <span class="tag">${news.category}</span>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">${news.title}</h3>
+                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">${news.summary}</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; pt: 1rem;">
+                            <span style="font-size: 0.75rem; color: #999;">${new Date(news.publish_date).toLocaleDateString()}</span>
+                            <a href="${news.link || '#'}" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">閱讀更多</a>
+                        </div>
+                    </div>
+                `;
+                newsGrid.appendChild(newsCard);
+            });
+        } else {
+            newsGrid.innerHTML = '<p style="text-align: center; color: #94a3b8; padding: 2rem;">目前尚無最新消息。</p>';
         }
 
-        renderNews(news);
     } catch (err) {
         console.error('Error fetching news:', err);
-        newsGrid.innerHTML = `<p style="text-align: center; color: #ef4444; padding: 2rem;">無法載入新聞資料：${err.message}</p>`;
+        newsGrid.innerHTML = '<p style="text-align: center; color: #e74c3c; padding: 2rem;">無法載入最新消息，請稍後再試。</p>';
     }
 });
-
-function renderNews(newsItems) {
-    const newsGrid = document.getElementById('news-grid');
-
-    newsGrid.innerHTML = newsItems.map(item => {
-        const date = new Date(item.published_at).toLocaleDateString('zh-TW', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-
-        return `
-            <article class="course-card">
-                <div class="card-body">
-                    <span class="tag">${item.tag || '最新消息'}</span>
-                    <h3>${item.title}</h3>
-                    <p>${item.summary}</p>
-                    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span class="meta-info">${date}</span>
-                        <a href="${item.url}" target="_blank" class="btn-text" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 0.9rem;">閱讀原文 ↗</a>
-                    </div>
-                </div>
-            </article>
-        `;
-    }).join('');
-}
