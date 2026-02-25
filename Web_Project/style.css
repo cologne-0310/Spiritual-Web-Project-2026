@@ -86,9 +86,10 @@ ul {
 }
 
 .logo img {
-    height: 48px;
+    height: 36px;
     width: auto;
-    margin-right: 12px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 .logo-sub {
@@ -610,21 +611,29 @@ ul {
 /* 場地租借藝廊 (Venue Gallery) */
 .venue-gallery {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 3rem;
-    align-items: flex-start;
-    margin-top: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
 }
 
 .venue-item {
-    position: relative;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px; /* 控制統一高度 */
 }
 
 .venue-item img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
-    border-radius: 12px;
-    box-shadow: var(--shadow-md);
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
