@@ -1,45 +1,72 @@
-// 最新消息自動化抓取
+/**
+ * news.js - 最新消息動態載入 (Dynamic News Loader)
+ */
+
 document.addEventListener('DOMContentLoaded', async () => {
     const newsGrid = document.getElementById('news-grid');
     if (!newsGrid) return;
 
-    try {
-        const { data, error } = await supabase
-            .from('latest_news')
-            .select('*')
-            .order('publish_date', { ascending: false })
-            .limit(6);
+    // 從 Supabase 讀取新聞數據
+    if (window.supabaseClient) {
+        try {
+            const { data, error } = await supabaseClient
+                .from('news_articles')
+                .select('*')
+                .order('created_at', { ascending: false });
 
-        if (error) throw error;
+            if (error) throw error;
 
-        if (data && data.length > 0) {
-            newsGrid.innerHTML = '';
-            data.forEach(news => {
-                const newsCard = document.createElement('article');
-                newsCard.className = 'course-card';
-                
-                newsCard.innerHTML = `
-                    <div style="height: 200px; overflow: hidden;">
-                        <img src="${news.image_url}" alt="${news.title}" class="course-img" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="card-body">
-                        <span class="tag">${news.category}</span>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">${news.title}</h3>
-                        <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">${news.summary}</p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; pt: 1rem;">
-                            <span style="font-size: 0.75rem; color: #999;">${new Date(news.publish_date).toLocaleDateString()}</span>
-                            <a href="${news.link || '#'}" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">閱讀更多</a>
-                        </div>
-                    </div>
-                `;
-                newsGrid.appendChild(newsCard);
-            });
-        } else {
-            newsGrid.innerHTML = '<p style="text-align: center; color: #94a3b8; padding: 2rem;">目前尚無最新消息。</p>';
+            if (data && data.length > 0) {
+                renderNews(data);
+            } else {
+                renderPlaceholder();
+            }
+        } catch (err) {
+            console.error('Supabase Error:', err);
+            renderPlaceholder();
         }
-
-    } catch (err) {
-        console.error('Error fetching news:', err);
-        newsGrid.innerHTML = '<p style="text-align: center; color: #e74c3c; padding: 2rem;">無法載入最新消息，請稍後再試。</p>';
+    } else {
+        renderPlaceholder();
     }
 });
+
+function renderNews(articles) {
+    const grid = document.getElementById('news-grid');
+    grid.innerHTML = '';
+
+    articles.forEach(article => {
+        const date = new Date(article.created_at).toLocaleDateString('zh-TW');
+        const card = `
+            <article class="course-card">
+                <img src="${article.image_url || 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800'}" 
+                     alt="News Image" class="course-img">
+                <div class="card-body">
+                    <span class="tag">${article.tag || '最新消息'}</span>
+                    <h3>${article.title}</h3>
+                    <p>${article.summary}</p>
+                    <div class="meta-info">${date}</div>
+                </div>
+            </article>
+        `;
+        grid.innerHTML += card;
+    });
+}
+
+function renderPlaceholder() {
+    const grid = document.getElementById('news-grid');
+    const defaultData = [
+        {
+            title: "2025 春季：能量理療與頌缽初探",
+            summary: "邀請您在這場全新的春季工作坊中，體驗頌缽的頻率如何清理冬天累積的沈重感，重新對齊靈魂的震動。",
+            tag: "最新消息",
+            created_at: new Date()
+        },
+        {
+            title: "源點身心靈官方網站：正式改版上線",
+            summary: "感謝各位夥伴的支持，我們的官方網站今日全新上線，新增了 AI 實驗室與即時課程預約功能。",
+            tag: "重要公告",
+            created_at: new Date()
+        }
+    ];
+    renderNews(defaultData);
+}

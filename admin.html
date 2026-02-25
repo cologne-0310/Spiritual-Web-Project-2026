@@ -4,176 +4,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>訂單管理 | 源點身&心靈工作坊</title>
+    <title>內部管理系統 | 源點身&心靈工作坊</title>
+    <!-- 字體與樣式 (Fonts & Styles) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .admin-page {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
-        }
-
-        .order-table-container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            border: 1px solid #eee;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        th {
-            background: #f8f9fa;
-            padding: 1rem;
-            font-weight: 500;
-            color: #64748b;
-            border-bottom: 2px solid #eee;
-        }
-
-        td {
-            padding: 1.2rem 1rem;
-            border-bottom: 1px solid #eee;
-            vertical-align: top;
-        }
-
-        .status-badge {
-            padding: 4px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .status-new {
-            background: #e1f5fe;
-            color: #0288d1;
-        }
-
-        .order-id {
-            font-family: monospace;
-            color: #94a3b8;
-        }
-
-        .items-list {
-            font-size: 0.9rem;
-            color: #334155;
-        }
-
-        .customer-info {
-            font-size: 0.9rem;
-        }
-
-        .customer-info div {
-            margin-bottom: 2px;
-        }
-
-        .loading-overlay {
-            padding: 4rem;
-            text-align: center;
-            color: #94a3b8;
-        }
-
-        .stats-grid {
+        .admin-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+
+        .admin-sidebar {
+            background: #1a2a26;
+            color: white;
+            padding: 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .admin-sidebar h2 {
+            font-family: 'Outfit', sans-serif;
             margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            text-align: center;
-        }
-
-        .stat-value {
-            display: block;
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 1.2rem;
             color: var(--accent-color);
+        }
+
+        .admin-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .admin-nav li {
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .admin-nav li:hover,
+        .admin-nav li.active {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-main {
+            padding: 3rem;
+            background: #f8f9fa;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        /* 儀表板卡片 (Dashboard Cards) */
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .dash-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .dash-card h4 {
+            color: #64748b;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
-        .stat-label {
+        .dash-card .value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* 模組容器 */
+        .admin-module {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+
+        .admin-module.active {
+            display: block;
+        }
+
+        /* 表單樣式 */
+        .admin-form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 800px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        /* 表格樣式 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .data-table th {
+            font-weight: 600;
             color: #64748b;
-            font-size: 0.9rem;
+        }
+
+        .btn-sm {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .btn-delete {
+            color: #ef4444;
+            border-color: #fee2e2;
+        }
+
+        .btn-delete:hover {
+            background: #fee2e2;
+        }
+
+        @media (max-width: 992px) {
+            .admin-container {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-sidebar {
+                height: auto;
+                position: relative;
+            }
         }
     </style>
 </head>
 
-<body class="bg-light">
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">源點<span class="logo-sub">管理後台</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">返回網站</a></li>
-                <li><a href="admin.html" class="active">訂單管理</a></li>
-                <li><a href="news-admin.html">新聞管理</a></li>
-            </ul>
-        </div>
-    </nav>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" style="width: 250px !important;">
+            <h2>管理中心</h2>
+            <nav class="admin-nav">
+                <ul>
+                    <li onclick="showModule('dashboard')" class="active">📊 運作概況</li>
+                    <li onclick="showModule('news')">📰 消息發佈</li>
+                    <li onclick="showModule('orders')">💰 訂單管理</li>
+                    <li onclick="showModule('logs')">🔮 AI 實驗室日誌</li>
+                    <li style="margin-top: 2rem;">
+                        <a href="index.html" style="color: #94a3b8; font-size: 0.9rem;">← 返回網站</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main class="admin-page">
-        <header class="section-header">
-            <h1>訂單系統</h1>
-            <p>即時監控並處理客戶預約與購買訂單</p>
-        </header>
+        <!-- Main Content -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1 id="page-title">運作概況</h1>
+                <div class="admin-user">Administrator</div>
+            </header>
 
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-value" id="stat-total">0</span>
-                <span class="stat-label">總訂單數</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-revenue">NT$ 0</span>
-                <span class="stat-label">預算總額</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-value" id="stat-today">0</span>
-                <span class="stat-label">今日新增</span>
-            </div>
-        </div>
-
-        <section class="order-list">
-            <div class="order-table-container">
-                <div id="loading" class="loading-overlay">資料讀取中...</div>
-                <div id="table-wrapper" style="display: none;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>編號 / 時間</th>
-                                <th>客戶資訊</th>
-                                <th>購買品項</th>
-                                <th>小計</th>
-                                <th>狀態</th>
-                            </tr>
-                        </thead>
-                        <tbody id="order-tbody">
-                            <!-- Injected by JS -->
-                        </tbody>
-                    </table>
+            <!-- Dashboard Module -->
+            <section id="module-dashboard" class="admin-module active">
+                <div class="dash-grid">
+                    <div class="dash-card">
+                        <h4>本月訂單數</h4>
+                        <div class="value" id="stats-orders">--</div>
+                    </div>
+                    <div class="dash-card">
+                        <h4>消息點擊率</h4>
+                        <div class="value" id="stats-news">--</div>
+                    </div>
+                    <div class="dash-card">
+                        <h4>AI 互動人次</h4>
+                        <div class="value" id="stats-ai">--</div>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+                <h3>系統即時日誌</h3>
+                <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                    <div id="quick-logs">正在連線至數據庫...</div>
+                </div>
+            </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-bottom">
-            <p>&copy; 2025 源點身&心靈工作坊 - 管理系統. 版權所有.</p>
-            <div style="margin-top: 1rem; font-size: 0.8rem;">
-                客務聯繫：0918-735208 | 0953-515901
-            </div>
-        </div>
-    </footer>
+            <!-- News Module -->
+            <section id="module-news" class="admin-module">
+                <h3>發佈最新消息</h3>
+                <form class="admin-form" id="news-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>標題</label>
+                            <input type="text" id="news-title" required placeholder="如：聖誕心靈排毒工作坊">
+                        </div>
+                        <div class="form-group">
+                            <label>分類標籤</label>
+                            <select id="news-tag">
+                                <option value="活動通知">活動通知</option>
+                                <option value="課程快訊">課程快訊</option>
+                                <option value="靈感分享">靈感分享</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>圖片連結 (URL)</label>
+                        <input type="url" id="news-img" placeholder="https://images.unsplash.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>摘要內容</label>
+                        <textarea id="news-summary" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 200px;">立即發佈</button>
+                    <p id="news-status" style="margin-top: 1rem; color: var(--accent-color);"></p>
+                </form>
+            </section>
+
+            <!-- Logs Module -->
+            <section id="module-logs" class="admin-module">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>AI 實驗室互動歷史</h3>
+                    <button onclick="loadAILogs()" class="btn-sm">🔄 重新整理</button>
+                </div>
+                <table class="data-table" id="ai-logs-table">
+                    <thead>
+                        <tr>
+                            <th>時間</th>
+                            <th>類別</th>
+                            <th>標題</th>
+                            <th>內容縮圖</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ai-logs-body">
+                        <!-- 動態載入 -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Orders Module -->
+            <section id="module-orders" class="admin-module">
+                <h3>本月訂單明細</h3>
+                <table class="data-table" id="orders-table">
+                    <thead>
+                        <tr>
+                            <th>訂單編號</th>
+                            <th>客戶名稱</th>
+                            <th>電話</th>
+                            <th>總金額</th>
+                            <th>狀態</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-body">
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: #999;">尚未有最新訂單數據</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
