@@ -4,31 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 靈性實驗室 | 源點身&心靈工作坊</title>
-    <meta name="description" content="體驗結合 AI 技術與神諭啟發的靈性對談。">
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="AI 靈性實驗室 - 源點身&心靈工作坊">
-    <meta property="og:description" content="獲取您的每日神諭指引。">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
+    <title>AI 實驗室 | 源點身&心靈工作坊</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ai-lab.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
-        rel="stylesheet">
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        .ai-lab-container {
+            display: grid !important;
+            grid-template-columns: 1fr 1.5fr !important;
+            gap: 2rem !important;
+            max-width: 1100px !important;
+            margin: 6rem auto 2rem !important;
+            padding: 2rem !important;
+        }
+    </style>
 </head>
 
-<body class="ai-lab-page">
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo"><img
-                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png"
-                    alt="源點 logo">源點<span class="logo-sub">身&心靈工作坊</span></a>
+<body>
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
                 <li><a href="index.html">最新消息</a></li>
@@ -36,103 +57,59 @@
                 <li><a href="shop.html">療癒服務</a></li>
                 <li><a href="gemini-page.html" class="active">AI 實驗室</a></li>
             </ul>
-            <div class="nav-actions">
-                <a href="#" class="login-btn">登入/註冊</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <div class="ai-lab-container container">
-        <header class="lab-header">
-            <h1 class="glow-text">AI 靈性對話系統</h1>
-            <p>請選擇您想諮詢的神諭主題，並開始對話</p>
-        </header>
-
-        <!-- Oracle Selector -->
-        <section class="oracle-selector">
-            <div class="oracle-card" onclick="selectOracle('love')" id="oracle-love">
-                <div class="oracle-icon">💖</div>
-                <h3>愛情與關係</h3>
-                <p>探索情感連結與親密關係的真相</p>
-                <div class="oracle-indicator">已選擇</div>
-            </div>
-            <div class="oracle-card" onclick="selectOracle('career')" id="oracle-career">
-                <div class="oracle-icon">🚀</div>
-                <h3>事業與豐盛</h3>
-                <p>指引職業發展與財富流動的智慧</p>
-                <div class="oracle-indicator">已選擇</div>
-            </div>
-            <div class="oracle-card" onclick="selectOracle('health')" id="oracle-health">
-                <div class="oracle-icon">🌿</div>
-                <h3>身心健康</h3>
-                <p>連結內在本能，找回健康的源動力</p>
-                <div class="oracle-indicator">已選擇</div>
-            </div>
-        </section>
-
-        <!-- Chat Area -->
-        <section class="chat-container">
-            <div class="chat-header">
-                <span id="oracle-title">請選擇主題開始</span>
-                <span class="status-indicator" id="api-status">API 連接中...</span>
-            </div>
-
-            <div class="chat-messages" id="chat-messages">
-                <div class="message ai-message">
-                    您好，我是源點 AI 導師。請先在上方選擇一個神諭主題，我將為您抽出一張專屬的神諭卡，並根據卡面訊息為您提供指引。
-                </div>
-            </div>
-
-            <form class="chat-input-area" id="chat-form">
-                <input type="text" id="user-input" placeholder="請輸入您的問題..." autocomplete="off" disabled>
-                <button type="submit" class="chat-send-btn">傳送</button>
-            </form>
-        </section>
-    </div>
-
-    <!-- Card Draw Animation Overlay -->
-    <div class="card-overlay" id="card-overlay" onclick="closeCard()"></div>
-    <div class="card-container" id="card-container">
-        <div class="oracle-card-dynamic" id="card-inner" onclick="closeCard()">
-            <div id="card-icon" style="font-size: 5rem; margin-bottom: 2rem;">✨</div>
-            <h2 id="card-title" style="margin-bottom: 1rem; color: var(--accent-color);">--</h2>
-            <p id="card-content" style="line-height: 1.8; color: #ccc;">正在揭示您的靈魂訊息...</p>
-            <div style="margin-top: 2rem; font-size: 0.8rem; color: #6b8e88;">點擊卡片以返回</div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <div class="footer-section">
-                <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
-                <div class="contact-info">
-                    <p>手機：海音 Lisa 0918-735208</p>
-                    <p>手機：劉昆榮 0953-515901</p>
-                    <p>市話：02-2882-5123</p>
-                    <p>地址：台北市士林區中山北路五段 92 號</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon" title="Facebook">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank" class="social-icon" title="YouTube">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
-                        </a>
+    <div class="ai-lab-container" id="ai-lab-main">
+        <!-- 左側：AI 神諭引導 -->
+        <section class="oracle-sidebar">
+            <div class="oracle-card" id="oracle-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/card-back.png"
+                            alt="神諭卡背面">
+                        <p>點擊抽取您的今日指引</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+            <div class="oracle-controls">
+                <button id="draw-btn" class="btn btn-primary">抽取今日指引</button>
+                <div id="oracle-result" class="oracle-result-box" style="display: none;">
+                    <h4 id="card-name">卡片名稱</h4>
+                    <p id="card-meaning">指引訊息將顯示於此...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 右側：AI 心靈對話 -->
+        <section class="chat-main">
+            <div class="chat-header">
+                <h2>心靈對話：與內在連結</h2>
+                <p>在這裡，您可以放心地表達任何困惑與感受。</p>
+            </div>
+            <div class="chat-box" id="chat-messages">
+                <div class="message ai-msg">您好，我是您的心靈夥伴。今天有什麼想分享的嗎？</div>
+            </div>
+            <div class="chat-input-area">
+                <textarea id="user-input" placeholder="輸入您的訊息..."></textarea>
+                <button id="send-btn" class="btn btn-primary">發送</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+                </p>
+            </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script src="ai-lab.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,5 @@
-// Core Website Logic
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu Toggling
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -11,34 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (navLinks.style.display === 'flex') {
                 navLinks.style.flexDirection = 'column';
                 navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
+                navLinks.style.top = '80px';
                 navLinks.style.left = '0';
                 navLinks.style.width = '100%';
-                navLinks.style.background = 'white';
+                navLinks.style.backgroundColor = 'white';
                 navLinks.style.padding = '2rem';
                 navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
             }
         });
     }
 
-    // 2. Fade-in Animation for Cards on Scroll
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.course-card').forEach(card => {
-        observer.observe(card);
+    // Header Background Change on Scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'white';
+            navbar.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
     });
 
-    // 3. Smooth Scrolling for Internal Links
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -51,28 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Form Submission Simulation (e.g. Newsletter)
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('input').value;
-            if (email) {
-                alert(`感謝您的訂閱！我們已將確認信發送至：${email}`);
-                newsletterForm.reset();
+    // Fade-in animation for course cards
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }
+    }, observerOptions);
 
-    // 5. Active Link Detection
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+    document.querySelectorAll('.course-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
     });
-
-    console.log('源點身心靈網站邏輯已啟動');
 });
