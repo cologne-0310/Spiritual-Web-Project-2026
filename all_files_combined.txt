@@ -1,0 +1,3578 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新消息 | 源點身&心靈工作坊</title>
+    <meta name="description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="最新消息 - 源點身&心靈工作坊">
+    <meta property="og:description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
+    <meta property="og:image"
+        content="https://knttkrxd.manus.space/https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
+    <meta property="og:url" content="https://knttkrxd.manus.space/index.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
+
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">
+                源點<span class="logo-sub">身&心靈工作坊</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html" class="active">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">登入/註冊</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">最新消息</h1>
+                <p class="page-subtitle">獲取源點身&心靈工作坊的最新課程動態與靈性訊息</p>
+                <div class="hero-buttons">
+                    <a href="academy.html" class="btn btn-primary">瀏覽所有課程</a>
+                    <a href="shop.html" class="btn btn-secondary">預約療癒服務</a>
+                </div>
+            </div>
+            <div class="hero-image-box">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%BA%AB%E5%BF%83%E9%9D%88%E6%AA%A2%E6%B8%AC.png"
+                    alt="最新消息" class="hero-featured-img">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content: Latest News Feed -->
+    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
+        <div class="section-header">
+            <h2>近期動態與訊息</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="course-grid" id="news-grid">
+            <p style="text-align: center; color: #94a3b8; padding: 2rem;">新聞連接中...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>訂閱電子報</h4>
+                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="您的電子信箱">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
+
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務 and 產品。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E6%8B%9B%E7%89%8C.jpg"
+                        alt="工作坊招牌" class="contact-signage">
+                </div>
+            </div>
+
+            <div class="footer-section link-list">
+                <h4>客戶服務</h4>
+                <ul>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">預約政策</a></li>
+                    <li><a href="#">服務條款</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="news.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 | 源點身&心靈工作坊</title>
+    <meta name="description" content="了解源點身&心靈工作坊的理念、空間與服務。我們致力於協助每個人找回身心平衡，重新連接內在的力量。">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="關於我們 - 源點身&心靈工作坊">
+    <meta property="og:description" content="探索源點的空間與服務理念。">
+    <meta property="og:image"
+        content="https://knttkrxd.manus.space/https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
+    <meta property="og:url" content="https://knttkrxd.manus.space/about.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+            clear: both !important;
+        }
+
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+            display: inline-block !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        .navbar {
+            padding: 1rem 0 !important;
+            width: 100% !important;
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- 導覽列 (Navbar) -->
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html" class="active">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">登入/註冊</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+
+    <!-- 主要內容區 (Main Content) -->
+    <main class="container main-content about-content" style="max-width: 1200px !important; margin: 0 auto !important;">
+
+        <!-- 源點身心靈區塊 (Top Section) -->
+        <section class="about-section" style="margin-top: 2rem;">
+            <div class="section-header">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">源點身心靈</h1>
+                <div class="divider"></div>
+            </div>
+            <div class="about-me-intro" style="text-align: center; margin-bottom: 4rem;">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E9%97%9C%E6%96%BC%E6%88%91.jpg"
+                    alt="源點身心靈" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+        </section>
+
+        <!-- 理念區塊 (Philosophy) -->
+        <section class="about-section alt-bg">
+            <div class="section-header">
+                <h2>我們的理念</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="text-content">
+                <p>【源點身&心靈工作坊】的理念：宇宙是一個大的能量場，每個人都如「光源」、一個能量的「中心點」，希望連結新時代理念的人，各自發揮其所長，助人並教學相長，擴大善的心念，共同建構和諧、慈愛的環境。</p>
+                <p>透過自然療法，陽光(遠紅外線)、空氣(負離子)、水(諧振小分子)、營養、運動、心靈課程的配合，擴展到全方位身心靈的平衡。</p>
+                <ul class="feature-list">
+                    <li><strong>【身】</strong> 以「痛點撥筋、CPTG精油理療、療癒飲食、微量元素、螺旋運動、能量頻率檢測等...」。</li>
+                    <li><strong>【心靈】</strong> 以課程或諮詢，如:「生命靈數、靈氣、空靈鼓、心靈對畫...等」，協助探索了解自我，面對各種生命課題。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 空間區塊 (Venue) -->
+        <section class="about-section">
+            <div class="section-header">
+                <h2>我們的空間與場地租借</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="text-content" style="margin-bottom: 2rem;">
+                <p>源點身&心靈工作坊位於台北市士林區中山北路五段92號（劍潭捷運站3號出口），環境舒適寧靜，是您放鬆身心、探索內在的理想場所。</p>
+                <p>我們的空間設計融合東方禪意與現代簡約風格，提供多功能療癒室、團體課程空間、個人諮詢室等，適合各類心靈工作坊、講座、練習 or 小型聚會。</p>
+                <p>配備完善的音響與投影設備，包括頌缽、水晶、精油擴香等，營造出平靜祥和的氛圍，幫助您更好地連接內在自我。</p>
+            </div>
+
+            <!-- Internal Photos Gallery -->
+            <div class="venue-gallery">
+                <div class="venue-item">
+                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/indoor.png"
+                        alt="空間實景展示">
+                </div>
+                <div class="venue-item">
+                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%A9%BA%E9%96%93%E7%A7%9F%E5%80%9F.png"
+                        alt="場地租借價目表">
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="guide.html" class="btn btn-secondary">查看租借詳情與費用</a>
+            </div>
+        </section>
+
+        <!-- 影片介紹區塊 (Video - BOTTOM) -->
+        <section class="video-section alt-bg" style="margin-bottom: 4rem;">
+            <div class="container" style="max-width: 1200px !important; margin: 0 auto !important;">
+                <div class="section-header">
+                    <h2>整體介紹影片</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source
+                            src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E6%BA%90%E9%BB%9E%E5%BD%B1%E7%89%87%E5%AE%8C%E6%95%B4.mp4"
+                            type="video/mp4">
+                        您的瀏覽器不支援影片播放。
+                    </video>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁尾 (Footer) -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>訂閱電子報</h4>
+                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="您的電子信箱">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
+
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段92號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section link-list">
+                <h4>客戶服務</h4>
+                <ul>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">預約政策</a></li>
+                    <li><a href="#">服務條款</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
+        </div>
+    </footer>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各類課程 | 源點身&心靈工作坊</title>
+    <meta name="description" content="探索源點提供的各類心靈成長、科技AI與傳統藝術課程。">
+    <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
+
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html" class="active">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">登入/註冊</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">各類課程資訊</h1>
+                <p class="page-subtitle">探索身心靈成長的多樣途徑，從科技AI到傳統藝術</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%B8%BD%E8%AA%B2%E7%A8%8B%E8%A1%A8.jpg"
+                    alt="各類課程" class="hero-featured-img">
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
+        <div class="course-grid">
+            <!-- AI Course -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/ai%20%E8%AA%B2.png"
+                    alt="AI 智能生活應用" class="course-img">
+                <div class="card-body">
+                    <span class="tag">科技與心靈</span>
+                    <h3>AI 智能生活應用課程</h3>
+                    <p>學習如何將 AI 技術融入 daily 工作與創作，釋放雙手，讓科技成為您心靈創作的延伸工具。</p>
+                    <div class="price-tag">NT$ 3,600</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="standard">標準課程 (4堂)</option>
+                            <option value="advanced">進階課程 (8堂) + NT$ 3,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="AI 智能生活應用課程" data-price="3600">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Ryukyu Glass -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-06.jpg" alt="琉璃藝創課程"
+                    class="course-img">
+                <div class="card-body">
+                    <span class="tag">藝創課程</span>
+                    <h3>心創 琉璃藝創課程</h3>
+                    <p>在光影交織中體驗琉璃之美，透過手作過程沉澱心靈，創造屬於自己的藝術之光。</p>
+                    <div class="price-tag">NT$ 2,800</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="beginner">基礎琉璃實作</option>
+                            <option value="advanced">中階琉璃設計 + NT$ 1,200</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="心創 琉璃藝創課程" data-price="2800">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Calligraphy -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-01.png" alt="書法課程"
+                    class="course-img">
+                <div class="card-body">
+                    <span class="tag">傳統藝術</span>
+                    <h3>靜心書法課程</h3>
+                    <p>張家禎老師指導。在墨色運轉間體會呼吸與專注，從指尖到宣紙，感受文字背後的定靜之力。</p>
+                    <div class="price-tag">NT$ 2,000</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="single">單堂體驗</option>
+                            <option value="monthly">月期課 (4堂) + NT$ 5,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="靜心書法課程" data-price="2000">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Music/Breath -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-05.png"
+                    alt="磅礡雨音音樂會" class="course-img">
+                <div class="card-body">
+                    <span class="tag">音療課程</span>
+                    <h3>磅礡雨音 - 呼吸音樂會</h3>
+                    <p>震撼的雨音共振，配合深層呼 islands 引導，深度清理內在壓力，體驗純粹的生命共鳴。</p>
+                    <div class="price-tag">NT$ 1,200</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="ticket">入場券 (1人)</option>
+                            <option value="couple">雙人同行價 NT$ 2,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="磅礡雨音 - 呼吸音樂會" data-price="1200">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段92號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>療癒服務 | 源點身&心靈工作坊</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
+
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html" class="active">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">登入/註冊</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">專業療癒服務</h1>
+                <p class="page-subtitle">透過多樣化的自然療法與能量技術，平衡您的身心靈狀態</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%8A%B3%E9%A6%99%E7%99%82%E6%B3%95.png"
+                    alt="療癒服務" class="hero-featured-img">
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
+        <div class="course-grid">
+            <!-- Bazi Consultation -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E5%85%AB%E5%AD%97%E8%AB%AE%E8%A9%A2.jpg"
+                    alt="八字諮詢" class="course-img">
+                <div class="card-body">
+                    <span class="tag">命理諮詢</span>
+                    <h3>八字命理諮詢</h3>
+                    <p>透過出生年月日時的精準分析，探尋您的生命藍圖，協助您了解天賦才華，並在人生的轉折點做出最適合的選擇。</p>
+                    <div class="price-tag">NT$ 1,200</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="half">基本諮詢 (30min)</option>
+                            <option value="full">深度解析 (60min) + NT$ 1,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="八字命理諮詢" data-price="1200">
+                        <span>🛒 預約加入</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Crystal Healing -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-02.png" alt="水晶療癒"
+                    class="course-img">
+                <div class="card-body">
+                    <span class="tag">能量療癒</span>
+                    <h3>水晶療癒分享流程</h3>
+                    <p>運用天然水晶與礦石的能量頻率，平衡身體七大脈輪，清理負面情緒，為您的身心注入純淨的療癒光芒。</p>
+                    <div class="price-tag">NT$ 2,500</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="standard">標準療癒 (60min)</option>
+                            <option value="intensive">深度脈輪清理 + NT$ 1,500</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="水晶療癒分享流程" data-price="2500">
+                        <span>🛒 預約加入</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Body & Soul Testing -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%BA%AB%E5%BF%83%E9%9D%88%E6%AA%A2%E6%B8%AC.png"
+                    alt="身心靈檢測" class="course-img">
+                <div class="card-body">
+                    <span class="tag">能量檢測</span>
+                    <h3>身心靈能量頻率檢測</h3>
+                    <p>使用先進的能量檢測設備，可視化您的氣場與健康頻率，為您量身打造個人化的身心靈調整方案。</p>
+                    <div class="price-tag">NT$ 800</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="basic">基礎檢測</option>
+                            <option value="report">詳細報告書 + NT$ 500</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="身心靈能量頻率檢測" data-price="800">
+                        <span>🛒 預約加入</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Oil Therapy -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%8A%B3%E9%A6%99%E7%99%82%E6%B3%95.png"
+                    alt="精油理療" class="course-img">
+                <div class="card-body">
+                    <span class="tag">香氛療癒</span>
+                    <h3>CPTG 頂級精油理療</h3>
+                    <p>結合大地的真純精華與專業理療手法，在芳香中深度放鬆，讓植物的修復力量滋養您的神經系統。</p>
+                    <div class="price-tag">NT$ 3,200</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="back">肩頸放鬆 (40min)</option>
+                            <option value="full">全身經絡理療 (90min) + NT$ 1,800</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="CPTG 頂級精油理療" data-price="3200">
+                        <span>🛒 預約加入</span>
+                    </button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長服務。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段92號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 實驗室 | 源點身&心靈工作坊</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
+
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+        }
+
+        .ai-lab-container {
+            display: grid !important;
+            grid-template-columns: 1fr 1.5fr !important;
+            gap: 2rem !important;
+            max-width: 1100px !important;
+            margin: 6rem auto 2rem !important;
+            padding: 2rem !important;
+            text-align: center !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ai-glow: rgba(107, 142, 136, 0.3);
+            --ai-glass: rgba(255, 255, 255, 0.05);
+            --ai-text: #fff;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a26 0%, #0d1412 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(13, 20, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Oracle Panel */
+        .oracle-panel {
+            background: var(--ai-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oracle-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--ai-glow) 0%, transparent 70%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 50px var(--ai-glow);
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .oracle-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 80px var(--ai-glow);
+            border-color: #6b8e88;
+        }
+
+        .oracle-msg {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e2e8f0;
+            min-height: 100px;
+        }
+
+        /* Right Panel: Chat */
+        .chat-panel {
+            background: var(--ai-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chat-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .chat-bot-status {
+            width: 10px;
+            height: 10px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #4ade80;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-height: 500px;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 1rem 1.2rem;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .message.ai {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom-left-radius: 4px;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: var(--accent-color);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-input-area {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input {
+            flex-grow: 1;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            color: white;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .chat-send-btn {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 0 1.2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .chat-send-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Graphic Menu styles */
+        .graphic-menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .menu-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .menu-item:hover {
+            background: rgba(107, 142, 136, 0.2);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .menu-item .icon {
+            font-size: 1.5rem;
+        }
+
+        /* Card Animation */
+        .card-container {
+            perspective: 1000px;
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+
+        .oracle-card-dynamic {
+            width: 280px;
+            height: 400px;
+            background: linear-gradient(145deg, #2d4540, #1a2a26);
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            z-index: 999;
+        }
+
+        @media (max-width: 850px) {
+            .ai-lab-container {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html" class="active">AI 實驗室</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ai-lab-container"
+        style="max-width: 1100px !important; margin: 6rem auto 2rem !important; display: grid !important; grid-template-columns: 1fr 1.5fr !important; gap: 2rem !important;">
+        <!-- Oracle Panel -->
+        <section class="oracle-panel">
+            <div class="oracle-circle" id="oracle-btn">
+                <span style="font-size: 3rem;">🔮</span>
+            </div>
+            <h3>每日神諭指引</h3>
+            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 2rem;">輕觸水晶球，領取此時此刻專屬於您的心靈訊息。</p>
+            <div class="oracle-msg" id="oracle-msg">「靜下心來，答案就在您的呼吸之間。」</div>
+        </section>
+
+        <!-- Chat Panel -->
+        <section class="chat-panel">
+            <div class="chat-header">
+                <div class="chat-bot-status"></div>
+                <div class="chat-bot-info">
+                    <div style="font-weight: 600;">Soul Guide AI</div>
+                    <div style="font-size: 0.8rem; color: #94a3b8;">在線，為您指引</div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message ai">
+                    歡迎來到心靈實驗室。我是您的數位導引者。您可以直接在下方選擇感興趣的主題，讓我為您抽取一張專屬的神諭排卡。
+                </div>
+            </div>
+
+            <!-- Graphic Menu Selection -->
+            <div class="graphic-menu" id="graphic-menu">
+                <div class="menu-item" onclick="drawCard('love')">
+                    <span class="icon">❤️</span>
+                    <div>
+                        <strong>感情與關係</strong>
+                        <div style="font-size: 0.7rem; color: #94a3b8;">追尋愛與和諧</div>
+                    </div>
+                </div>
+                <div class="menu-item" onclick="drawCard('career')">
+                    <span class="icon">💼</span>
+                    <div>
+                        <strong>事業與成就</strong>
+                        <div style="font-size: 0.7rem; color: #94a3b8;">對齊目標與豐盛</div>
+                    </div>
+                </div>
+                <div class="menu-item" onclick="drawCard('health')">
+                    <span class="icon">🌱</span>
+                    <div>
+                        <strong>身心靈健康</strong>
+                        <div style="font-size: 0.7rem; color: #94a3b8;">淨化、療癒與平靜</div>
+                    </div>
+                </div>
+                <div class="menu-item" onclick="drawCard('wealth')">
+                    <span class="icon">💰</span>
+                    <div>
+                        <strong>豐盛與金錢</strong>
+                        <div style="font-size: 0.7rem; color: #94a3b8;">消除金錢障礙</div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="chat-input-area" id="chat-form">
+                <input type="text" class="chat-input" id="chat-input" placeholder="或直接與我對話..." required>
+                <button type="submit" class="chat-send-btn">傳送</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Card Draw Animation Overlay -->
+    <div class="card-overlay" id="card-overlay" onclick="closeCard()"></div>
+    <div class="card-container" id="card-container">
+        <div class="oracle-card-dynamic" id="card-inner" onclick="closeCard()">
+            <div id="card-icon" style="font-size: 5rem; margin-bottom: 2rem;">✨</div>
+            <h2 id="card-title" style="margin-bottom: 1rem; color: var(--accent-color);">--</h2>
+            <p id="card-content" style="line-height: 1.8; color: #ccc;">正在揭示您的靈魂訊息...</p>
+            <div style="margin-top: 2rem; font-size: 0.8rem; color: #6b8e88;">點擊卡片以返回</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="ai-lab.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理後台 | 身心靈平台</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --admin-sidebar-width: 260px;
+            --admin-bg: #f8fafc;
+            --admin-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --admin-primary: #6b8e88;
+            --admin-secondary: #f1f5f9;
+        }
+
+        body {
+            background-color: var(--admin-bg);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .admin-sidebar {
+            width: var(--admin-sidebar-width);
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .admin-logo {
+            padding: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--admin-primary);
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-nav {
+            padding: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--admin-primary);
+            background: #f0f7f6;
+            border-right: 4px solid var(--admin-primary);
+        }
+
+        /* Main Content */
+        .admin-main {
+            margin-left: var(--admin-sidebar-width);
+            flex-grow: 1;
+            padding: 2.5rem;
+        }
+
+        .admin-header {
+            margin-bottom: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-title h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+
+        .admin-title p {
+            color: #94a3b8;
+            margin: 0.5rem 0 0 0;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--admin-card-shadow);
+            border: 1px solid #f1f5f9;
+        }
+
+        .stat-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Tables */
+        .admin-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--admin-card-shadow);
+            border: 1px solid #f1f5f9;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th {
+            background: #f8fafc;
+            padding: 1rem 2rem;
+            text-align: left;
+            font-weight: 600;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .admin-table td {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+        }
+
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-sidebar">
+        <div class="admin-logo">
+            <span style="font-size: 1.8rem;">✨</span> 身心靈平台
+        </div>
+        <nav class="admin-nav">
+            <a class="nav-item active" onclick="switchTab('dashboard')">📊 儀表板</a>
+            <a class="nav-item" onclick="switchTab('orders')">🛒 訂單管理</a>
+            <a class="nav-item" onclick="switchTab('news')">📰 新聞管理</a>
+            <a class="nav-item" onclick="switchTab('affiliates')">💰 分潤查詢</a>
+            <a class="nav-item" onclick="switchTab('reports')">📈 報表統計</a>
+        </nav>
+    </div>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="admin-title">
+                <h1 id="page-title">歡迎回來，管理員</h1>
+                <p>這裡是您的管理後台，可以查看系統概況與最新動態。</p>
+            </div>
+            <div class="admin-user">
+                <span>admin</span>
+            </div>
+        </header>
+
+        <section id="dashboard-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">總用戶數</div>
+                    <div class="stat-value" id="stat-users">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">總課程數</div>
+                    <div class="stat-value" id="stat-products">12</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">總訂單數</div>
+                    <div class="stat-value" id="stat-orders">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">總分潤金額</div>
+                    <div class="stat-value" id="stat-revenue">--</div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>近期訂單</h3>
+                    <button class="btn-refresh" onclick="loadDashboardData()"
+                        style="padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #ddd; background: white; cursor: pointer;">重新整理</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>客戶</th>
+                                <th>品項</th>
+                                <th>金額</th>
+                                <th>推薦人</th>
+                                <th>狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders-list">
+                            <!-- Injected by JS -->
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 3rem; color: #94a3b8;">載入中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Management Section (Hidden by default via switchTab) -->
+        <section id="news-content" style="display: none;">
+            <div class="admin-card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <h3>發布新靈性新聞</h3>
+                </div>
+                <div style="padding: 2rem;">
+                    <form id="news-form" style="display: grid; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">新聞標題</label>
+                                <input type="text" id="news-title" class="form-control" placeholder="例如：2025年療癒經濟趨勢"
+                                    required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">分類標籤</label>
+                                <input type="text" id="news-tag" class="form-control" placeholder="例如：趨勢報導" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">重點摘要</label>
+                            <textarea id="news-summary" class="form-control" style="height: 100px; resize: none;"
+                                placeholder="請輸入 100-200 字的黃金摘要..." required></textarea>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">原文連結 (URL)</label>
+                            <input type="url" id="news-url" class="form-control"
+                                placeholder="https://example.com/article" required>
+                        </div>
+                        <button type="submit" class="btn-primary"
+                            style="padding: 1rem; border: none; border-radius: 8px; background: var(--admin-primary); color: white; font-weight: 700; cursor: pointer;">發布新聞</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>已發布新聞</h3>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>標題</th>
+                                <th>標籤</th>
+                                <th>連結</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-news-list">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊 - 管理系統. 版權所有.</p>
+            <div style="margin-top: 1rem; font-size: 0.8rem;">
+                客務聯繫：0918-735208 | 0953-515901
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂單結帳 | 源點身&心靈工作坊</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="源點 logo">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="checkout-container">
+            <div class="checkout-card">
+                <h2>顧客資訊</h2>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label>姓名</label>
+                        <input type="text" name="name" class="form-control" placeholder="請輸入姓名" required>
+                    </div>
+                    <div class="form-group">
+                        <label>電子信箱</label>
+                        <input type="email" name="email" class="form-control" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>連絡電話</label>
+                        <input type="tel" name="phone" class="form-control" placeholder="0912-345-678" required>
+                    </div>
+                    <div class="form-group">
+                        <label>備註 (如：預約時段偏好)</label>
+                        <textarea name="note" rows="4" class="form-control" placeholder="有任何特殊需求請告知我們..."></textarea>
+                    </div>
+                    <button type="submit" class="place-order-btn">
+                        <span>🚀 確認並送出訂單</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="checkout-card">
+                <h3>訂單摘要</h3>
+                <div id="checkout-items">
+                    <!-- Items injected by JS -->
+                </div>
+                <div class="checkout-total-row">
+                    <span class="total-label">總計</span>
+                    <span id="checkout-total" class="total-amount">NT$ 0</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長服務。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+        </div>
+    </footer>
+
+    <!-- Supabase SDK & Config -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
+    <script src="cart.js"></script>
+    <script>
+        // Checkout page specific logic
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCheckout();
+
+            document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('.place-order-btn');
+                const btnText = btn.querySelector('span');
+                const originalText = btnText.innerText;
+
+                // Loading State
+                btn.disabled = true;
+                btnText.innerText = '⏳ 處理中...';
+
+                const formData = new FormData(e.target);
+                const referralId = localStorage.getItem('yuan_point_ref');
+                const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+
+                const orderData = {
+                    customer_name: formData.get('name'),
+                    customer_email: formData.get('email'),
+                    customer_phone: formData.get('phone'),
+                    customer_address: formData.get('note'), // 使用備註作為地址/需求
+                    items: cart,
+                    total_amount: total,
+                    referral_id: referralId || null,
+                    status: 'pending'
+                };
+
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('orders')
+                        .insert([orderData])
+                        .select();
+
+                    if (error) throw error;
+
+                    // Success Flow
+                    alert(`✅ 訂單已成功送出！\n訂單編號：${data[0].id.slice(0, 8)}...`);
+
+                    // Clear cart
+                    localStorage.removeItem('yuan_point_cart');
+                    window.location.href = 'index.html';
+
+                } catch (err) {
+                    console.error('Supabase Error:', err);
+                    alert('❌ 訂單送出失敗，請稍後再試：' + err.message);
+                    btn.disabled = false;
+                    btnText.innerText = originalText;
+                }
+            });
+        });
+
+        function renderCheckout() {
+            const container = document.getElementById('checkout-items');
+            const totalEl = document.getElementById('checkout-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="empty-cart-msg">您的購物車是空的</p>';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const itemTotal = item.price * (item.quantity || 1);
+                total += itemTotal;
+                return `
+                    <div class="order-summary-item">
+                        <div class="item-info">
+                            <span class="item-name">${item.name}</span>
+                            <span class="item-meta">${item.option} x ${item.quantity || 1}</span>
+                        </div>
+                        <span class="item-price">NT$ ${itemTotal.toLocaleString()}</span>
+                    </div>
+                `;
+            }).join('');
+            totalEl.textContent = `NT$ ${total.toLocaleString()}`;
+        }
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用指南 | 源點身&心靈工作坊</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">源點<span class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+                <li><a href="guide.html" class="active">使用指南</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">使用指南</h1>
+                <p class="page-subtitle">如何開始您的療癒旅程？</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="assets/course-04.png" alt="使用指南" class="hero-featured-img">
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="about-section">
+            <div class="section-header">
+                <h2>簡單三步驟</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="text-content">
+                <ol class="feature-list" style="list-style: decimal;">
+                    <li><strong>選擇課程：</strong>在課程資訊或心靈課程中挑選適合您的項目。</li>
+                    <li><strong>預約時間：</strong>撥打專員電話或點擊了解更多與我們聯繫。</li>
+                    <li><strong>親身体驗：</strong>來到劍潭站附近的工作坊，開啟您的身心靈饗宴。</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+        </div>
+    </footer>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+/* 全域變數 (Global Variables) */
+:root {
+    /* 色彩 (Colors) */
+    --bg-primary: #FDFBF7;
+    /* 溫暖米白 */
+    --bg-secondary: #F3F0EB;
+
+    --text-primary: #2C3E50;
+    --text-secondary: #64748B;
+    --text-light: #94A3B8;
+
+    --accent-color: #6B8E88;
+    /* 鼠尾草綠 - 療癒感 */
+    --accent-hover: #55726D;
+    --accent-light: #E0E9E8;
+
+    --card-bg: #FFFFFF;
+
+    /* 裝飾 (Decoration) */
+    --border-radius: 16px;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+
+    /* 字體 (Fonts) */
+    --font-heading: 'Noto Sans TC', sans-serif;
+    --font-body: 'Noto Sans TC', sans-serif;
+    /* 若無法載入則使用系統字體 */
+}
+
+/* 重置 (Reset) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 導覽列 (Navbar) */
+.navbar {
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 0.05em;
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.logo-sub {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-left: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.login-btn {
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 主視覺區塊 (Hero Section) */
+.hero {
+    padding: 6rem 0;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.hero::before {
+    display: none;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content-box {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image-box {
+        justify-content: center;
+    }
+}
+
+.hero-content-box {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-featured-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    font-size: 2.25rem;
+    /* 32px is approx 2rem-2.25rem */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #333;
+    line-height: 1.3;
+    text-shadow: none;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* 主要內容區 (Main Content) */
+.main-content {
+    padding: 2rem 2rem 6rem;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+@media (max-width: 480px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* 課程卡片 (Course Cards) */
+.course-card {
+    background: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* 課程卡片圖片 (Course Card Image) */
+.course-img {
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    /* More vertical for "DM" feel */
+    object-fit: contain;
+    /* Changed from cover to avoid cropping */
+    background-color: #f9f9f9;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.img-contain {
+    object-fit: contain !important;
+    aspect-ratio: auto !important;
+}
+
+/* 品牌識別 (Branding) */
+/* 社交媒體與聯絡資訊增強 (Social Media & Contact Info Enhancements) */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: var(--accent-light);
+    box-shadow: var(--shadow-md);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-signage {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.meta-info {
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: #999;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.05);
+}
+
+.tag {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.course-card h3 {
+    font-size: 1.17rem;
+    /* approx 18.72px */
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.course-card p {
+    font-size: 1rem;
+    /* 16px */
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    align-self: flex-start;
+}
+
+.read-more:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* 頁尾 (Footer) */
+.site-footer {
+    background-color: var(--bg-secondary);
+    padding: 4rem 2rem 2rem;
+    color: var(--text-secondary);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-section h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    max-width: 300px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-form input {
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.newsletter-form button {
+    padding: 0.6rem 1.2rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.newsletter-form button:hover {
+    background: var(--accent-hover);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* 關於我們頁面樣式 (About Page Styles) */
+.about-content {
+    padding-top: 0;
+}
+
+.about-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-section:last-child {
+    border-bottom: none;
+}
+
+.about-section.alt-bg {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius);
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.text-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.feature-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.feature-list li::before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.feature-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    display: block;
+    box-shadow: var(--shadow-md);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.service-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.service-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* 場地租借藝廊 (Venue Gallery) */
+.venue-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.venue-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    /* 控制統一高度 */
+}
+
+.venue-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.venue-item img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+    .venue-gallery {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* 響應式調整 (Responsive) */
+@media (max-width: 768px) {
+
+    .nav-links,
+    .nav-actions {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding: 4rem 0 3rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* 關於我們頁面 RWD */
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-section.alt-bg {
+        padding: 2rem 1rem;
+    }
+}
+
+/* 購物車側邊欄增強 (Cart Sidebar Enhancements) */
+.cart-sidebar {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.cart-item-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.cart-item-info p {
+    margin: 4px 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.cart-item-price {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.cart-item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8f9fa;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.quantity-controls button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0 4px;
+}
+
+.quantity-controls span {
+    font-size: 0.9rem;
+    min-width: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ff4757;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.empty-cart-msg {
+    text-align: center;
+    color: #999;
+    margin-top: 3rem;
+}
+
+.cart-footer {
+    padding: 1.5rem;
+    background: #fdfcfb;
+    border-top: 1px solid #eee;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* 按鈕反饋動畫 (Button Feedback) */
+.add-to-cart-btn.added {
+    background-color: #2ED573 !important;
+    border-color: #2ED573 !important;
+}
+
+.cart-floating-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(107, 142, 136, 0.3);
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.cart-floating-btn:hover {
+    transform: scale(1.1);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 0.75rem;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    font-weight: 700;
+}
+
+/* 結帳頁面美化 (Checkout Page Aesthetics) */
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2.5rem;
+    margin: 4rem auto;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.checkout-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.checkout-card h2,
+.checkout-card h3 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 1.5px solid #eee;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(107, 142, 136, 0.1);
+}
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.order-summary-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.2rem;
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.checkout-total-row {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.total-amount {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    font-family: 'Outfit', sans-serif;
+}
+
+.place-order-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.place-order-btn:hover {
+    background: #5a7a74;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 142, 136, 0.3);
+}
+
+.place-order-btn:active {
+    transform: translateY(0);
+}
+document.addEventListener('DOMContentLoaded', () => {
+    // 手機版選單切換 (Mobile Menu Toggle)
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navActions = document.querySelector('.nav-actions');
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+            mobileBtn.setAttribute('aria-expanded', !isExpanded);
+
+            // 在實際應用中，我們通常會切換 class
+            // 此處為了演示方便，直接切換 display 屬性與樣式
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+                if (navActions) navActions.style.display = 'none';
+                mobileBtn.innerHTML = '☰';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = '#FDFBF7';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+
+                if (navActions) {
+                    navActions.style.display = 'flex';
+                    navActions.style.position = 'absolute';
+                    navActions.style.top = 'calc(100% + 200px)'; /* 簡單定位修正 */
+                    navActions.style.width = '100%';
+                    navActions.style.justifyContent = 'center';
+                    navActions.style.padding = '1rem';
+                }
+
+                mobileBtn.innerHTML = '✕';
+            }
+        });
+    }
+
+    // 平滑捲動效果 (Smooth Scroll)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 捲動時淡入動畫 (Fade in on Scroll)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.course-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
+
+/**
+ * Cart Logic for 源點身&心靈工作坊
+ */
+
+let cart = JSON.parse(localStorage.getItem('yuan_point_cart')) || [];
+
+document.addEventListener('DOMContentLoaded', () => {
+    detectReferral();
+    initCartUI();
+    updateCartCount();
+    renderCartItems();
+
+    // Event Delegation for "Add to Cart"
+    document.body.addEventListener('click', (e) => {
+        if (e.target.closest('.add-to-cart-btn')) {
+            const btn = e.target.closest('.add-to-cart-btn');
+            const name = btn.dataset.name;
+            const basePrice = parseInt(btn.dataset.price);
+
+            // Get selected option
+            const card = btn.closest('.course-card');
+            const select = card.querySelector('.option-select');
+            const optionText = select.options[select.selectedIndex].text;
+
+            // Simple logic: if text contains "+ NT$ XXX", add it to price
+            let finalPrice = basePrice;
+            const extraMatch = optionText.match(/\+ NT\$ ([\d,]+)/);
+            if (extraMatch) {
+                finalPrice += parseInt(extraMatch[1].replace(/,/g, ''));
+            }
+
+            addToCart({ name, option: optionText, price: finalPrice });
+        }
+
+        // Toggle Cart
+        if (e.target.closest('#cart-toggle')) {
+            document.getElementById('cart-sidebar').classList.add('active');
+        }
+        if (e.target.closest('#cart-close')) {
+            document.getElementById('cart-sidebar').classList.remove('active');
+        }
+    });
+});
+
+function initCartUI() {
+    // Basic sidebar layout exists in HTML
+}
+
+function addToCart(item) {
+    // Check if item with same name and option already exists
+    const existingIdx = cart.findIndex(i => i.name === item.name && i.option === item.option);
+
+    if (existingIdx > -1) {
+        cart[existingIdx].quantity = (cart[existingIdx].quantity || 1) + 1;
+    } else {
+        cart.push({
+            id: Date.now(),
+            quantity: 1,
+            ...item
+        });
+    }
+
+    saveCart();
+    updateCartCount();
+    renderCartItems();
+
+    // Visual Feedback on button (optional but good)
+    const activeBtn = document.querySelector(`.add-to-cart-btn[data-name="${item.name}"]`);
+    if (activeBtn) {
+        const originalHtml = activeBtn.innerHTML;
+        activeBtn.innerHTML = '<span>✅ 已加入</span>';
+        activeBtn.classList.add('added');
+        setTimeout(() => {
+            activeBtn.innerHTML = originalHtml;
+            activeBtn.classList.remove('added');
+        }, 2000);
+    }
+
+    // Open sidebar to show progress
+    document.getElementById('cart-sidebar').classList.add('active');
+}
+
+function updateQuantity(id, delta) {
+    const idx = cart.findIndex(item => item.id === id);
+    if (idx > -1) {
+        cart[idx].quantity = Math.max(1, (cart[idx].quantity || 1) + delta);
+        saveCart();
+        updateCartCount();
+        renderCartItems();
+    }
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    saveCart();
+    updateCartCount();
+    renderCartItems();
+}
+
+function updateCartCount() {
+    const counts = document.querySelectorAll('.cart-count');
+    counts.forEach(c => c.textContent = cart.length);
+}
+
+function saveCart() {
+    localStorage.setItem('yuan_point_cart', JSON.stringify(cart));
+}
+
+function renderCartItems() {
+    const container = document.getElementById('cart-items-container');
+    const totalEl = document.getElementById('cart-total-amount');
+
+    if (!container) return;
+
+    if (cart.length === 0) {
+        container.innerHTML = '<div class="empty-cart-msg">購物車是空的</div>';
+        totalEl.textContent = 'NT$ 0';
+        return;
+    }
+
+    let total = 0;
+    container.innerHTML = cart.map(item => {
+        const itemTotal = item.price * (item.quantity || 1);
+        total += itemTotal;
+        return `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.option}</p>
+                    <span class="cart-item-price">NT$ ${item.price.toLocaleString()}</span>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="quantity-controls">
+                        <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <span>${item.quantity || 1}</span>
+                        <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart(${item.id})">移除</button>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    totalEl.textContent = `NT$ ${total.toLocaleString()}`;
+}
+
+function detectReferral() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref');
+    if (ref) {
+        localStorage.setItem('yuan_point_ref', ref);
+        console.log('Referral detected and stored:', ref);
+    }
+}
+
+// Make globally accessible for the onclick attribute
+window.removeFromCart = removeFromCart;
+window.updateQuantity = updateQuantity;
+
+// news.js - Dynamic news fetching and rendering
+document.addEventListener('DOMContentLoaded', async () => {
+    const newsGrid = document.getElementById('news-grid');
+    if (!newsGrid) return;
+
+    try {
+        console.log('Fetching latest news from Supabase...');
+        const { data: news, error } = await supabaseClient
+            .from('news')
+            .select('*')
+            .order('published_at', { ascending: false });
+
+        if (error) throw error;
+
+        if (!news || news.length === 0) {
+            newsGrid.innerHTML = '<p style="text-align: center; color: #64748b; padding: 2rem;">目前尚無新聞，請稍後再回來查看。</p>';
+            return;
+        }
+
+        renderNews(news);
+    } catch (err) {
+        console.error('Error fetching news:', err);
+        newsGrid.innerHTML = `<p style="text-align: center; color: #ef4444; padding: 2rem;">無法載入新聞資料：${err.message}</p>`;
+    }
+});
+
+function renderNews(newsItems) {
+    const newsGrid = document.getElementById('news-grid');
+
+    newsGrid.innerHTML = newsItems.map(item => {
+        const date = new Date(item.published_at).toLocaleDateString('zh-TW', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        return `
+            <article class="course-card">
+                <div class="card-body">
+                    <span class="tag">${item.tag || '最新消息'}</span>
+                    <h3>${item.title}</h3>
+                    <p>${item.summary}</p>
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span class="meta-info">${date}</span>
+                        <a href="${item.url}" target="_blank" class="btn-text" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 0.9rem;">閱讀原文 ↗</a>
+                    </div>
+                </div>
+            </article>
+        `;
+    }).join('');
+}
+
+// AI Lab - Interactive Logic & Card Drawing
+const soulCards = {
+    love: [
+        { title: "心靈契合", icon: "💞", content: "您即將與某個靈魂頻率達成共識。保持開放，愛會以最自然的方式流動。" },
+        { title: "自我愛護", icon: "✨", content: "先成為自己的暖陽，他人自然會被您的光芒吸引。今日請多給自己一個擁抱。" },
+        { title: "溝通之橋", icon: "🌈", content: "誠實的表達是化解誤會的良藥。試著溫柔地說出心底話。" }
+    ],
+    career: [
+        { title: "豐盛顯化", icon: "🌟", content: "您的努力正在宇宙中醞釀。保持現在的節奏，收穫的季節即將到來。" },
+        { title: "方向指引", icon: "🧭", content: "若感到迷惘，請回到初心。問問自己：什麼是讓您感到最有熱情的事？" },
+        { title: "突破僵局", icon: "🔥", content: "勇於跨出舒適圈，新的機會就在轉角處。您的能量足以應對任何挑戰。" }
+    ],
+    health: [
+        { title: "內在平靜", icon: "🧘", content: "身體是靈魂的殿堂。今日請多喝水，與大自然接觸，讓能量自然流動。" },
+        { title: "釋放負重", icon: "🍃", content: "深呼吸，吐出那些不再服務於您的壓力。您是被宇宙全然守護著的。" },
+        { title: "能量修復", icon: "💎", content: "睡眠是最好的療癒。今晚請放下手機，給予意識一段純淨的休息時間。" }
+    ],
+    wealth: [
+        { title: "金錢流動", icon: "🌊", content: "金錢是能量的另一種形式。當您學會感恩已擁有的，更多的豐盛會隨之而來。" },
+        { title: "格局擴張", icon: "🚀", content: "不要侷限於現有的收入管道。您的天賦正等待被更廣泛地應用。" },
+        { title: "豐盛意識", icon: "🍀", content: "清除內心的匱乏感。宇宙的資源是無窮的，且您值得擁有這一切。" }
+    ]
+};
+
+const oracleMessages = [
+    "「靜下心來，答案就在您的呼吸之間。」",
+    "「每一個結束，都是另一個靈魂覺醒的導讀。」",
+    "「外界的紛擾只是倒影，心中的平靜才是真實。」",
+    "「勇敢面對內心的陰影，那正是光照進來的地方。」",
+    "「您所追尋的，也正在追尋著您。」",
+    "「相信您的直覺，它是靈魂與宇宙的私語。」",
+    "「給予自己溫柔，就像陽光對待花朵一樣。」"
+];
+
+const aiResponses = [
+    {
+        keywords: ["壓力", "累", "煩", "睡不著"],
+        response: "我感受到了您的疲憊。有時候，讓自己停下來並不是浪費時間，而是為了更好的對齊。或許您可以試著進行 5 分鐘的深呼吸，或參考我們的「音缽療癒」課程來放鬆神經系統。",
+        link: "shop.html"
+    },
+    {
+        keywords: ["迷惘", "未來", "選擇", "方向"],
+        response: "迷惘是靈魂正在擴張的訊號。當您不知道往哪走時，就先回到當下。我們的「靈魂藍圖解析」能協助您看見潛在的生命路徑，或許對您有幫助。",
+        link: "academy.html"
+    },
+    {
+        keywords: ["愛", "感情", "關係", "寂寞"],
+        response: "所有的關係，最終都是我們與自己關係的鏡像。先溫柔地擁抱自己，愛自然會流向您。您可以看看我們的「心輪開啟工作坊」。",
+        link: "academy.html"
+    }
+];
+
+const defaultResponse = "感謝您的分享。您的每個情緒都值得被溫柔地看見。雖然我只是 AI，但我能感應到您尋求平衡的心。您可以試試下方的主題選單來抽取一張指引卡片。";
+
+document.addEventListener('DOMContentLoaded', () => {
+    const oracleBtn = document.getElementById('oracle-btn');
+    const oracleMsg = document.getElementById('oracle-msg');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    // Exposure for HTML onclick
+    window.drawCard = drawCard;
+    window.closeCard = closeCard;
+
+    // Generate a simple session ID for this visit
+    const sessionId = Math.random().toString(36).substring(2, 15);
+
+    // 1. Oracle Logic
+    oracleBtn.addEventListener('click', async () => {
+        oracleMsg.style.opacity = '0';
+        oracleBtn.style.transform = 'scale(0.9) rotate(15deg)';
+
+        setTimeout(async () => {
+            const randomMsg = oracleMessages[Math.floor(Math.random() * oracleMessages.length)];
+            oracleMsg.innerText = randomMsg;
+            oracleMsg.style.opacity = '1';
+            oracleBtn.style.transform = 'scale(1.1)';
+
+            // Log to Supabase
+            if (window.supabaseClient) {
+                try {
+                    await supabaseClient.from('oracle_drawings').insert([{
+                        category: 'Crystal Ball',
+                        card_title: 'Daily Guidance',
+                        card_content: randomMsg
+                    }]);
+                } catch (err) { console.error('Supabase log error:', err); }
+            }
+        }, 500);
+    });
+
+    // 2. Chat Logic
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userText = chatInput.value.trim();
+        if (!userText) return;
+
+        appendMessage('user', userText);
+        chatInput.value = '';
+
+        setTimeout(async () => {
+            const botResponse = findBestResponse(userText);
+            appendMessage('ai', botResponse);
+
+            // Log to Supabase
+            if (window.supabaseClient) {
+                try {
+                    await supabaseClient.from('ai_chat_logs').insert([{
+                        session_id: sessionId,
+                        user_message: userText,
+                        ai_response: botResponse
+                    }]);
+                } catch (err) { console.error('Supabase log error:', err); }
+            }
+        }, 800);
+    });
+
+    function appendMessage(role, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${role}`;
+        msgDiv.innerText = text;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function findBestResponse(text) {
+        for (const item of aiResponses) {
+            if (item.keywords.some(k => text.includes(k))) {
+                return item.response;
+            }
+        }
+        return defaultResponse;
+    }
+
+    // 3. Card Drawing Logic
+    async function drawCard(category) {
+        const overlay = document.getElementById('card-overlay');
+        const container = document.getElementById('card-container');
+        const cardInner = document.getElementById('card-inner');
+
+        const categoryCards = soulCards[category];
+        const randomCard = categoryCards[Math.floor(Math.random() * categoryCards.length)];
+
+        // Prep card UI
+        document.getElementById('card-icon').innerText = randomCard.icon;
+        document.getElementById('card-title').innerText = randomCard.title;
+        document.getElementById('card-content').innerText = randomCard.content;
+
+        // Show with animation
+        overlay.style.display = 'block';
+        container.style.display = 'block';
+
+        // Brief shuffling feel
+        cardInner.style.transform = 'rotateY(720deg) scale(0.5)';
+        setTimeout(() => {
+            cardInner.style.transform = 'rotateY(0deg) scale(1)';
+        }, 50);
+
+        // Add to chat as history
+        appendMessage('ai', `您抽取了一張「${randomCard.title}」神諭卡：${randomCard.content}`);
+
+        // Log to Supabase
+        if (window.supabaseClient) {
+            try {
+                await supabaseClient.from('oracle_drawings').insert([{
+                    category: category,
+                    card_title: randomCard.title,
+                    card_content: randomCard.content
+                }]);
+            } catch (err) { console.error('Supabase log error:', err); }
+        }
+    }
+
+    function closeCard() {
+        document.getElementById('card-overlay').style.display = 'none';
+        document.getElementById('card-container').style.display = 'none';
+    }
+});
+
+// Admin Dashboard Logic
+document.addEventListener('DOMContentLoaded', async () => {
+    // Initial data load
+    loadDashboardData();
+
+    // Setup news form listener
+    const newsForm = document.getElementById('news-form');
+    if (newsForm) {
+        newsForm.addEventListener('submit', handleNewsSubmit);
+    }
+});
+
+async function loadDashboardData() {
+    console.log('Fetching dashboard data...');
+
+    try {
+        // 1. Fetch Orders for the Table and Stats
+        const { data: orders, error: ordersError } = await supabaseClient
+            .from('orders')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (ordersError) throw ordersError;
+
+        // 2. Fetch Affiliates for Stats
+        const { data: affiliates, error: affError } = await supabaseClient
+            .from('affiliates')
+            .select('*');
+
+        if (affError) throw affError;
+
+        // --- Calculate Stats ---
+        const totalOrders = orders.length;
+        const totalRevenue = orders.reduce((sum, order) => sum + (Number(order.total_amount) || 0), 0);
+        const uniqueCustomers = new Set(orders.map(o => o.customer_email)).size;
+
+        // --- Update Stats UI ---
+        document.getElementById('stat-orders').innerText = totalOrders;
+        document.getElementById('stat-revenue').innerText = `NT$ ${totalRevenue.toLocaleString()}`;
+        document.getElementById('stat-users').innerText = uniqueCustomers;
+
+        // --- Render Recent Orders Table ---
+        renderOrdersTable(orders.slice(0, 10)); // Only show top 10 in dashboard
+
+    } catch (err) {
+        console.error('Admin Error:', err);
+        alert('載入數據失敗：' + err.message);
+    }
+}
+
+function renderOrdersTable(orders) {
+    const tbody = document.getElementById('recent-orders-list');
+
+    if (orders.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 2rem;">目前尚無訂單</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = orders.map(order => {
+        const date = new Date(order.created_at).toLocaleDateString('zh-TW');
+
+        // Parse items if it's a string/json
+        let itemsSummary = '';
+        if (order.items && Array.isArray(order.items)) {
+            itemsSummary = order.items.map(i => `${i.name} x${i.quantity}`).join(', ');
+        } else {
+            itemsSummary = '無明細';
+        }
+
+        return `
+            <tr>
+                <td>${date}</td>
+                <td>
+                    <div style="font-weight: 600;">${order.customer_name}</div>
+                    <div style="font-size: 0.8rem; color: #64748b;">${order.customer_phone}</div>
+                </td>
+                <td><div style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${itemsSummary}">${itemsSummary}</div></td>
+                <td style="font-weight: 600;">NT$ ${Number(order.total_amount).toLocaleString()}</td>
+                <td><span class="status-badge" style="background: #f1f5f9; color: #475569;">${order.referral_id || '直接'}</span></td>
+                <td><span class="status-badge status-${order.status || 'pending'}">${translateStatus(order.status)}</span></td>
+            </tr>
+        `;
+    }).join('');
+}
+
+function translateStatus(status) {
+    const map = {
+        'pending': '處理中',
+        'completed': '已完成',
+        'cancelled': '已取消'
+    };
+    return map[status] || '未知';
+}
+
+function switchTab(tabName) {
+    // Basic tab switching logic
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+
+    const title = {
+        'dashboard': '歡迎回來，管理員',
+        'orders': '訂單管理面板',
+        'news': '最新消息發布系統',
+        'affiliates': '分潤業績查詢',
+        'reports': '報表統計中心'
+    };
+
+    document.getElementById('page-title').innerText = title[tabName] || '管理頁面';
+
+    // Toggle content sections
+    const sections = ['dashboard-content', 'news-content'];
+    sections.forEach(s => {
+        const el = document.getElementById(s);
+        if (el) el.style.display = 'none';
+    });
+
+    const activeSection = document.getElementById(`${tabName}-content`);
+    if (activeSection) {
+        activeSection.style.display = 'block';
+    }
+
+    if (tabName === 'dashboard') {
+        loadDashboardData();
+    } else if (tabName === 'news') {
+        loadNewsData();
+    }
+}
+
+// --- News Management Logic ---
+
+async function loadNewsData() {
+    console.log('Fetching news for admin...');
+    const tbody = document.getElementById('admin-news-list');
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">載入中...</td></tr>';
+
+    try {
+        const { data: news, error } = await supabaseClient
+            .from('news')
+            .select('*')
+            .order('published_at', { ascending: false });
+
+        if (error) throw error;
+
+        if (news.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">尚未發布任何新聞</td></tr>';
+            return;
+        }
+
+        tbody.innerHTML = news.map(item => {
+            const date = new Date(item.published_at).toLocaleDateString('zh-TW');
+            return `
+                <tr>
+                    <td>${date}</td>
+                    <td><div style="font-weight: 600;">${item.title}</div></td>
+                    <td><span class="tag">${item.tag}</span></td>
+                    <td><a href="${item.url}" target="_blank" style="color: var(--admin-primary);">點此查看</a></td>
+                    <td>
+                        <button onclick="deleteNews(${item.id})" style="color: #ef4444; border: none; background: none; cursor: pointer; font-weight: 600;">刪除</button>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+    } catch (err) {
+        console.error('Load News Error:', err);
+    }
+}
+
+async function handleNewsSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerText = '發布中...';
+
+    const newsData = {
+        title: document.getElementById('news-title').value,
+        tag: document.getElementById('news-tag').value,
+        summary: document.getElementById('news-summary').value,
+        url: document.getElementById('news-url').value,
+        published_at: new Date().toISOString()
+    };
+
+    try {
+        const { error } = await supabaseClient
+            .from('news')
+            .insert([newsData]);
+
+        if (error) throw error;
+
+        alert('新聞發布成功！');
+        e.target.reset();
+        loadNewsData();
+    } catch (err) {
+        console.error('Submit News Error:', err);
+        alert('發布失敗：' + err.message);
+    } finally {
+        btn.disabled = false;
+        btn.innerText = '發布新聞';
+    }
+}
+
+async function deleteNews(id) {
+    if (!confirm('確定要刪除這條新聞嗎？')) return;
+
+    try {
+        const { error } = await supabaseClient
+            .from('news')
+            .delete()
+            .eq('id', id);
+
+        if (error) throw error;
+        loadNewsData();
+    } catch (err) {
+        alert('刪除失敗：' + err.message);
+    }
+}
+
+// Supabase 整合配置 (Supabase Integration Configuration)
+// 請將您的 Project URL 與 Anon Key 填入下方的變數中
+
+const SUPABASE_URL = 'https://tbhxanustlbigwzqgdul.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRiaHhhbnVzdGxiaWd3enFnZHVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4Mjk1ODEsImV4cCI6MjA4NzQwNTU4MX0.bsCcWf_qi8sozqZ1otW26x-_qi87QRDrjH4MCcDjBA4';
+
+// 初始化 Supabase Client
+// 初始化 Supabase Client
+// 假設頁面已引入 https://cdn.jsdelivr.net/npm/@supabase/supabase-js
+if (typeof supabase === 'undefined') {
+    console.error('Supabase SDK 未載入，請確保 HTML 中包含 SDK 腳本。');
+}
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+window.supabaseClient = supabaseClient; // Expose for debugging
+
+
+console.log('Supabase 橋樑已就緒...');
+
+// 預計功能：產品同步、分潤追蹤、會員登入
+

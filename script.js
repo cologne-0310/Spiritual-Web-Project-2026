@@ -1,29 +1,59 @@
-/**
- * script.js - 通用動畫與互動 (General Animations & UI)
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. 手機選單切換 (Mobile Menu Toggle)
-    const menuBtn = document.querySelector('.mobile-menu-btn');
+    // 手機版選單切換 (Mobile Menu Toggle)
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const navActions = document.querySelector('.nav-actions');
 
-    if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+            mobileBtn.setAttribute('aria-expanded', !isExpanded);
+
+            // 在實際應用中，我們通常會切換 class
+            // 此處為了演示方便，直接切換 display 屬性與樣式
             if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+                if (navActions) navActions.style.display = 'none';
+                mobileBtn.innerHTML = '☰';
+            } else {
+                navLinks.style.display = 'flex';
                 navLinks.style.flexDirection = 'column';
                 navLinks.style.position = 'absolute';
                 navLinks.style.top = '100%';
                 navLinks.style.left = '0';
                 navLinks.style.width = '100%';
-                navLinks.style.background = 'white';
+                navLinks.style.background = '#FDFBF7';
                 navLinks.style.padding = '1rem';
-                navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+
+                if (navActions) {
+                    navActions.style.display = 'flex';
+                    navActions.style.position = 'absolute';
+                    navActions.style.top = 'calc(100% + 200px)'; /* 簡單定位修正 */
+                    navActions.style.width = '100%';
+                    navActions.style.justifyContent = 'center';
+                    navActions.style.padding = '1rem';
+                }
+
+                mobileBtn.innerHTML = '✕';
             }
         });
     }
 
-    // 2. 漸進式淡入 (Scroll Fade In)
+    // 平滑捲動效果 (Smooth Scroll)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 捲動時淡入動畫 (Fade in on Scroll)
     const observerOptions = {
         threshold: 0.1
     };
@@ -37,23 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.course-card, .about-section').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease-out';
-        observer.observe(el);
-    });
-
-    // 3. 平滑捲動 (Smooth Scroll)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+    document.querySelectorAll('.course-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
     });
 });

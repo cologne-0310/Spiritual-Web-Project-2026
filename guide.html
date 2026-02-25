@@ -6,46 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>使用指南 | 源點身&心靈工作坊</title>
     <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo">源點<span class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+                <li><a href="guide.html" class="active">使用指南</a></li>
+            </ul>
         </div>
     </nav>
-    <main class="container" style="padding-top: 5rem; padding-bottom: 5rem; max-width: 800px;">
-        <h1>服務條款與使用指南</h1>
-        <p style="margin-top: 2rem; color: #64748b;">歡迎來到源點心靈實驗室，在使用我們的服務前，請詳閱以下說明：</p>
 
-        <section style="margin-top: 3rem;">
-            <h3>1. 預約與付費</h3>
-            <ul>
-                <li>所有課程與服務均採預約制，送出訂單後將有專人聯繫確認。</li>
-                <li>轉帳付款請於預約確認後 24 小時內完成，並告知帳號後五碼。</li>
-            </ul>
-        </section>
-
-        <section style="margin-top: 2rem;">
-            <h3>2. 取消與退費</h3>
-            <ul>
-                <li>開課前 3 日取消可全額退費（扣除轉帳手續費）。</li>
-                <li>當日取消恕不退費，但可申請名額轉讓或更換時段一次。</li>
-            </ul>
-        </section>
-
-        <section style="margin-top: 2rem;">
-            <h3>3. AI 諮詢與隱私</h3>
-            <ul>
-                <li>AI 實驗室之對話僅供參考，不具醫療諮詢建議。</li>
-                <li>為優化服務，相關互動數據將匿名記錄於 Supabase 數據庫，我們承諾不對外公開。</li>
-            </ul>
-        </section>
-
-        <div style="margin-top: 4rem; text-align: center;">
-            <a href="index.html" class="btn btn-primary">回到首頁</a>
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">使用指南</h1>
+                <p class="page-subtitle">如何開始您的療癒旅程？</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="assets/course-04.png" alt="使用指南" class="hero-featured-img">
+            </div>
         </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="about-section">
+            <div class="section-header">
+                <h2>簡單三步驟</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="text-content">
+                <ol class="feature-list" style="list-style: decimal;">
+                    <li><strong>選擇課程：</strong>在課程資訊或心靈課程中挑選適合您的項目。</li>
+                    <li><strong>預約時間：</strong>撥打專員電話或點擊了解更多與我們聯繫。</li>
+                    <li><strong>親身体驗：</strong>來到劍潭站附近的工作坊，開啟您的身心靈饗宴。</li>
+                </ol>
+            </div>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+        </div>
+    </footer>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -4,305 +4,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>內部管理系統 | 源點身&心靈工作坊</title>
-    <!-- 字體與樣式 (Fonts & Styles) -->
+    <title>管理後台 | 身心靈平台</title>
+    <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <style>
-        .admin-container {
-            display: grid;
-            grid-template-columns: 250px 1fr;
+        :root {
+            --admin-sidebar-width: 260px;
+            --admin-bg: #f8fafc;
+            --admin-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --admin-primary: #6b8e88;
+            --admin-secondary: #f1f5f9;
+        }
+
+        body {
+            background-color: var(--admin-bg);
+            margin: 0;
+            display: flex;
             min-height: 100vh;
         }
 
+        /* Sidebar Styles */
         .admin-sidebar {
-            background: #1a2a26;
-            color: white;
-            padding: 2rem;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-        }
-
-        .admin-sidebar h2 {
-            font-family: 'Outfit', sans-serif;
-            margin-bottom: 2rem;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-
-        .admin-nav ul {
+            width: var(--admin-sidebar-width);
+            background: white;
+            border-right: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .admin-logo {
+            padding: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--admin-primary);
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admin-nav {
+            padding: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
             gap: 1rem;
-        }
-
-        .admin-nav li {
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.3s ease;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
-        .admin-nav li:hover,
-        .admin-nav li.active {
-            background: rgba(255, 255, 255, 0.1);
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--admin-primary);
+            background: #f0f7f6;
+            border-right: 4px solid var(--admin-primary);
         }
 
+        /* Main Content */
         .admin-main {
-            padding: 3rem;
-            background: #f8f9fa;
+            margin-left: var(--admin-sidebar-width);
+            flex-grow: 1;
+            padding: 2.5rem;
         }
 
         .admin-header {
+            margin-bottom: 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3rem;
         }
 
-        /* 儀表板卡片 (Dashboard Cards) */
-        .dash-grid {
+        .admin-title h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+
+        .admin-title p {
+            color: #94a3b8;
+            margin: 0.5rem 0 0 0;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
-        .dash-card {
+        .stat-card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--admin-card-shadow);
+            border: 1px solid #f1f5f9;
         }
 
-        .dash-card h4 {
-            color: #64748b;
+        .stat-label {
+            color: #94a3b8;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
-        .dash-card .value {
-            font-size: 2rem;
+        .stat-value {
+            font-size: 1.8rem;
             font-weight: 700;
+            color: #1e293b;
             font-family: 'Outfit', sans-serif;
         }
 
-        /* 模組容器 */
-        .admin-module {
+        /* Tables */
+        .admin-card {
             background: white;
-            padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            display: none;
+            box-shadow: var(--admin-card-shadow);
+            border: 1px solid #f1f5f9;
+            overflow: hidden;
         }
 
-        .admin-module.active {
-            display: block;
+        .card-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* 表單樣式 */
-        .admin-form {
-            display: grid;
-            gap: 1.5rem;
-            max-width: 800px;
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .admin-table th {
+            background: #f8fafc;
+            padding: 1rem 2rem;
+            text-align: left;
+            font-weight: 600;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .admin-table td {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #1e293b;
+        }
+
+        .status-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
             font-weight: 500;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            outline: none;
+        .status-pending {
+            background: #fef3c7;
+            color: #92400e;
         }
 
-        /* 表格樣式 */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
+        .status-completed {
+            background: #dcfce7;
+            color: #166534;
         }
 
-        .data-table th,
-        .data-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-        }
-
-        .data-table th {
-            font-weight: 600;
-            color: #64748b;
-        }
-
-        .btn-sm {
-            padding: 0.4rem 0.8rem;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            cursor: pointer;
-            border: 1px solid #ddd;
-        }
-
-        .btn-delete {
-            color: #ef4444;
-            border-color: #fee2e2;
-        }
-
-        .btn-delete:hover {
-            background: #fee2e2;
-        }
-
-        @media (max-width: 992px) {
-            .admin-container {
-                grid-template-columns: 1fr;
-            }
-
-            .admin-sidebar {
-                height: auto;
-                position: relative;
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="admin-container">
-        <!-- Sidebar -->
-        <aside class="admin-sidebar" style="width: 250px !important;">
-            <h2>管理中心</h2>
-            <nav class="admin-nav">
-                <ul>
-                    <li onclick="showModule('dashboard')" class="active">📊 運作概況</li>
-                    <li onclick="showModule('news')">📰 消息發佈</li>
-                    <li onclick="showModule('orders')">💰 訂單管理</li>
-                    <li onclick="showModule('logs')">🔮 AI 實驗室日誌</li>
-                    <li style="margin-top: 2rem;">
-                        <a href="index.html" style="color: #94a3b8; font-size: 0.9rem;">← 返回網站</a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="admin-main">
-            <header class="admin-header">
-                <h1 id="page-title">運作概況</h1>
-                <div class="admin-user">Administrator</div>
-            </header>
-
-            <!-- Dashboard Module -->
-            <section id="module-dashboard" class="admin-module active">
-                <div class="dash-grid">
-                    <div class="dash-card">
-                        <h4>本月訂單數</h4>
-                        <div class="value" id="stats-orders">--</div>
-                    </div>
-                    <div class="dash-card">
-                        <h4>消息點擊率</h4>
-                        <div class="value" id="stats-news">--</div>
-                    </div>
-                    <div class="dash-card">
-                        <h4>AI 互動人次</h4>
-                        <div class="value" id="stats-ai">--</div>
-                    </div>
-                </div>
-                <h3>系統即時日誌</h3>
-                <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
-                    <div id="quick-logs">正在連線至數據庫...</div>
-                </div>
-            </section>
-
-            <!-- News Module -->
-            <section id="module-news" class="admin-module">
-                <h3>發佈最新消息</h3>
-                <form class="admin-form" id="news-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>標題</label>
-                            <input type="text" id="news-title" required placeholder="如：聖誕心靈排毒工作坊">
-                        </div>
-                        <div class="form-group">
-                            <label>分類標籤</label>
-                            <select id="news-tag">
-                                <option value="活動通知">活動通知</option>
-                                <option value="課程快訊">課程快訊</option>
-                                <option value="靈感分享">靈感分享</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>圖片連結 (URL)</label>
-                        <input type="url" id="news-img" placeholder="https://images.unsplash.com/...">
-                    </div>
-                    <div class="form-group">
-                        <label>摘要內容</label>
-                        <textarea id="news-summary" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 200px;">立即發佈</button>
-                    <p id="news-status" style="margin-top: 1rem; color: var(--accent-color);"></p>
-                </form>
-            </section>
-
-            <!-- Logs Module -->
-            <section id="module-logs" class="admin-module">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <h3>AI 實驗室互動歷史</h3>
-                    <button onclick="loadAILogs()" class="btn-sm">🔄 重新整理</button>
-                </div>
-                <table class="data-table" id="ai-logs-table">
-                    <thead>
-                        <tr>
-                            <th>時間</th>
-                            <th>類別</th>
-                            <th>標題</th>
-                            <th>內容縮圖</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ai-logs-body">
-                        <!-- 動態載入 -->
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Orders Module -->
-            <section id="module-orders" class="admin-module">
-                <h3>本月訂單明細</h3>
-                <table class="data-table" id="orders-table">
-                    <thead>
-                        <tr>
-                            <th>訂單編號</th>
-                            <th>客戶名稱</th>
-                            <th>電話</th>
-                            <th>總金額</th>
-                            <th>狀態</th>
-                        </tr>
-                    </thead>
-                    <tbody id="orders-body">
-                        <tr>
-                            <td colspan="5" style="text-align: center; color: #999;">尚未有最新訂單數據</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
+    <div class="admin-sidebar">
+        <div class="admin-logo">
+            <span style="font-size: 1.8rem;">✨</span> 身心靈平台
+        </div>
+        <nav class="admin-nav">
+            <a class="nav-item active" onclick="switchTab('dashboard')">📊 儀表板</a>
+            <a class="nav-item" onclick="switchTab('orders')">🛒 訂單管理</a>
+            <a class="nav-item" onclick="switchTab('news')">📰 新聞管理</a>
+            <a class="nav-item" onclick="switchTab('affiliates')">💰 分潤查詢</a>
+            <a class="nav-item" onclick="switchTab('reports')">📈 報表統計</a>
+        </nav>
     </div>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="admin-title">
+                <h1 id="page-title">歡迎回來，管理員</h1>
+                <p>這裡是您的管理後台，可以查看系統概況與最新動態。</p>
+            </div>
+            <div class="admin-user">
+                <span>admin</span>
+            </div>
+        </header>
+
+        <section id="dashboard-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">總用戶數</div>
+                    <div class="stat-value" id="stat-users">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">總課程數</div>
+                    <div class="stat-value" id="stat-products">12</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">總訂單數</div>
+                    <div class="stat-value" id="stat-orders">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">總分潤金額</div>
+                    <div class="stat-value" id="stat-revenue">--</div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>近期訂單</h3>
+                    <button class="btn-refresh" onclick="loadDashboardData()"
+                        style="padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid #ddd; background: white; cursor: pointer;">重新整理</button>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>客戶</th>
+                                <th>品項</th>
+                                <th>金額</th>
+                                <th>推薦人</th>
+                                <th>狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-orders-list">
+                            <!-- Injected by JS -->
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 3rem; color: #94a3b8;">載入中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Management Section (Hidden by default via switchTab) -->
+        <section id="news-content" style="display: none;">
+            <div class="admin-card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <h3>發布新靈性新聞</h3>
+                </div>
+                <div style="padding: 2rem;">
+                    <form id="news-form" style="display: grid; gap: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">新聞標題</label>
+                                <input type="text" id="news-title" class="form-control" placeholder="例如：2025年療癒經濟趨勢"
+                                    required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">分類標籤</label>
+                                <input type="text" id="news-tag" class="form-control" placeholder="例如：趨勢報導" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">重點摘要</label>
+                            <textarea id="news-summary" class="form-control" style="height: 100px; resize: none;"
+                                placeholder="請輸入 100-200 字的黃金摘要..." required></textarea>
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">原文連結 (URL)</label>
+                            <input type="url" id="news-url" class="form-control"
+                                placeholder="https://example.com/article" required>
+                        </div>
+                        <button type="submit" class="btn-primary"
+                            style="padding: 1rem; border: none; border-radius: 8px; background: var(--admin-primary); color: white; font-weight: 700; cursor: pointer;">發布新聞</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>已發布新聞</h3>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>標題</th>
+                                <th>標籤</th>
+                                <th>連結</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-news-list">
+                            <!-- Injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊 - 管理系統. 版權所有.</p>
+            <div style="margin-top: 1rem; font-size: 0.8rem;">
+                客務聯繫：0918-735208 | 0953-515901
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

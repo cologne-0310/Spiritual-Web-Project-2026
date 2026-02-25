@@ -1,156 +1,158 @@
 /**
- * cart.js - 全域購物車邏輯 (Global Shopping Cart Logic)
+ * Cart Logic for 源點身&心靈工作坊
  */
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('yuan_point_cart')) || [];
 
-// 1. 初始化購物車 (從 localStorage 讀取)
 document.addEventListener('DOMContentLoaded', () => {
-    const savedCart = localStorage.getItem('soul_cart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCartUI();
-    }
+    detectReferral();
+    initCartUI();
+    updateCartCount();
+    renderCartItems();
 
-    // 監聽結帳按鈕，如果已在結帳頁面，自動加載數據
-    if (window.location.pathname.includes('checkout.html')) {
-        renderCheckoutSummary();
-    }
+    // Event Delegation for "Add to Cart"
+    document.body.addEventListener('click', (e) => {
+        if (e.target.closest('.add-to-cart-btn')) {
+            const btn = e.target.closest('.add-to-cart-btn');
+            const name = btn.dataset.name;
+            const basePrice = parseInt(btn.dataset.price);
+
+            // Get selected option
+            const card = btn.closest('.course-card');
+            const select = card.querySelector('.option-select');
+            const optionText = select.options[select.selectedIndex].text;
+
+            // Simple logic: if text contains "+ NT$ XXX", add it to price
+            let finalPrice = basePrice;
+            const extraMatch = optionText.match(/\+ NT\$ ([\d,]+)/);
+            if (extraMatch) {
+                finalPrice += parseInt(extraMatch[1].replace(/,/g, ''));
+            }
+
+            addToCart({ name, option: optionText, price: finalPrice });
+        }
+
+        // Toggle Cart
+        if (e.target.closest('#cart-toggle')) {
+            document.getElementById('cart-sidebar').classList.add('active');
+        }
+        if (e.target.closest('#cart-close')) {
+            document.getElementById('cart-sidebar').classList.remove('active');
+        }
+    });
 });
 
-// 2. 加入購物車 (Add to Cart)
-function addToCart(name, price, type, img) {
-    const existingItem = cart.find(item => item.name === name);
+function initCartUI() {
+    // Basic sidebar layout exists in HTML
+}
 
-    if (existingItem) {
-        existingItem.quantity += 1;
+function addToCart(item) {
+    // Check if item with same name and option already exists
+    const existingIdx = cart.findIndex(i => i.name === item.name && i.option === item.option);
+
+    if (existingIdx > -1) {
+        cart[existingIdx].quantity = (cart[existingIdx].quantity || 1) + 1;
     } else {
         cart.push({
-            name: name,
-            price: price,
-            type: type,
-            img: img,
-            quantity: 1
+            id: Date.now(),
+            quantity: 1,
+            ...item
         });
     }
 
-    saveAndUpdate();
+    saveCart();
+    updateCartCount();
+    renderCartItems();
 
-    // 視覺反饋
-    const btn = event.currentTarget;
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '已加入！';
-    btn.classList.add('added');
-    setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.classList.remove('added');
-    }, 1500);
-}
-
-// 3. 切換購物車顯示 (Toggle Sidebar)
-function toggleCart() {
-    const sidebar = document.getElementById('cart-sidebar');
-    if (sidebar) sidebar.classList.toggle('active');
-}
-
-// 4. 更新數量 (Update Quantity)
-function updateQuantity(name, delta) {
-    const item = cart.find(i => i.name === name);
-    if (!item) return;
-
-    item.quantity += delta;
-    if (item.quantity <= 0) {
-        cart = cart.filter(i => i.name !== name);
+    // Visual Feedback on button (optional but good)
+    const activeBtn = document.querySelector(`.add-to-cart-btn[data-name="${item.name}"]`);
+    if (activeBtn) {
+        const originalHtml = activeBtn.innerHTML;
+        activeBtn.innerHTML = '<span>✅ 已加入</span>';
+        activeBtn.classList.add('added');
+        setTimeout(() => {
+            activeBtn.innerHTML = originalHtml;
+            activeBtn.classList.remove('added');
+        }, 2000);
     }
 
-    saveAndUpdate();
+    // Open sidebar to show progress
+    document.getElementById('cart-sidebar').classList.add('active');
 }
 
-// 5. 移除項目 (Remove Item)
-function removeFromCart(name) {
-    cart = cart.filter(i => i.name !== name);
-    saveAndUpdate();
-}
-
-// 6. 核心更新邏輯
-function saveAndUpdate() {
-    localStorage.setItem('soul_cart', JSON.stringify(cart));
-    updateCartUI();
-    if (window.location.pathname.includes('checkout.html')) {
-        renderCheckoutSummary();
+function updateQuantity(id, delta) {
+    const idx = cart.findIndex(item => item.id === id);
+    if (idx > -1) {
+        cart[idx].quantity = Math.max(1, (cart[idx].quantity || 1) + delta);
+        saveCart();
+        updateCartCount();
+        renderCartItems();
     }
 }
 
-// 7. 更新 UI 元件
-function updateCartUI() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartCount = document.getElementById('cart-count');
-    const totalAmountSpan = document.getElementById('cart-total-amount');
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    saveCart();
+    updateCartCount();
+    renderCartItems();
+}
 
-    if (!cartItemsContainer) return;
+function updateCartCount() {
+    const counts = document.querySelectorAll('.cart-count');
+    counts.forEach(c => c.textContent = cart.length);
+}
+
+function saveCart() {
+    localStorage.setItem('yuan_point_cart', JSON.stringify(cart));
+}
+
+function renderCartItems() {
+    const container = document.getElementById('cart-items-container');
+    const totalEl = document.getElementById('cart-total-amount');
+
+    if (!container) return;
 
     if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<div class="empty-cart-msg">您的清單是空的</div>';
-        if (cartCount) cartCount.innerText = '0';
-        if (totalAmountSpan) totalAmountSpan.innerText = 'NT$ 0';
+        container.innerHTML = '<div class="empty-cart-msg">購物車是空的</div>';
+        totalEl.textContent = 'NT$ 0';
         return;
     }
 
     let total = 0;
-    let count = 0;
-
-    cartItemsContainer.innerHTML = cart.map(item => {
-        total += item.price * item.quantity;
-        count += item.quantity;
+    container.innerHTML = cart.map(item => {
+        const itemTotal = item.price * (item.quantity || 1);
+        total += itemTotal;
         return `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <h4>${item.name}</h4>
-                    <p>NT$ ${item.price.toLocaleString()}</p>
+                    <p>${item.option}</p>
+                    <span class="cart-item-price">NT$ ${item.price.toLocaleString()}</span>
                 </div>
                 <div class="cart-item-actions">
                     <div class="quantity-controls">
-                        <button onclick="updateQuantity('${item.name}', -1)">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="updateQuantity('${item.name}', 1)">+</button>
+                        <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <span>${item.quantity || 1}</span>
+                        <button onclick="updateQuantity(${item.id}, 1)">+</button>
                     </div>
-                    <button class="remove-btn" onclick="removeFromCart('${item.name}')">移除</button>
+                    <button class="remove-btn" onclick="removeFromCart(${item.id})">移除</button>
                 </div>
-                <div class="cart-item-price">NT$ ${(item.price * item.quantity).toLocaleString()}</div>
             </div>
         `;
     }).join('');
 
-    if (cartCount) cartCount.innerText = count;
-    if (totalAmountSpan) totalAmountSpan.innerText = `NT$ ${total.toLocaleString()}`;
+    totalEl.textContent = `NT$ ${total.toLocaleString()}`;
 }
 
-// 8. 結帳頁面專用渲染 (For checkout.html)
-function renderCheckoutSummary() {
-    const summaryContainer = document.getElementById('order-summary-list');
-    const finalTotal = document.getElementById('final-total-amount');
-
-    if (!summaryContainer || !finalTotal) return;
-
-    if (cart.length === 0) {
-        summaryContainer.innerHTML = '<div class="empty-cart-msg">無待結帳項目</div>';
-        finalTotal.innerText = 'NT$ 0';
-        return;
+function detectReferral() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref');
+    if (ref) {
+        localStorage.setItem('yuan_point_ref', ref);
+        console.log('Referral detected and stored:', ref);
     }
-
-    let total = 0;
-    summaryContainer.innerHTML = cart.map(item => {
-        total += item.price * item.quantity;
-        return `
-            <div class="order-summary-item">
-                <div class="item-info">
-                    <span class="item-name">${item.name} x ${item.quantity}</span>
-                    <span class="item-meta">${item.type === 'academy' ? '課程' : '服務'}</span>
-                </div>
-                <span class="item-price">NT$ ${(item.price * item.quantity).toLocaleString()}</span>
-            </div>
-        `;
-    }).join('');
-
-    finalTotal.innerText = `NT$ ${total.toLocaleString()}`;
 }
+
+// Make globally accessible for the onclick attribute
+window.removeFromCart = removeFromCart;
+window.updateQuantity = updateQuantity;

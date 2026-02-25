@@ -1,0 +1,91 @@
+/* 
+   源點身&心靈工作坊 - 緊急佈局修復 (Layout Recovery)
+   Version: 3.0
+   Purpose: 強制修正全站容器居中、Logo 大小及 AI Lab 特殊佈局
+*/
+
+/* 全域容器居中強制修正 */
+.container {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    width: 100% !important;
+    display: block !important;
+    clear: both !important;
+    box-sizing: border-box !important;
+}
+
+/* 導覽列極限修正 */
+.navbar {
+    width: 100% !important;
+    padding: 1rem 0 !important;
+}
+
+.nav-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+.logo {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.logo img {
+    height: 36px !important;
+    width: auto !important;
+    max-height: 36px !important;
+    margin-right: 8px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+/* AI 實驗室 (AI Lab) 特殊佈局強制修正 */
+.ai-lab-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1.5fr !important;
+    gap: 2rem !important;
+    max-width: 1100px !important;
+    margin: 6rem auto 2rem !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* 確保主內容區域在所有頁面都居中 */
+main.container {
+    margin-top: 2rem !important;
+    margin-bottom: 4rem !important;
+}
+
+/* 頁尾居中修正 */
+.footer-content {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 2rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* 手機版適應性強制修正 */
+@media (max-width: 850px) {
+    .ai-lab-container {
+        grid-template-columns: 1fr !important;
+        margin-top: 5rem !important;
+    }
+
+    .nav-content {
+        padding: 0 1rem !important;
+    }
+}
+
+/* 版本標記 */
+#fix-v3-marker {
+    display: none;
+}

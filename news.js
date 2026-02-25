@@ -1,72 +1,51 @@
-/**
- * news.js - 最新消息動態載入 (Dynamic News Loader)
- */
-
+// news.js - Dynamic news fetching and rendering
 document.addEventListener('DOMContentLoaded', async () => {
     const newsGrid = document.getElementById('news-grid');
     if (!newsGrid) return;
 
-    // 從 Supabase 讀取新聞數據
-    if (window.supabaseClient) {
-        try {
-            const { data, error } = await supabaseClient
-                .from('news_articles')
-                .select('*')
-                .order('created_at', { ascending: false });
+    try {
+        console.log('Fetching latest news from Supabase...');
+        const { data: news, error } = await supabaseClient
+            .from('news')
+            .select('*')
+            .order('published_at', { ascending: false });
 
-            if (error) throw error;
+        if (error) throw error;
 
-            if (data && data.length > 0) {
-                renderNews(data);
-            } else {
-                renderPlaceholder();
-            }
-        } catch (err) {
-            console.error('Supabase Error:', err);
-            renderPlaceholder();
+        if (!news || news.length === 0) {
+            newsGrid.innerHTML = '<p style="text-align: center; color: #64748b; padding: 2rem;">目前尚無新聞，請稍後再回來查看。</p>';
+            return;
         }
-    } else {
-        renderPlaceholder();
+
+        renderNews(news);
+    } catch (err) {
+        console.error('Error fetching news:', err);
+        newsGrid.innerHTML = `<p style="text-align: center; color: #ef4444; padding: 2rem;">無法載入新聞資料：${err.message}</p>`;
     }
 });
 
-function renderNews(articles) {
-    const grid = document.getElementById('news-grid');
-    grid.innerHTML = '';
+function renderNews(newsItems) {
+    const newsGrid = document.getElementById('news-grid');
 
-    articles.forEach(article => {
-        const date = new Date(article.created_at).toLocaleDateString('zh-TW');
-        const card = `
+    newsGrid.innerHTML = newsItems.map(item => {
+        const date = new Date(item.published_at).toLocaleDateString('zh-TW', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        return `
             <article class="course-card">
-                <img src="${article.image_url || 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800'}" 
-                     alt="News Image" class="course-img">
                 <div class="card-body">
-                    <span class="tag">${article.tag || '最新消息'}</span>
-                    <h3>${article.title}</h3>
-                    <p>${article.summary}</p>
-                    <div class="meta-info">${date}</div>
+                    <span class="tag">${item.tag || '最新消息'}</span>
+                    <h3>${item.title}</h3>
+                    <p>${item.summary}</p>
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span class="meta-info">${date}</span>
+                        <a href="${item.url}" target="_blank" class="btn-text" style="color: var(--accent-color); font-weight: 600; text-decoration: none; font-size: 0.9rem;">閱讀原文 ↗</a>
+                    </div>
                 </div>
             </article>
         `;
-        grid.innerHTML += card;
-    });
-}
-
-function renderPlaceholder() {
-    const grid = document.getElementById('news-grid');
-    const defaultData = [
-        {
-            title: "2025 春季：能量理療與頌缽初探",
-            summary: "邀請您在這場全新的春季工作坊中，體驗頌缽的頻率如何清理冬天累積的沈重感，重新對齊靈魂的震動。",
-            tag: "最新消息",
-            created_at: new Date()
-        },
-        {
-            title: "源點身心靈官方網站：正式改版上線",
-            summary: "感謝各位夥伴的支持，我們的官方網站今日全新上線，新增了 AI 實驗室與即時課程預約功能。",
-            tag: "重要公告",
-            created_at: new Date()
-        }
-    ];
-    renderNews(defaultData);
+    }).join('');
 }
