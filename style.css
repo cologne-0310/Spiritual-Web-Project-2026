@@ -309,17 +309,48 @@ ul {
 }
 
 /* 品牌識別 (Branding) */
-.logo img {
-    height: 40px;
-    width: auto;
-    vertical-align: middle;
-    margin-right: 10px;
+/* 社交媒體與聯絡資訊增強 (Social Media & Contact Info Enhancements) */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: var(--accent-light);
+    box-shadow: var(--shadow-md);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .contact-signage {
     max-width: 200px;
     border-radius: 8px;
     margin-top: 1rem;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .card-body {
