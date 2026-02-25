@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 實驗室 | 源點身&心靈工作坊</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fix-layout.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ai-accent: #6B8E88;
+            --ai-bg: #0f1212;
+            --ai-card: #1a1f1f;
+        }
+
+        .ai-body {
+            background-color: var(--ai-bg);
+            color: #e0e0e0;
+            min-height: 100vh;
+            font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+        }
+
+        .ai-header {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a2422 0%, #0f1212 70%);
+        }
+
+        .glass-card {
+            background: rgba(26, 31, 31, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .ai-lab-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 4rem;
+        }
+
+        @media (max-width: 900px) {
+            .ai-lab-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .oracle-panel {
+            text-align: center;
+        }
+
+        .oracle-circle {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #6B8E88, #EADEC2, #6B8E88);
+            padding: 5px;
+            position: relative;
+            animation: rotate 20s linear infinite;
+            cursor: pointer;
+        }
+
+        .oracle-circle::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            background: var(--ai-bg);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .oracle-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: none;
+            /* 內圈不跟著轉 */
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .chat-panel {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+
+        .chat-history {
+            flex-grow: 1;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+            padding-right: 10px;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            max-width: 85%;
+            padding: 1rem;
+            border-radius: 12px;
+            line-height: 1.6;
+        }
+
+        .user-msg {
+            background: var(--ai-accent);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            border-bottom-right-radius: 2px;
+        }
+
+        .bot-msg {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ai-input {
+            flex-grow: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            color: white;
+            transition: border-color 0.3s;
+        }
+
+        .ai-input:focus {
+            outline: none;
+            border-color: var(--ai-accent);
+        }
+
+        /* 圖型選單樣式 */
+        .graphic-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .menu-item:hover,
+        .menu-item.selected {
+            border-color: var(--ai-accent);
+            background: rgba(107, 142, 136, 0.15) !important;
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .loading-dots span {
+            animation: blink 1.4s infinite both;
+            font-size: 2rem;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: .2;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: .2;
+            }
+        }
+    </style>
+</head>
+
+<body class="ai-body">
+    <!-- Navbar -->
+    <nav class="navbar" style="background: rgba(15, 18, 18, 0.95);">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="https://via.placeholder.com/36x36/6B8E88/FFFFFF?text=AI" alt="源點 AI Logo">
+                <span style="color: white;">源點 AI 實驗室</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於源點</a>
+                <a href="academy.html">各類課程</a>
+                <a href="shop.html">療癒服務</a>
+                <a href="gemini-page.html" class="active">AI 實驗室</a>
+            </div>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartOpenBtn">
+                    🛒 購物車 <span class="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="ai-header">
+        <div class="container">
+            <h1 class="page-title" style="color: #6B8E88;">Soul Guide AI</h1>
+            <p class="page-subtitle" style="color: #888;">連結集體潛意識，探索您的內在引導</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="ai-lab-container">
+            <!-- Left: Oracle Control -->
+            <div class="oracle-panel glass-card">
+                <div class="oracle-circle" id="drawCardBtn">
+                    <div class="oracle-inner">
+                        <div id="oracleStatus">點擊抽卡</div>
+                        <div class="loading-dots" id="aiLoading" style="display: none;">
+                            <span>.</span><span>.</span><span>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>選擇導引主題</h3>
+                <div class="graphic-menu">
+                    <div class="menu-item selected" data-category="love">
+                        <img src="assets/oracle_love.png" alt="愛情與關係">
+                        <div class="item-label">愛情與關係</div>
+                    </div>
+                    <div class="menu-item" data-category="career">
+                        <img src="assets/oracle_career.png" alt="事業與財富">
+                        <div class="item-label">事業與財富</div>
+                    </div>
+                    <div class="menu-item" data-category="health">
+                        <img src="assets/oracle_health.png" alt="身心平衡">
+                        <div class="item-label">身心平衡</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #666;">
+                    已選擇：<span id="selectedCategoryName">愛情與關係</span>
+                </p>
+            </div>
+
+            <!-- Right: Chat Interface -->
+            <div class="chat-panel glass-card">
+                <div class="chat-history" id="chatHistory">
+                    <div class="message bot-msg">
+                        您好，我是您的 Soul Guide 片刻。請先從左側選擇一個主題並點擊法陣抽取您的「今日啟示卡」，我將為您解讀當中的意涵。
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" id="userInput" class="ai-input" placeholder="詢問關於啟示卡的問題..." disabled>
+                    <button id="sendBtn" class="btn btn-primary" disabled>傳送</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #0a0c0c; border-top: 1px solid #1a1f1f;">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h3 style="color: #6B8E88;">源點身&心靈工作坊</h3>
+                <p>探索身心靈平衡的藝術</p>
+                <div class="social-links">
+                    <a href="https://facebook.com">FB</a>
+                    <a href="https://instagram.com">IG</a>
+                    <a href="https://youtube.com">YT</a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h4>聯繫我們</h4>
+                <p>地址：台北市士林區忠誠路二段 123 號</p>
+                <p>郵件：info@spiritual-origin.com</p>
+                <p>電話：(02) 2882-5123</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速連結</h4>
+                <a href="index.html">首頁</a>
+                <a href="academy.html">課程列表</a>
+                <a href="shop.html">療癒服務</a>
+                <a href="gemini-page.html">AI 實驗室</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 源點身&心靈工作坊 版權所有</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <!-- Reusing cart structure -->
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button id="cartCloseBtn">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+            <p class="empty-cart-msg">您的購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>小計</span>
+                <span id="cartTotalAmount">NT$ 0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="location.href='checkout.html'">前往結帳</button>
+        </div>
+    </div>
+
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="ai-lab.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

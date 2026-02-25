@@ -1,180 +1,231 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們 | 源點身&心靈工作坊</title>
-    <meta name="description" content="了解源點身&心靈工作坊的理念、空間與服務。我們致力於協助每個人找回身心平衡，重新連接內在的力量。">
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="關於我們 - 源點身&心靈工作坊">
-    <meta property="og:description" content="探索源點的空間與服務理念。">
-    <meta property="og:image"
-        content="https://knttkrxd.manus.space/https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
+    <title>關於源點 | 源點身&心靈工作坊</title>
+    <meta name="description" content="了解源點身&心靈工作坊的理念、團隊與我們提供的空間。">
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="關於源點 | 源點身&心靈工作坊">
+    <meta property="og:description" content="了解源點身&心靈工作坊的理念、團隊與我們提供的空間。">
     <meta property="og:url" content="https://knttkrxd.manus.space/about.html">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fix-layout.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <!-- 導覽列 (Navbar) -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="index.html" class="logo"><img
-                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png"
-                    alt="源點 logo">源點<span class="logo-sub">身&心靈工作坊</span></a>
-            <ul class="nav-links">
-                <li><a href="about.html" class="active">關於我們</a></li>
-                <li><a href="index.html">最新消息</a></li>
-                <li><a href="academy.html">各類課程</a></li>
-                <li><a href="shop.html">療癒服務</a></li>
-                <li><a href="gemini-page.html">AI 實驗室</a></li>
-            </ul>
+            <a href="index.html" class="logo">
+                <img src="https://via.placeholder.com/36x36/6B8E88/FFFFFF?text=Logo" alt="源點 Logo">
+                <span>源點身&心靈工作坊</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="about.html" class="active">關於源點</a>
+                <a href="academy.html">各類課程</a>
+                <a href="shop.html">療癒服務</a>
+                <a href="gemini-page.html">AI 實驗室</a>
+            </div>
             <div class="nav-actions">
-                <a href="#" class="login-btn">登入/註冊</a>
+                <a href="admin.html" class="btn btn-outline" style="margin-right: 15px;">後台管理</a>
+                <button class="cart-btn" id="cartOpenBtn">
+                    🛒 購物車 <span class="cart-badge">0</span>
+                </button>
             </div>
             <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">關於源點</h1>
+            <p class="page-subtitle">探索身心平衡的藝術，點亮內在的生命之光</p>
+        </div>
+    </header>
 
-    <!-- 主要內容區 (Main Content) -->
-    <main class="container main-content about-content">
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="feature-text">
+                    <div class="accent-label">OUR MISSION</div>
+                    <h2>連結科技與心靈的橋樑</h2>
+                    <p>在源點，我們相信每一個靈魂都是獨一無二的光點。透過結合傳統的靈性智慧與現代的 AI
+                        科技，我們創造了一個安全、溫暖的空間，協助您在忙碌的現代生活中重新找回內在的平靜與力量。</p>
+                    <p>我們的願景是讓身心靈的平衡變得更加易於觸及，不僅是透過傳統的課程，也透過創新的數位工具，陪伴每個人走向更自覺、更具神采的人生旅程。</p>
+                    <ul class="feature-list">
+                        <li><strong>專業導師：</strong> 資深身心靈引導者提供一對一與團體課程。</li>
+                        <li><strong>科技創新：</strong> 運用 AI 工具輔助心靈探索與自我認知。</li>
+                        <li><strong>多元場域：</strong> 提供舒適、具備美感的空間供各類活動租借。</li>
+                    </ul>
+                </div>
+                <div class="feature-media">
+                    <img src="https://via.placeholder.com/600x450/EADEC2/6B8E88?text=Studio+Atmosphere" alt="工作室氛圍"
+                        class="feature-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- 源點身心靈區塊 (Top Section) -->
-        <section class="about-section" style="margin-top: 2rem;">
-            <div class="section-header">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem;">源點身心靈</h1>
-                <div class="divider"></div>
+    <!-- Core Values -->
+    <section class="about-section alt-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心價值</h2>
+                <div class="title-line"></div>
             </div>
-            <div class="about-me-intro" style="text-align: center; margin-bottom: 4rem;">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E9%97%9C%E6%96%BC%E6%88%91.jpg"
-                    alt="源點身心靈" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="item-icon">🌱</div>
+                    <h3>本質歸元</h3>
+                    <p>回歸生命的初衷，修復受損的能量，找回最純粹的自我狀態。</p>
+                </div>
+                <div class="service-item">
+                    <div class="item-icon">✨</div>
+                    <h3>覺知啟發</h3>
+                    <p>透過多元的課程與體驗，開啟內在的智慧，提升對生活的感知力。</p>
+                </div>
+                <div class="service-item">
+                    <div class="item-icon">🤝</div>
+                    <h3>共鳴成長</h3>
+                    <p>建立一個互相支持、共同成長的社群，讓每個人都能在愛中展翅。</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 理念區塊 (Philosophy) -->
-        <section class="about-section alt-bg">
-            <div class="section-header">
-                <h2>我們的理念</h2>
-                <div class="divider"></div>
+    <!-- Team Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>專業團隊</h2>
+                <div class="title-line"></div>
             </div>
-            <div class="text-content">
-                <p>【源點身&心靈工作坊】的理念：宇宙是一個大的能量場，每個人都如「光源」、一個能量的「中心點」，希望連結新時代理念的人，各自發揮其所長，助人並教學相長，擴大善的心念，共同建構和諧、慈愛的環境。</p>
-                <p>透過自然療法，陽光(遠紅外線)、空氣(負離子)、水(諧振小分子)、營養、運動、心靈課程的配合，擴展到全方位身心靈的平衡。</p>
-                <ul class="feature-list">
-                    <li><strong>【身】</strong> 以「痛點撥筋、CPTG精油理療、療癒飲食、微量元素、螺旋運動、能量頻率檢測等...」。</li>
-                    <li><strong>【心靈】</strong> 以課程 or 諮詢，如:「生命靈數、靈氣、空靈鼓、心靈對畫...等」，協助探索了解自我，面對各種生命課題。</li>
-                </ul>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/150x150/6B8E88/FFFFFF?text=Founder" alt="創辦人"
+                        style="border-radius: 50%; width: 120px; margin-bottom: 1.5rem;">
+                    <h3>曉林</h3>
+                    <p class="accent-label">創辦人 / 資深引導師</p>
+                    <p>擁有超過十年的冥想與脈輪修復經驗，致力於將生活美學與靈性實踐相結合。</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/150x150/6B8E88/FFFFFF?text=AI+Lead" alt="AI 技術負責人"
+                        style="border-radius: 50%; width: 120px; margin-bottom: 1.5rem;">
+                    <h3>凱文</h3>
+                    <p class="accent-label">AI 產品經理 / 占星師</p>
+                    <p>結合科技背景與西方占星學，開發幫助大眾探索潛意識的數位工具。</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/150x150/6B8E88/FFFFFF?text=Therapist" alt="療癒師"
+                        style="border-radius: 50%; width: 120px; margin-bottom: 1.5rem;">
+                    <h3>心怡</h3>
+                    <p class="accent-label">藝術治療師</p>
+                    <p>擅長透過繪畫與色彩引導學員抒發情緒，轉化內在壓力為創作動力。</p>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 空間區塊 (Venue) -->
-        <section class="about-section">
-            <div class="section-header">
-                <h2>我們的空間與場地租借</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="text-content" style="margin-bottom: 2rem;">
-                <p>源點身&心靈工作坊位於台北市士林區中山北路五段92號（劍潭捷運站3號出口），環境舒適寧靜，是您放鬆身心、探索內在的理想場所。</p>
-                <p>我們的空間設計融合東方禪意與現代簡約風格，提供多功能療癒室、團體課程空間、個人諮詢室等，適合各類心靈工作坊、講座、練習或小型聚會。</p>
-                <p>配備完善的音響與投影設備，包括頌缽、水晶、精油擴香等，營造出平靜祥和的氛圍，幫助您更好地連接內在自我。</p>
+    <!-- Venue Rental Section -->
+    <section class="about-section alt-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>空間租借</h2>
+                <p>我們提供安靜且充滿能量的場所，適合舉辦小型講座、冥想工作坊、一對一諮詢錄影或身心靈聚會。</p>
+                <div class="title-line"></div>
             </div>
 
-            <!-- Internal Photos Gallery -->
             <div class="venue-gallery">
                 <div class="venue-item">
-                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/indoor.png"
-                        alt="空間實景展示">
+                    <img src="https://via.placeholder.com/600x450/FDFBF7/6B8E88?text=Meditation+Space+View+1"
+                        alt="靜坐空間 A 面" class="venue-img">
                 </div>
                 <div class="venue-item">
-                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%A9%BA%E9%96%93%E7%A7%9F%E5%80%9F.png"
-                        alt="場地租借價目表">
+                    <img src="https://via.placeholder.com/600x450/FDFBF7/6B8E88?text=Workshop+Space+View+2"
+                        alt="工作坊空間 B 面" class="venue-img">
+                </div>
+                <div class="venue-item">
+                    <img src="https://via.placeholder.com/600x450/FDFBF7/6B8E88?text=Consultation+Corner" alt="諮詢角落"
+                        class="venue-img">
+                </div>
+                <div class="venue-item">
+                    <!-- 價目表圖片由 AI 生成 -->
+                    <img src="https://via.placeholder.com/600x450/FFFFFF/6B8E88?text=Space+Rental+Prices" alt="場地租借價目表"
+                        class="venue-img">
                 </div>
             </div>
+
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="guide.html" class="btn btn-secondary">查看租借詳情與費用</a>
+                <p>如有租借需求，歡迎透過官方 LINE 或電話與我們聯繫預約看場地。</p>
+                <a href="https://line.me" class="btn btn-primary" style="margin-top: 1rem;">聯繫我們預約</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 影片介紹區塊 (Video - BOTTOM) -->
-        <section class="video-section alt-bg" style="margin-bottom: 4rem;">
-            <div class="container">
-                <div class="section-header">
-                    <h2>整體介紹影片</h2>
-                    <div class="divider"></div>
-                </div>
-                <div class="video-container">
-                    <video controls>
-                        <source
-                            src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E6%BA%90%E9%BB%9E%E5%BD%B1%E7%89%87%E5%AE%8C%E6%95%B4.mp4"
-                            type="video/mp4">
-                        您的瀏覽器不支援影片播放。
-                    </video>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 頁尾 (Footer) -->
-    <footer class="site-footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-section">
-                <h4>訂閱電子報</h4>
-                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="您的電子信箱">
-                    <button type="submit">訂閱</button>
-                </form>
-            </div>
-
-            <div class="footer-section">
-                <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
-                <div class="contact-info">
-                    <p>手機：海音 Lisa 0918-735208</p>
-                    <p>手機：劉昆榮 0953-515901</p>
-                    <p>市話：02-2882-5123</p>
-                    <p>地址：台北市士林區中山北路五段92號</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
-                            title="Facebook">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
-                                alt="Facebook">
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
-                            class="social-icon" title="YouTube">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
-                                alt="YouTube">
-                        </a>
-                    </div>
+            <div class="footer-logo">
+                <h3>源點身&心靈工作坊</h3>
+                <p>探索身心靈平衡的藝術</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" title="Facebook">FB</a>
+                    <a href="https://instagram.com" title="Instagram">IG</a>
+                    <a href="https://youtube.com" title="YouTube">YT</a>
                 </div>
             </div>
-
-            <div class="footer-section link-list">
-                <h4>客戶服務</h4>
-                <ul>
-                    <li><a href="#">常見問題</a></li>
-                    <li><a href="#">預約政策</a></li>
-                    <li><a href="#">服務條款</a></li>
-                </ul>
+            <div class="footer-info">
+                <h4>聯繫我們</h4>
+                <p>地址：台北市士林區忠誠路二段 123 號</p>
+                <p>郵件：info@spiritual-origin.com</p>
+                <p>電話：(02) 2882-5123</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速連結</h4>
+                <a href="index.html">首頁</a>
+                <a href="academy.html">課程列表</a>
+                <a href="shop.html">療癒服務</a>
+                <a href="gemini-page.html">AI 實驗室</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+            <p>&copy; 2026 源點身&心靈工作坊 版權所有</p>
         </div>
     </footer>
-    <!-- Supabase SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="supabase-config.js"></script>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button id="cartCloseBtn">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+            <!-- Items injected by JS -->
+            <p class="empty-cart-msg">您的購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>小計</span>
+                <span id="cartTotalAmount">NT$ 0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn" onclick="location.href='checkout.html'">前往結帳</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
     <script src="script.js"></script>
 </body>
 
