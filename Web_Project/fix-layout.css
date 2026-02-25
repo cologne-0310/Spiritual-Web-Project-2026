@@ -1,0 +1,67 @@
+/* 強制修復版面問題 (Forced Layout Fix) */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.logo img {
+    height: 36px !important;
+    width: auto !important;
+    max-height: 36px !important;
+}
+
+.nav-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.ai-lab-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1.5fr !important;
+    gap: 2rem !important;
+    max-width: 1100px !important;
+    margin: 6rem auto 2rem !important;
+    padding: 2rem !important;
+    text-align: center !important;
+}
+
+.graphic-menu {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+}
+
+.menu-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 1.5rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+}
+
+.menu-item .icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* 之前截圖出現的文字置中修正 */
+.oracle-panel {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
