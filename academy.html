@@ -5,69 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>各類課程 | 源點身&心靈工作坊</title>
-    <!-- 字體與樣式 (Fonts & Styles) -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <meta name="description" content="探索源點提供的各類心靈成長、科技AI與傳統藝術課程。">
     <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
     <style>
-        .hero {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1545235621-546b475c83e1?q=80&w=1200');
-            background-size: cover;
-            background-position: center;
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
         }
 
-        .cart-tag {
-            display: inline-block;
-            background: var(--accent-light);
-            color: var(--accent-color);
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
         }
 
-        .price-tag {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin: 0.5rem 0 1rem;
-        }
-
-        .add-to-cart-btn {
-            width: 100%;
-            padding: 0.8rem;
-            background: white;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .add-to-cart-btn:hover {
-            background: var(--accent-color);
-            color: white;
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <!-- 導覽列 (Navbar) -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">
-                源點
-                <span class="logo-sub">身&心靈工作坊</span>
-            </a>
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
                 <li><a href="index.html">最新消息</a></li>
@@ -76,140 +55,136 @@
                 <li><a href="gemini-page.html">AI 實驗室</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="admin.html" class="login-btn">內部管理</a>
+                <a href="#" class="login-btn">登入/註冊</a>
             </div>
             <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <!-- 課程主視覺 (Academy Hero) -->
     <header class="hero">
-        <div class="container">
-            <h1 class="page-title">喚醒靈魂的潛能</h1>
-            <p class="page-subtitle">從身體呼吸、心理平衡到靈性連結，我們提供專業且溫暖的教學環境，與您共同成長。</p>
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">各類課程資訊</h1>
+                <p class="page-subtitle">探索身心靈成長的多樣途徑，從科技AI到傳統藝術</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="assets/%E7%B8%BD%E8%AA%B2%E7%A8%8B%E8%A1%A8.jpg"
+                    alt="各類課程" class="hero-featured-img">
+            </div>
         </div>
     </header>
 
-    <!-- 課程列表 (Course Grid) -->
-    <main class="main-content container">
+    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
         <div class="course-grid">
-            <!-- 課程 1 -->
+            <!-- AI Course -->
             <article class="course-card">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800" alt="正念冥想課程"
+                <img src="assets/ai%20%E8%AA%B2.png"
+                    alt="AI 智能生活應用" class="course-img">
+                <div class="card-body">
+                    <span class="tag">科技與心靈</span>
+                    <h3>AI 智能生活應用課程</h3>
+                    <p>學習如何將 AI 技術融入 daily 工作與創作，釋放雙手，讓科技成為您心靈創作的延伸工具。</p>
+                    <div class="price-tag">NT$ 3,600</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="standard">標準課程 (4堂)</option>
+                            <option value="advanced">進階課程 (8堂) + NT$ 3,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="AI 智能生活應用課程" data-price="3600">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Ryukyu Glass -->
+            <article class="course-card">
+                <img src="assets/course-06.jpg" alt="琉璃藝創課程"
                     class="course-img">
                 <div class="card-body">
-                    <span class="cart-tag">靜心系列</span>
-                    <h3>正念冥想與內在覺察</h3>
-                    <p>學習透過呼吸與自律訓練，讓紛亂的心平靜下來。適合壓力繁重、尋求深度放鬆的現代人。</p>
+                    <span class="tag">藝創課程</span>
+                    <h3>心創 琉璃藝創課程</h3>
+                    <p>在光影交織中體驗琉璃之美，透過手作過程沉澱心靈，創造屬於自己的藝術之光。</p>
+                    <div class="price-tag">NT$ 2,800</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="beginner">基礎琉璃實作</option>
+                            <option value="advanced">中階琉璃設計 + NT$ 1,200</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="心創 琉璃藝創課程" data-price="2800">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Calligraphy -->
+            <article class="course-card">
+                <img src="assets/course-01.png" alt="書法課程"
+                    class="course-img">
+                <div class="card-body">
+                    <span class="tag">傳統藝術</span>
+                    <h3>靜心書法課程</h3>
+                    <p>張家禎老師指導。在墨色運轉間體會呼吸與專注，從指尖到宣紙，感受文字背後的定靜之力。</p>
+                    <div class="price-tag">NT$ 2,000</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="single">單堂體驗</option>
+                            <option value="monthly">月期課 (4堂) + NT$ 5,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="靜心書法課程" data-price="2000">
+                        <span>🛒 加入購物車</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Music/Breath -->
+            <article class="course-card">
+                <img src="assets/course-05.png"
+                    alt="磅礡雨音音樂會" class="course-img">
+                <div class="card-body">
+                    <span class="tag">音療課程</span>
+                    <h3>磅礡雨音 - 呼吸音樂會</h3>
+                    <p>震撼的雨音共振，配合深層呼 islands 引導，深度清理內在壓力，體驗純粹的生命共鳴。</p>
                     <div class="price-tag">NT$ 1,200</div>
-                    <button class="add-to-cart-btn"
-                        onclick="addToCart('正念冥想與內在覺察', 1200, 'academy', 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=200')">
-                        加入購物車
-                    </button>
-                </div>
-            </article>
-
-            <!-- 課程 2 -->
-            <article class="course-card">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800" alt="頌缽音療課程"
-                    class="course-img">
-                <div class="card-body">
-                    <span class="cart-tag">能量音療</span>
-                    <h3>手工頌缽初階工作坊</h3>
-                    <p>認識音頻在身體上的流動。透過親自敲擊與感受，學習基礎的居家自我療癒技巧。</p>
-                    <div class="price-tag">NT$ 3,500</div>
-                    <button class="add-to-cart-btn"
-                        onclick="addToCart('手工頌缽初階工作坊', 3500, 'academy', 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=200')">
-                        加入購物車
-                    </button>
-                </div>
-            </article>
-
-            <!-- 課程 3 -->
-            <article class="course-card">
-                <img src="https://images.unsplash.com/photo-1524334228333-0f6db392f8a1?q=80&w=800" alt="能量瑜珈"
-                    class="course-img">
-                <div class="card-body">
-                    <span class="cart-tag">身體對齊</span>
-                    <h3>修復瑜珈與能量流動</h3>
-                    <p>結合陰瑜珈與呼吸法，專注於身體經絡的開展與負能量的排解釋放。讓身體恢復自然彈性。</p>
-                    <div class="price-tag">NT$ 800</div>
-                    <button class="add-to-cart-btn"
-                        onclick="addToCart('修復瑜珈與能量流動', 800, 'academy', 'https://images.unsplash.com/photo-1524334228333-0f6db392f8a1?q=80&w=200')">
-                        加入購物車
-                    </button>
-                </div>
-            </article>
-
-            <!-- 課程 4 -->
-            <article class="course-card">
-                <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800" alt="水晶能量"
-                    class="course-img">
-                <div class="card-body">
-                    <span class="cart-tag">靈性工具</span>
-                    <h3>水晶療癒基礎學</h3>
-                    <p>探索大自然的頻率。學習如何挑選、淨化與應用不同類型的水晶，為生活空間創造高頻場域。</p>
-                    <div class="price-tag">NT$ 1,800</div>
-                    <button class="add-to-cart-btn"
-                        onclick="addToCart('水晶療癒基礎學', 1800, 'academy', 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=200')">
-                        加入購物車
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="ticket">入場券 (1人)</option>
+                            <option value="couple">雙人同行價 NT$ 2,000</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="磅礡雨音 - 呼吸音樂會" data-price="1200">
+                        <span>🛒 加入購物車</span>
                     </button>
                 </div>
             </article>
         </div>
     </main>
 
-    <!-- 購物車側邊欄 (Cart Sidebar) -->
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>購物車</h3>
-            <button class="close-cart" onclick="toggleCart()">✕</button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- 動態內容 -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>總計:</span>
-                <span id="cart-total-amount">NT$ 0</span>
-            </div>
-            <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center;">前往結帳</a>
-        </div>
-    </div>
-
-    <!-- 購物車浮動按鈕 (Floating Cart Button) -->
-    <div class="cart-floating-btn" onclick="toggleCart()">
-        🛒
-        <div class="cart-count" id="cart-count">0</div>
-    </div>
-
-    <!-- 頁尾 (Footer) -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-section">
                 <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程。</p>
                 <div class="contact-info">
                     <p>手機：海音 Lisa 0918-735208</p>
                     <p>手機：劉昆榮 0953-515901</p>
                     <p>市話：02-2882-5123</p>
-                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <p>地址：台北市士林區中山北路五段92號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="footer-section">
-                <h4>快速連結</h4>
-                <ul>
-                    <li><a href="academy.html">身心靈課程</a></li>
-                    <li><a href="shop.html">預約服務</a></li>
-                    <li><a href="gemini-page.html">AI 諮詢</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>訂閱消息</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="輸入您的 Email">
-                    <button type="submit">訂閱</button>
-                </form>
             </div>
         </div>
         <div class="footer-bottom">
@@ -218,9 +193,35 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="cart.js"></script>
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
     <script src="script.js"></script>
+    <script src="cart.js"></script>
 </body>
 
 </html>
