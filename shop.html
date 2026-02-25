@@ -5,28 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>療癒服務 | 源點身&心靈工作坊</title>
-    <meta name="description" content="預約源點身&心靈工作坊的各類專屬理療服務，包括八字諮詢、水晶療癒與頌缽理療。">
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="療癒服務 - 源點身&心靈工作坊">
-    <meta property="og:description" content="預約專屬的靈性諮詢與理療服務。">
-    <meta property="og:image" content="https://knttkrxd.manus.space/assets/logo.png">
-    <meta property="og:url" content="https://knttkrxd.manus.space/shop.html">
-    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="index.html" class="logo"><img src="assets/logo.png" alt="源點 logo">源點<span
+            <a href="index.html" class="logo"><img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">源點<span
                     class="logo-sub">身&心靈工作坊</span></a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
@@ -42,98 +30,111 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header" style="background-image: url('assets/儀器.png');">
-        <div class="container">
-            <h1>療癒服務</h1>
-            <p>量身打造的預約制專業服務，找回您的身心平衡</p>
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">專業療癒服務</h1>
+                <p class="page-subtitle">透過多樣化的自然療法與能量技術，平衡您的身心靈狀態</p>
+            </div>
+            <div class="hero-image-box">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%8A%B3%E9%A6%99%E7%99%82%E6%B3%95.png" alt="療癒服務" class="hero-featured-img">
+            </div>
         </div>
     </header>
 
-    <!-- Service Listing -->
     <main class="container main-content">
-        <div class="section-header">
-            <h2>個人化諮詢與理療</h2>
-            <div class="divider"></div>
-        </div>
-
         <div class="course-grid">
-            <!-- Service Card 1: Bazi -->
+            <!-- Bazi Consultation -->
             <article class="course-card">
-                <img src="assets/bazi.png" alt="八字諮詢" class="course-img">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E5%85%AB%E5%AD%97%E8%AB%AE%E8%A9%A2.jpg" alt="八字諮詢" class="course-img">
                 <div class="card-body">
-                    <span class="tag">靈性諮詢</span>
-                    <h3>命理八字與靈魂藍圖解析</h3>
-                    <p>透過傳統八字結合新時代靈魂觀念，解析您的生命原型、天賦特質與人生大運。協助您在變動中看清方向。</p>
-                    <div class="price-box">
-                        <span class="price-label">服務費用：</span>
-                        <span class="price">NT$ 2,200</span>
-                    </div>
+                    <span class="tag">命理諮詢</span>
+                    <h3>八字命理諮詢</h3>
+                    <p>透過出生年月日時的精準分析，探尋您的生命藍圖，協助您了解天賦才華，並在人生的轉折點做出最適合的選擇。</p>
+                    <div class="price-tag">NT$ 1,200</div>
                     <div class="product-options">
-                        <label for="bazi-type">諮詢型態：</label>
-                        <select id="bazi-type" class="product-select">
-                            <option value="single">單次精準諮詢 (45min)</option>
-                            <option value="detailed">深度流年解析 (90min) (+NT$1,800)</option>
+                        <select class="option-select">
+                            <option value="half">基本諮詢 (30min)</option>
+                            <option value="full">深度解析 (60min) + NT$ 1,000</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary add-to-cart-btn" data-id="service-bazi" data-name="八字靈魂藍圖解析"
-                        data-price="2200">加入預約</button>
+                    <button class="add-to-cart-btn" data-name="八字命理諮詢" data-price="1200">
+                        <span>🛒 預約加入</span>
+                    </button>
                 </div>
             </article>
 
-            <!-- Service Card 2: Crystal -->
+            <!-- Crystal Healing -->
             <article class="course-card">
-                <img src="assets/身心靈檢測.png" alt="水晶檢測" class="course-img">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-02.png" alt="水晶療癒" class="course-img">
                 <div class="card-body">
-                    <span class="tag">能量理療</span>
-                    <h3>水晶能量場衡定與淨化服務</h3>
-                    <p>使用天然礦石與多頻檢測儀器，分析您目前的氣場狀態，並透過專業水晶排列幫助能量流通與穩定。</p>
-                    <div class="price-box">
-                        <span class="price-label">服務費用：</span>
-                        <span class="price">NT$ 3,800</span>
-                    </div>
+                    <span class="tag">能量療癒</span>
+                    <h3>水晶療癒分享流程</h3>
+                    <p>運用天然水晶與礦石的能量頻率，平衡身體七大脈輪，清理負面情緒，為您的身心注入純淨的療癒光芒。</p>
+                    <div class="price-tag">NT$ 2,500</div>
                     <div class="product-options">
-                        <label for="crystal-addon">服務升級：</label>
-                        <select id="crystal-addon" class="product-select">
-                            <option value="standard">標準淨化服務</option>
-                            <option value="plus">含個人專屬配對水晶組 (+NT$2,500)</option>
+                        <select class="option-select">
+                            <option value="standard">標準療癒 (60min)</option>
+                            <option value="intensive">深度脈輪清理 + NT$ 1,500</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary add-to-cart-btn" data-id="service-crystal" data-name="水晶能量場衡定服務"
-                        data-price="3800">加入預約</button>
+                    <button class="add-to-cart-btn" data-name="水晶療癒分享流程" data-price="2500">
+                        <span>🛒 預約加入</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Body & Soul Testing -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%BA%AB%E5%BF%83%E9%9D%88%E6%AA%A2%E6%B8%AC.png" alt="身心靈檢測" class="course-img">
+                <div class="card-body">
+                    <span class="tag">能量檢測</span>
+                    <h3>身心靈能量頻率檢測</h3>
+                    <p>使用先進的能量檢測設備，可視化您的氣場與健康頻率，為您量身打造個人化的身心靈調整方案。</p>
+                    <div class="price-tag">NT$ 800</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="basic">基礎檢測</option>
+                            <option value="report">詳細報告書 + NT$ 500</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="身心靈能量頻率檢測" data-price="800">
+                        <span>🛒 預約加入</span>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Oil Therapy -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%8A%B3%E9%A6%99%E7%99%82%E6%B3%95.png" alt="精油理療" class="course-img">
+                <div class="card-body">
+                    <span class="tag">香氛療癒</span>
+                    <h3>CPTG 頂級精油理療</h3>
+                    <p>結合大地的真純精華與專業理療手法，在芳香中深度放鬆，讓植物的修復力量滋養您的神經系統。</p>
+                    <div class="price-tag">NT$ 3,200</div>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option value="back">肩頸放鬆 (40min)</option>
+                            <option value="full">全身經絡理療 (90min) + NT$ 1,800</option>
+                        </select>
+                    </div>
+                    <button class="add-to-cart-btn" data-name="CPTG 頂級精油理療" data-price="3200">
+                        <span>🛒 預約加入</span>
+                    </button>
                 </div>
             </article>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-section">
-                <h4>訂閱電子報</h4>
-                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="您的電子信箱">
-                    <button type="submit">訂閱</button>
-                </form>
-            </div>
-
-            <div class="footer-section">
                 <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長服務。</p>
                 <div class="contact-info">
                     <p>電話：海音 Lisa 0918-735208</p>
                     <p>地址：台北市士林區中山北路五段92號</p>
                 </div>
-            </div>
-
-            <div class="footer-section link-list">
-                <h4>客戶服務</h4>
-                <ul>
-                    <li><a href="#">常見問題</a></li>
-                    <li><a href="#">預約政策</a></li>
-                    <li><a href="#">服務條款</a></li>
-                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -154,7 +155,7 @@
             <button class="close-cart" id="cart-close">✕</button>
         </div>
         <div class="cart-items" id="cart-items-container">
-            <!-- Items injected by JS -->
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
