@@ -5,8 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>各類課程 | 源點身&心靈工作坊</title>
-    <meta name="description" content="探索源點提供的各類心靈成長、科技AI與傳統藝術課程。">
+    <meta name="description" content="探索源點身&心靈工作坊提供的身心靈成長課程，包括靈氣、生命靈數、空靈鼓等。">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="各類課程 - 源點身&心靈工作坊">
+    <meta property="og:description" content="獲取各類課程資訊與報名。">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
+    <meta property="og:url" content="https://knttkrxd.manus.space/academy.html">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,6 +24,7 @@
 </head>
 
 <body>
+    <!-- 導覽列 (Navbar) -->
     <nav class="navbar">
         <div class="container nav-content">
             <a href="index.html" class="logo"><img
@@ -34,116 +44,151 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-layout">
-            <div class="hero-content-box">
-                <h1 class="page-title">各類課程資訊</h1>
-                <p class="page-subtitle">探索身心靈成長的多樣途徑，從科技AI到傳統藝術</p>
-            </div>
-            <div class="hero-image-box">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%B8%BD%E8%AA%B2%E7%A8%8B%E8%A1%A8.jpg"
-                    alt="各類課程" class="hero-featured-img">
-            </div>
-        </div>
-    </header>
 
+    <!-- 主要內容區 (Main Content) -->
     <main class="container main-content">
+        <div class="section-header">
+            <h2>靈性成長課程</h2>
+            <div class="divider"></div>
+        </div>
+
         <div class="course-grid">
-            <!-- AI Course -->
+            <!-- 課程卡片 1 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/ai%20%E8%AA%B2.png"
-                    alt="AI 智能生活應用" class="course-img">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%B2%BE%E6%B2%B9.png"
+                    alt="各類精油芳療理療" class="course-img">
                 <div class="card-body">
-                    <span class="tag">科技與心靈</span>
-                    <h3>AI 智能生活應用課程</h3>
-                    <p>學習如何將 AI 技術融入 daily 工作與創作，釋放雙手，讓科技成為您心靈創作的延伸工具。</p>
-                    <div class="price-tag">NT$ 3,600</div>
-                    <div class="product-options">
-                        <select class="option-select">
-                            <option value="standard">標準課程 (4堂)</option>
-                            <option value="advanced">進階課程 (8堂) + NT$ 3,000</option>
-                        </select>
+                    <span class="tag">芳香療法</span>
+                    <h3>各類精油芳療理療</h3>
+                    <p>透過高品質 CPTG 精油，結合專業手技，釋放身體長期累積的壓力與緊繃。</p>
+                    <div class="meta-info">
+                        <span>理療服務 / 預約制</span>
                     </div>
-                    <button class="add-to-cart-btn" data-name="AI 智能生活應用課程" data-price="3600">
-                        <span>🛒 加入購物車</span>
-                    </button>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="course-1" data-name="各類精油芳療理療"
+                        data-price="2500" style="margin-top: 1rem;">加入購物車 (NT$ 2,500)</button>
                 </div>
             </article>
 
-            <!-- Ryukyu Glass -->
+            <!-- 課程卡片 2 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-06.jpg" alt="琉璃藝創課程"
-                    class="course-img">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%BA%AB%E5%BF%83%E9%9D%88%E6%AA%A2%E6%B8%AC.png"
+                    alt="身心靈檢測生命靈數" class="course-img">
                 <div class="card-body">
-                    <span class="tag">藝創課程</span>
-                    <h3>心創 琉璃藝創課程</h3>
-                    <p>在光影交織中體驗琉璃之美，透過手作過程沉澱心靈，創造屬於自己的藝術之光。</p>
-                    <div class="price-tag">NT$ 2,800</div>
-                    <div class="product-options">
-                        <select class="option-select">
-                            <option value="beginner">基礎琉璃實作</option>
-                            <option value="advanced">中階琉璃設計 + NT$ 1,200</option>
-                        </select>
+                    <span class="tag">靈數諮詢</span>
+                    <h3>身心靈檢測與生命靈數</h3>
+                    <p>解鎖您的生命密碼，了解內在天賦、能量狀態，找回生命的方向感。</p>
+                    <div class="meta-info">
+                        <span>諮詢課程 / 1.5 小時</span>
                     </div>
-                    <button class="add-to-cart-btn" data-name="心創 琉璃藝創課程" data-price="2800">
-                        <span>🛒 加入購物車</span>
-                    </button>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="course-2" data-name="身心靈檢測與生命靈數"
+                        data-price="1800" style="margin-top: 1rem;">加入購物車 (NT$ 1,800)</button>
                 </div>
             </article>
 
-            <!-- Calligraphy -->
+            <!-- 課程卡片 3 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-01.png" alt="書法課程"
-                    class="course-img">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%A9%BA%E9%9D%88%E9%BC%93.png"
+                    alt="空靈鼓教學" class="course-img">
                 <div class="card-body">
-                    <span class="tag">傳統藝術</span>
-                    <h3>靜心書法課程</h3>
-                    <p>張家禎老師指導。在墨色運轉間體會呼吸與專注，從指尖到宣紙，感受文字背後的定靜之力。</p>
-                    <div class="price-tag">NT$ 2,000</div>
-                    <div class="product-options">
-                        <select class="option-select">
-                            <option value="single">單堂體驗</option>
-                            <option value="monthly">月期課 (4堂) + NT$ 5,000</option>
-                        </select>
+                    <span class="tag">聲音療癒</span>
+                    <h3>空靈鼓教學</h3>
+                    <p>簡單易學的空靈鼓，透過純淨的樂音，帶領您進入深度的冥想與放鬆狀態。</p>
+                    <div class="meta-info">
+                        <span>實體課程 / 共 4 堂</span>
                     </div>
-                    <button class="add-to-cart-btn" data-name="靜心書法課程" data-price="2000">
-                        <span>🛒 加入購物車</span>
-                    </button>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="course-3" data-name="空靈鼓教學"
+                        data-price="3200" style="margin-top: 1rem;">加入購物車 (NT$ 3,200)</button>
                 </div>
             </article>
 
-            <!-- Music/Breath -->
+            <!-- 課程卡片 4 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-05.png"
-                    alt="磅礡雨音音樂會" class="course-img">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E9%9D%88%E6%B0%A3.png"
+                    alt="靈氣課程" class="course-img">
                 <div class="card-body">
-                    <span class="tag">音療課程</span>
-                    <h3>磅礡雨音 - 呼吸音樂會</h3>
-                    <p>震撼的雨音共振，配合深層呼引導，深度清理內在壓力，體驗純粹的生命共鳴。</p>
-                    <div class="price-tag">NT$ 1,200</div>
-                    <div class="product-options">
-                        <select class="option-select">
-                            <option value="ticket">入場券 (1人)</option>
-                            <option value="couple">雙人同行價 NT$ 2,000</option>
-                        </select>
+                    <span class="tag">能量傳導</span>
+                    <h3>靈氣 (Reiki) 認證課程</h3>
+                    <p>學習連結宇宙生命能量，啟動自癒本能，提升整體身心頻率。</p>
+                    <div class="meta-info">
+                        <span>認證課程 / 初階級</span>
                     </div>
-                    <button class="add-to-cart-btn" data-name="磅礡雨音 - 呼吸音樂會" data-price="1200">
-                        <span>🛒 加入購物車</span>
-                    </button>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="course-4" data-name="靈氣 (Reiki) 認證課程"
+                        data-price="8800" style="margin-top: 1rem;">加入購物車 (NT$ 8,800)</button>
+                </div>
+            </article>
+
+            <!-- 課程卡片 5 -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%8A%B1%E7%B2%BE.png"
+                    alt="花精諮詢" class="course-img">
+                <div class="card-body">
+                    <span class="tag">情緒療癒</span>
+                    <h3>巴哈花精情緒諮詢</h3>
+                    <p>藉由植物的能量場，溫和處理負面情緒，找回內在的和諧與平靜。</p>
+                    <div class="meta-info">
+                        <span>一對一諮詢 / 1 小時</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="course-5" data-name="巴哈花精情緒諮詢"
+                        data-price="1500" style="margin-top: 1rem;">加入購物車 (NT$ 1,500)</button>
+                </div>
+            </article>
+
+            <!-- 課程卡片 6 -->
+            <article class="course-card">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E5%BF%83%E9%9D%88%E5%B0%8D%E7%95%AB.png"
+                    alt="心靈對畫" class="course-img">
+                <div class="card-body">
+                    <span class="tag">表達藝術</span>
+                    <h3>心靈對畫體驗課</h3>
+                    <p>不需繪畫基礎，透過直覺性繪畫與潛意識對談，探索未知的內在風景。</p>
+                    <div class="meta-info">
+                        <span>體驗課程 / 2 小時</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="course-6" data-name="心靈對畫體驗課"
+                        data-price="1200" style="margin-top: 1rem;">加入購物車 (NT$ 1,200)</button>
                 </div>
             </article>
         </div>
     </main>
 
+    <!-- 頁尾 (Footer) -->
     <footer class="site-footer">
         <div class="container footer-content">
+            <div class="footer-section">
+                <h4>訂閱電子報</h4>
+                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="您的電子信箱">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
+
             <div class="footer-section">
                 <h4>關於我們</h4>
                 <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程。</p>
                 <div class="contact-info">
-                    <p>電話：海音 Lisa 0918-735208</p>
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
                     <p>地址：台北市士林區中山北路五段92號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon" title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank" class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+            <div class="footer-section link-list">
+                <h4>客戶服務</h4>
+                <ul>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">預約政策</a></li>
+                    <li><a href="#">服務條款</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -164,7 +209,7 @@
             <button class="close-cart" id="cart-close">✕</button>
         </div>
         <div class="cart-items" id="cart-items-container">
-            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+            <!-- 購物車項目將動態插入 -->
         </div>
         <div class="cart-footer">
             <div class="cart-total">

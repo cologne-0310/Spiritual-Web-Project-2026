@@ -4,107 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>訂單結帳 | 源點身&心靈工作坊</title>
+    <title>結帳中心 | 源點身&心靈工作坊</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-content">
-            <a href="index.html" class="logo"><img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">源點<span
-                    class="logo-sub">身&心靈工作坊</span></a>
+            <a href="index.html" class="logo">源點<span class="logo-sub">身&心靈工作坊</span></a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
-                <li><a href="index.html">最新消息</a></li>
-                <li><a href="academy.html">各類課程</a></li>
-                <li><a href="shop.html">療癒服務</a></li>
-                <li><a href="gemini-page.html">AI 實驗室</a></li>
+                <li><a href="academy.html">課程</a></li>
+                <li><a href="shop.html">服務</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container main-content">
         <div class="checkout-container">
+            <!-- Left: Items -->
             <div class="checkout-card">
-                <h2>顧客資訊</h2>
-                <form id="checkout-form">
-                    <div class="form-group">
-                        <label>姓名</label>
-                        <input type="text" name="name" class="form-control" placeholder="請輸入姓名" required>
-                    </div>
-                    <div class="form-group">
-                        <label>電子信箱</label>
-                        <input type="email" name="email" class="form-control" placeholder="example@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>連絡電話</label>
-                        <input type="tel" name="phone" class="form-control" placeholder="0912-345-678" required>
-                    </div>
-                    <div class="form-group">
-                        <label>備註 (如：預約時段偏好)</label>
-                        <textarea name="note" rows="4" class="form-control" placeholder="有任何特殊需求請告知我們..."></textarea>
-                    </div>
-                    <button type="submit" class="place-order-btn">
-                        <span>🚀 確認並送出訂單</span>
-                    </button>
-                </form>
+                <h3>確認您的選擇</h3>
+                <div id="checkout-items" class="checkout-list">
+                    <!-- Dynamic Items -->
+                </div>
+                <div class="checkout-summary-row mt-4 pt-4 border-top">
+                    <h4>總計金額</h4>
+                    <span id="checkout-total" class="total-price">NT$ 0</span>
+                </div>
             </div>
 
+            <!-- Right: Form -->
             <div class="checkout-card">
-                <h3>訂單摘要</h3>
-                <div id="checkout-items">
-                    <!-- Items injected by JS -->
-                </div>
-                <div class="checkout-total-row">
-                    <span class="total-label">總計</span>
-                    <span id="checkout-total" class="total-amount">NT$ 0</span>
-                </div>
+                <h3>填寫聯絡資料</h3>
+                <form id="checkout-form">
+                    <div class="form-group mb-3">
+                        <label>真實姓名</label>
+                        <input type="text" id="cust-name" class="form-control" required placeholder="例：林平之">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>聯絡電話</label>
+                        <input type="tel" id="cust-phone" class="form-control" required placeholder="0912-345678">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>電子郵件</label>
+                        <input type="email" id="cust-email" class="form-control" placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label>備註需求</label>
+                        <textarea id="cust-note" class="form-control" rows="3" placeholder="請註明預約時間或特殊需求"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-3" id="submit-order-btn">
+                        <span id="btn-text">確認送出訂單</span>
+                    </button>
+                    <p class="text-muted mt-3 small">
+                        * 送出後，服務人員將於 24 小時內與您聯繫確認細節。
+                    </p>
+                </form>
             </div>
         </div>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-bottom">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長服務。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon" title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank" class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
         </div>
     </footer>
 
-    <!-- Supabase SDK & Config -->
+    <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
-
-    <script src="cart.js"></script>
     <script>
-        // Checkout page specific logic
+        const cart = JSON.parse(localStorage.getItem('yuan_point_cart') || '[]');
+
         document.addEventListener('DOMContentLoaded', () => {
             renderCheckout();
 
-            document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+            const form = document.getElementById('checkout-form');
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const btn = e.target.querySelector('.place-order-btn');
-                const btnText = btn.querySelector('span');
+                const btn = document.getElementById('submit-order-btn');
+                const btnText = document.getElementById('btn-text');
                 const originalText = btnText.innerText;
 
-                // Loading State
                 btn.disabled = true;
-                btnText.innerText = '⏳ 處理中...';
-
-                const formData = new FormData(e.target);
-                const referralId = localStorage.getItem('yuan_point_ref');
-                const total = cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+                btnText.innerText = '處理中...';
 
                 const orderData = {
-                    customer_name: formData.get('name'),
-                    customer_email: formData.get('email'),
-                    customer_phone: formData.get('phone'),
-                    customer_address: formData.get('note'), // 使用備註作為地址/需求
+                    customer_name: document.getElementById('cust-name').value,
+                    customer_phone: document.getElementById('cust-phone').value,
+                    customer_email: document.getElementById('cust-email').value,
+                    customer_note: document.getElementById('cust-note').value,
                     items: cart,
-                    total_amount: total,
-                    referral_id: referralId || null,
-                    status: 'pending'
+                    total_amount: parseInt(document.getElementById('checkout-total').innerText.replace(/\D/g, ''))
                 };
 
                 try {
@@ -145,16 +166,17 @@
                 const itemTotal = item.price * (item.quantity || 1);
                 total += itemTotal;
                 return `
-                    <div class="order-summary-item">
-                        <div class="item-info">
-                            <span class="item-name">${item.name}</span>
-                            <span class="item-meta">${item.option} x ${item.quantity || 1}</span>
+                    <div class="checkout-item mb-3 d-flex justify-content-between">
+                        <div>
+                            <strong>${item.name}</strong>
+                            <div class="small text-muted">數量：${item.quantity || 1}</div>
                         </div>
-                        <span class="item-price">NT$ ${itemTotal.toLocaleString()}</span>
+                        <div class="text-end">NT$ ${itemTotal.toLocaleString()}</div>
                     </div>
                 `;
             }).join('');
-            totalEl.textContent = `NT$ ${total.toLocaleString()}`;
+
+            totalEl.innerText = `NT$ ${total.toLocaleString()}`;
         }
     </script>
 </body>
