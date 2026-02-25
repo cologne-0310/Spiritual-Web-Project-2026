@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>療癒服務 | 源點身&心靈工作坊</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fix-layout.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="https://via.placeholder.com/36x36/6B8E88/FFFFFF?text=Logo" alt="源點 Logo">
+                <span>源點身&心靈工作坊</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於源點</a>
+                <a href="academy.html">各類課程</a>
+                <a href="shop.html" class="active">療癒服務</a>
+                <a href="gemini-page.html">AI 實驗室</a>
+            </div>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartOpenBtn">
+                    🛒 購物車 <span class="cart-badge">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">療癒服務與產品</h1>
+            <p class="page-subtitle">專業引導師陪伴您進入深層放鬆，平衡內在能量</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="course-grid">
+                <!-- Service 1 -->
+                <article class="course-card">
+                    <img src="https://via.placeholder.com/400x440/FDFBF7/6B8E88?text=Crystal+Healing" alt="療癒服務"
+                        class="course-img">
+                    <div class="card-body">
+                        <span class="tag">能量平衡</span>
+                        <h3>脈輪能量平衡與水晶淨化</h3>
+                        <p>一對一的個人化服務，針對目前的能量阻塞進行梳理，提升整體頻率。</p>
+                        <div class="meta-info">
+                            <span class="price">NT$ 2,200 / 60min</span>
+                            <button class="btn btn-primary add-to-cart-btn" data-id="s1" data-name="脈輪能量平衡服務"
+                                data-price="2200">加入購物車</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 2 -->
+                <article class="course-card">
+                    <img src="https://via.placeholder.com/400x440/FDFBF7/6B8E88?text=Hypnosis" alt="療癒服務"
+                        class="course-img">
+                    <div class="card-body">
+                        <span class="tag">意識探索</span>
+                        <h3>前世回溯與潛意識引導</h3>
+                        <p>透過專業催眠與深度引導，探索現有問題的根源，與內在小孩進行溝通與和解。</p>
+                        <div class="meta-info">
+                            <span class="price">NT$ 3,800 / 90min</span>
+                            <button class="btn btn-primary add-to-cart-btn" data-id="s2" data-name="前世回溯引導服務"
+                                data-price="3800">加入購物車</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Service 3 -->
+                <article class="course-card">
+                    <img src="https://via.placeholder.com/400x440/FDFBF7/6B8E88?text=Oracle+Set" alt="療癒產品"
+                        class="course-img">
+                    <div class="card-body">
+                        <span class="tag">療癒周邊</span>
+                        <h3>Soul Guide 限定牌卡套裝 (含 AI 免費使用額度)</h3>
+                        <p>精心設計的實體占卜牌卡，並隨附 Soul Guide AI 對話功能的專屬啟動碼。</p>
+                        <div class="meta-info">
+                            <span class="price">NT$ 1,280</span>
+                            <button class="btn btn-primary add-to-cart-btn" data-id="p1" data-name="Soul Guide 牌卡套裝"
+                                data-price="1280">加入購物車</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h3>源點身&心靈工作坊</h3>
+                <p>探索身心靈平衡的藝術</p>
+                <div class="social-links">
+                    <a href="https://facebook.com">FB</a>
+                    <a href="https://instagram.com">IG</a>
+                    <a href="https://youtube.com">YT</a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h4>聯繫我們</h4>
+                <p>地址：台北市士林區忠誠路二段 123 號</p>
+                <p>郵件：info@spiritual-origin.com</p>
+                <p>電話：(02) 2882-5123</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速連結</h4>
+                <a href="index.html">首頁</a>
+                <a href="academy.html">課程列表</a>
+                <a href="shop.html">療癒服務</a>
+                <a href="gemini-page.html">AI 實驗室</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 源點身&心靈工作坊 版權所有</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button id="cartCloseBtn">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+            <p class="empty-cart-msg">您的購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>小計</span>
+                <span id="cartTotalAmount">NT$ 0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="location.href='checkout.html'">前往結帳</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
