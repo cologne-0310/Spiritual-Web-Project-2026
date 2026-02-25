@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新消息 | 源點身&心靈工作坊</title>
+    <meta name="description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="最新消息 - 源點身&心靈工作坊">
+    <meta property="og:description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
+    <meta property="og:image" content="https://knttkrxd.manus.space/assets/logo.png">
+    <meta property="og:url" content="https://knttkrxd.manus.space/index.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="源點 logo">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html" class="active">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">登入/註冊</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-layout">
+            <div class="hero-content-box">
+                <h1 class="page-title">最新消息</h1>
+                <p class="page-subtitle">獲取源點身&心靈工作坊的最新課程動態與靈性訊息</p>
+                <div class="hero-buttons">
+                    <a href="academy.html" class="btn btn-primary">瀏覽所有課程</a>
+                    <a href="shop.html" class="btn btn-secondary">預約療癒服務</a>
+                </div>
+            </div>
+            <div class="hero-image-box">
+                <img src="assets/身心靈檢測.png" alt="最新消息" class="hero-featured-img">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content: Latest News Feed -->
+    <main class="container main-content">
+        <div class="section-header">
+            <h2>近期動態與訊息</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="course-grid" id="news-grid">
+            <p style="text-align: center; color: #94a3b8; padding: 2rem;">新聞連接中...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>訂閱電子報</h4>
+                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="您的電子信箱">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
+
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務 and 產品。</p>
+                <div class="contact-info">
+                    <p>電話：海音 Lisa 0918-735208</p>
+                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <img src="assets/招牌.jpg" alt="工作坊招牌" class="contact-signage">
+                </div>
+            </div>
+
+            <div class="footer-section link-list">
+                <h4>客戶服務</h4>
+                <ul>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">預約政策</a></li>
+                    <li><a href="#">服務條款</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="news.js"></script>
+</body>
+
+</html>
