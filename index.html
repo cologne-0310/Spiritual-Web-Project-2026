@@ -6,16 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>最新消息 | 源點身&心靈工作坊</title>
     <meta name="description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
+    <link rel="stylesheet" href="style.css">
+    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
+    <style>
+        .container {
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            width: 100% !important;
+            display: block !important;
+        }
+
+        .logo img {
+            height: 36px !important;
+            width: auto !important;
+            max-height: 36px !important;
+        }
+
+        .nav-content {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+    </style>
     <!-- Open Graph Tags -->
     <meta property="og:title" content="最新消息 - 源點身&心靈工作坊">
     <meta property="og:description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
-    <meta property="og:image"
-        content="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
-    <meta property="og:url" content="https://knttkrxd.manus.space/index.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,12 +45,13 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="index.html" class="logo"><img
-                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png"
-                    alt="源點 logo">源點<span class="logo-sub">身&心靈工作坊</span></a>
+    <nav class="navbar" style="width: 100% !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
+                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
                 <li><a href="index.html" class="active">最新消息</a></li>
@@ -44,7 +66,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero">
         <div class="container hero-layout">
             <div class="hero-content-box">
@@ -62,31 +83,18 @@
         </div>
     </header>
 
-
-    <!-- Main Content: Latest News Feed -->
-    <main class="container main-content">
+    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
         <div class="section-header">
             <h2>近期動態與訊息</h2>
             <div class="divider"></div>
         </div>
-
         <div class="course-grid" id="news-grid">
             <p style="text-align: center; color: #94a3b8; padding: 2rem;">新聞連接中...</p>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-content">
-            <div class="footer-section">
-                <h4>訂閱電子報</h4>
-                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="您的電子信箱">
-                    <button type="submit">訂閱</button>
-                </form>
-            </div>
-
             <div class="footer-section">
                 <h4>關於我們</h4>
                 <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務 and 產品。</p>
@@ -96,29 +104,23 @@
                     <p>市話：02-2882-5123</p>
                     <p>地址：台北市士林區中山北路五段 92 號</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon" title="Facebook">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
                         </a>
-                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank" class="social-icon" title="YouTube">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
                         </a>
                     </div>
-                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E6%8B%9B%E7%89%8C.jpg"
-                        alt="工作坊招牌" class="contact-signage">
                 </div>
-            </div>
-
-            <div class="footer-section link-list">
-                <h4>客戶服務</h4>
-                <ul>
-                    <li><a href="#">常見問題</a></li>
-                    <li><a href="#">預約政策</a></li>
-                    <li><a href="#">服務條款</a></li>
-                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
         </div>
     </footer>
 
