@@ -5,47 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>療癒服務 | 源點身&心靈工作坊</title>
+    <!-- 字體與樣式 (Fonts & Styles) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
     <style>
-        .container {
-            max-width: 1200px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
-            width: 100% !important;
-            display: block !important;
+        .hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200');
+            background-size: cover;
+            background-position: center;
         }
 
-        .logo img {
-            height: 36px !important;
-            width: auto !important;
-            max-height: 36px !important;
+        .cart-tag {
+            display: inline-block;
+            background: rgba(107, 142, 136, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .nav-content {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
+        .price-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 0.5rem 0 1rem;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: white;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--accent-color);
+            color: white;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar" style="width: 100% !important;">
-        <div class="container nav-content"
-            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
-            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
-                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
-                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
-                    class="logo-sub">身&心靈工作坊</span></a>
+    <!-- 導覽列 (Navbar) -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">
+                源點
+                <span class="logo-sub">身&心靈工作坊</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
                 <li><a href="index.html">最新消息</a></li>
@@ -53,94 +75,117 @@
                 <li><a href="shop.html" class="active">療癒服務</a></li>
                 <li><a href="gemini-page.html">AI 實驗室</a></li>
             </ul>
+            <div class="nav-actions">
+                <a href="admin.html" class="login-btn">內部管理</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
+    <!-- 服務主視覺 (Shop Hero) -->
     <header class="hero">
-        <div class="container hero-layout">
-            <div class="hero-content-box">
-                <h1 class="page-title">療癒服務與產品</h1>
-                <p class="page-subtitle">讓身心回歸平衡，體驗專業的能量理療與心靈引導</p>
-            </div>
-            <div class="hero-image-box">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%99%82%E7%99%92%E6%9C%8D%E5%8B%992.jpg"
-                    alt="療癒服務" class="hero-featured-img">
-            </div>
+        <div class="container">
+            <h1 class="page-title">一對一專屬療癒服務</h1>
+            <p class="page-subtitle">讓頻率重組您的負擔，找回身心最適配的和諧狀態。</p>
         </div>
     </header>
 
-    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
+    <!-- 服務列表 (Services Grid) -->
+    <main class="main-content container">
         <div class="course-grid">
-            <!-- Oracle Reading -->
+            <!-- 服務 1 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E7%BF%A0%E5%BE%AE.jpg"
-                    alt="神諭卡諮詢" class="course-img">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800" alt="頌缽理療"
+                    class="course-img">
                 <div class="card-body">
-                    <span class="tag">心靈引導</span>
-                    <h3>翠微老師：神諭卡個案諮詢</h3>
-                    <p>透過神諭卡的圖像與文字資訊，引導您洞察當前生命的課題，並給予溫暖且具體的行動建議。</p>
-                    <div class="price-tag">NT$ 1,800</div>
-                    <div class="product-options">
-                        <select class="option-select">
-                            <option value="60min">線上諮詢 (60分鐘)</option>
-                            <option value="90min">實體諮詢 (90分鐘) + NT$ 1,000</option>
-                        </select>
-                    </div>
-                    <button class="add-to-cart-btn" data-name="神諭卡個案諮詢" data-price="1800">
-                        <span>🛒 加入購物車</span>
+                    <span class="cart-tag">深度理療</span>
+                    <h3>一對一頌缽深層釋壓</h3>
+                    <p>由專業理療師透過頌缽頻率共振，深層釋放體內緊繃與壓力。適合長期失眠、焦慮與極度疲勞者。</p>
+                    <div class="price-tag">NT$ 2,800 / 60min</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('一對一頌缽深層釋壓', 2800, 'service', 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=200')">
+                        立即預約
                     </button>
                 </div>
             </article>
 
-            <!-- Energy Therapy -->
+            <!-- 服務 2 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/course-02.png" alt="能量理療"
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800" alt="天使卡諮詢"
                     class="course-img">
                 <div class="card-body">
-                    <span class="tag">能量理療</span>
-                    <h3>深層能量場清理</h3>
-                    <p>專業理療師運用多種工具協助能量場的平衡與修復，釋放累積的負向壓力與情緒淤塞。</p>
-                    <div class="price-tag">NT$ 3,200</div>
-                    <div class="product-options">
-                        <select class="option-select">
-                            <option value="standard">標準理療 (90分鐘)</option>
-                            <option value="premium">深層理療 (120分鐘) + NT$ 1,600</option>
-                        </select>
-                    </div>
-                    <button class="add-to-cart-btn" data-name="深層能量場清理" data-price="3200">
-                        <span>🛒 加入購物車</span>
+                    <span class="cart-tag">靈魂指引</span>
+                    <h3>靈魂藍圖與神諭諮詢</h3>
+                    <p>結合神諭卡與直覺引導，為您目前的困惑提供更高维度的觀點與具體建議。協助您做出適當的決策。</p>
+                    <div class="price-tag">NT$ 2,000 / 45min</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('靈魂藍圖與神諭諮詢', 2000, 'service', 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=200')">
+                        立即預約
                     </button>
                 </div>
             </article>
 
-            <!-- Sound Therapy -->
+            <!-- 服務 3 -->
             <article class="course-card">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/news-04.jpg" alt="頌缽音療"
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800" alt="能量平衡"
                     class="course-img">
                 <div class="card-body">
-                    <span class="tag">音療體驗</span>
-                    <h3>靈魂頌缽・音療洗滌</h3>
-                    <p>藉由頌缽深沈穩定的共振頻率，讓全身細胞重新排列組合，進入深層放鬆與自我修復的狀態。</p>
-                    <div class="price-tag">NT$ 2,500</div>
-                    <button class="add-to-cart-btn" data-name="靈魂頌缽・音療洗滌" data-price="2500">
-                        <span>🛒 加入購物車</span>
+                    <span class="cart-tag">能量調整</span>
+                    <h3>全感官療癒工作區（預約制）</h3>
+                    <p>提供客製化的能量場清理與對齊服務。結合精油、聲音與水晶，為您的身、心、靈帶來全面淨化。</p>
+                    <div class="price-tag">NT$ 3,200 / 90min</div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('全感官療癒工作區', 3200, 'service', 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=200')">
+                        立即預約
                     </button>
                 </div>
             </article>
         </div>
     </main>
 
+    <!-- 購物車側邊欄 (Cart Sidebar) -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>預約清單</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- 動態內容 -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計:</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary" style="width: 100%; text-align: center;">前往結帳</a>
+        </div>
+    </div>
+
+    <!-- 購物車浮動按鈕 (Floating Cart Button) -->
+    <div class="cart-floating-btn" onclick="toggleCart()">
+        📅
+        <div class="cart-count" id="cart-count">0</div>
+    </div>
+
+    <!-- 頁尾 (Footer) -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-section">
                 <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長產品與服務。</p>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
                 <div class="contact-info">
                     <p>手機：海音 Lisa 0918-735208</p>
                     <p>手機：劉昆榮 0953-515901</p>
-                    <p>市話：02-2882-5123</p>
                     <p>地址：台北市士林區中山北路五段 92 號</p>
                 </div>
+            </div>
+            <div class="footer-section">
+                <h4>快速連結</h4>
+                <ul>
+                    <li><a href="academy.html">身心靈課程</a></li>
+                    <li><a href="shop.html">預約服務</a></li>
+                    <li><a href="gemini-page.html">AI 諮詢</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -149,34 +194,9 @@
         </div>
     </footer>
 
-    <!-- Floating Cart Button -->
-    <div class="cart-floating-btn" id="cart-toggle">
-        <span>🛒</span>
-        <div class="cart-count">0</div>
-    </div>
-
-    <!-- Cart Sidebar -->
-    <aside class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>您的購物車</h3>
-            <button class="close-cart" id="cart-close">✕</button>
-        </div>
-        <div class="cart-items" id="cart-items-container">
-            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>總計</span>
-                <span id="cart-total-amount">NT$ 0</span>
-            </div>
-            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
-        </div>
-    </aside>
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="supabase-config.js"></script>
-    <script src="script.js"></script>
+    <!-- Scripts -->
     <script src="cart.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

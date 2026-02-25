@@ -5,47 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>關於我們 | 源點身&心靈工作坊</title>
+    <!-- 字體與樣式 (Fonts & Styles) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
     <style>
-        .container {
-            max-width: 1200px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
-            width: 100% !important;
-            display: block !important;
-        }
-
-        .logo img {
-            height: 36px !important;
-            width: auto !important;
-            max-height: 36px !important;
-        }
-
-        .nav-content {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
+        .hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1499728235582-8a64b4945d3f?q=80&w=1200');
+            background-size: cover;
+            background-position: center;
         }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar" style="width: 100% !important;">
-        <div class="container nav-content"
-            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
-            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
-                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
-                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
-                    class="logo-sub">身&心靈工作坊</span></a>
+    <!-- 導覽列 (Navbar) -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">
+                源點
+                <span class="logo-sub">身&心靈工作坊</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="about.html" class="active">關於我們</a></li>
                 <li><a href="index.html">最新消息</a></li>
@@ -53,83 +35,83 @@
                 <li><a href="shop.html">療癒服務</a></li>
                 <li><a href="gemini-page.html">AI 實驗室</a></li>
             </ul>
+            <div class="nav-actions">
+                <a href="admin.html" class="login-btn">內部管理</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
-    <header class="hero alt-bg">
-        <div class="container hero-layout">
-            <div class="hero-content-box">
-                <h1 class="page-title">起源與初心</h1>
-                <p class="page-subtitle">在繁雜的世界中，為您預留一個與內在對話的純淨空間。</p>
-            </div>
-            <div class="hero-image-box">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E9%97%9C%E6%96%BC%E6%88%91.jpg"
-                    alt="關於源點" class="hero-featured-img">
-            </div>
+    <!-- 關於我們主視覺 (About Hero) -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="page-title">源點，回歸生命的本質</h1>
+            <p class="page-subtitle">在這個紛雜的世界裡，我們為您保留一片寧靜的綠洲，陪伴您探索內在的平靜與豐盛。</p>
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="container" style="max-width: 1200px !important; margin: 0 auto !important;">
-            <section class="about-section">
-                <div class="hero-layout">
-                    <div class="text-content">
-                        <h2>我們的理念</h2>
-                        <p>「源點」代表著生命的始源，也是心靈最終回歸的平靜之處。我們相信，每個人都擁有自我療癒的本能，只是在現代生活的壓力下，這股力量暫時被塵封。</p>
-                        <p>透過我們的課程與服務，我們致力於成為您的導引者，協助您剝離外在的束縛，重新連結內在的智慧。無論是透過傳統的藝術創作、精準的能量檢測，還是前衛的 AI
-                            心靈對話，我們都以「真、善、美」為核心，陪伴您走這一段覺醒之路。</p>
+    <!-- 關於我們內容 (About Content) -->
+    <main class="about-content container">
+        <!-- 品牌故事 (Brand Story) -->
+        <section class="about-section">
+            <div class="section-header">
+                <h2>我們的理念</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="text-content">
+                <p>「源點身&心靈工作坊」創立於 2024 年，空間位於台北市士林區，是一個致力於身心靈整合與個人成長的空間。</p>
+                <p>我們相信，每個人內在都擁有一股自然癒合的力量。只是在忙碌的現代生活中，這股力量往往被壓力、焦慮與社會期待所覆蓋。我們的使命，是透過多元的療癒方式與課程，引導您重新連結這股力量，找回生命的自主權與喜悅。</p>
+            </div>
+        </section>
 
-                        <ul class="feature-list">
-                            <li>全人關懷的課程設計</li>
-                            <li>專業且溫暖的導師團隊</li>
-                            <li>結合科技與傳統的多元途徑</li>
-                            <li>隱密且舒適的療癒空間</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-
+        <!-- 服務特色 (Features) -->
         <section class="about-section alt-bg">
-            <div class="container" style="max-width: 1200px !important; margin: 0 auto !important;">
-                <div class="section-header">
-                    <h2>空間導覽</h2>
-                    <div class="divider"></div>
+            <div class="split-layout">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?q=80&w=800" alt="冥想修行"
+                        class="feature-img">
                 </div>
-                <div class="venue-gallery" style="display: grid !important; grid-template-columns: 1fr 1fr !important;">
-                    <div class="venue-item"><img
-                            src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/store-front.png"
-                            alt="工作室門面"></div>
-                    <div class="venue-item"><img
-                            src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/indoor.png"
-                            alt="室內空間"></div>
+                <div class="content-box">
+                    <h3>專業、專注、專屬於您</h3>
+                    <p>我們提供由資深老師引領的多樣化課程，無論您是想要提升自我覺察、釋放身體壓力，還是尋求人生的深度指引，源點都有適合您的選擇。</p>
+                    <ul class="feature-list">
+                        <li><strong>資深師資：</strong>擁有多年實作與教學經驗，給予學員最精準的指導。</li>
+                        <li><strong>環境幽雅：</strong>位於市中心卻鬧中取靜的空間，讓身心能徹底放鬆。</li>
+                        <li><strong>多元整合：</strong>結合東西方智慧，提供涵蓋身體、心理與靈魂的全面服務。</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="video-section">
-            <div class="container" style="max-width: 1200px !important; margin: 0 auto !important;">
-                <div class="section-header">
-                    <h2>源點・動態視界</h2>
-                    <p>透過影像，感受我們為您營造的平靜頻率</p>
-                    <div class="divider"></div>
+        <!-- 場地與環境 (Venue & Environment) -->
+        <section class="about-section">
+            <div class="section-header">
+                <h2>療癒空間</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="text-content">
+                <p>我們的工作坊空間寬敞明亮（約 26 坪），非常適合進行冥想、瑜珈、工作坊或私人諮詢。除此之外，我們也提供場地租借服務，歡迎志同道合的人士在此分享與交流。</p>
+            </div>
+            <!-- 場地藝廊 (Venue Gallery) -->
+            <div class="venue-gallery">
+                <div class="venue-item">
+                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/field1.jpg"
+                        alt="場地實景 1">
                 </div>
-                <div class="video-container">
-                    <video controls poster="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
-                        <source src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E6%BA%90%E9%BB%9E%E5%BD%B1%E7%89%87%E5%AE%8C%E6%95%B4.mp4"
-                            type="video/mp4">
-                        您的瀏覽器不支援影片播放。
-                    </video>
+                <div class="venue-item">
+                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/field2.jpg"
+                        alt="場地實景 2">
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- 頁尾 (Footer) -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-section">
                 <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程。</p>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
                 <div class="contact-info">
                     <p>手機：海音 Lisa 0918-735208</p>
                     <p>手機：劉昆榮 0953-515901</p>
@@ -149,6 +131,21 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-section">
+                <h4>快速連結</h4>
+                <ul>
+                    <li><a href="academy.html">身心靈課程</a></li>
+                    <li><a href="shop.html">預約服務</a></li>
+                    <li><a href="gemini-page.html">AI 諮詢</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>訂閱消息</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="輸入您的 Email">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
@@ -156,8 +153,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="supabase-config.js"></script>
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 
