@@ -51,9 +51,11 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" style="width: 100% !important;">
-        <div class="container nav-content" style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
+        <div class="container nav-content"
+            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
             <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo" style="height: 36px !important; width: auto !important; max-height: 36px !important;">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
+                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">
                 源點<span class="logo-sub">身&心靈工作坊</span>
             </a>
             <ul class="nav-links">
@@ -90,7 +92,7 @@
 
 
     <!-- Main Content: Latest News Feed -->
-    <main class="container main-content">
+    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
         <div class="section-header">
             <h2>近期動態與訊息</h2>
             <div class="divider"></div>
@@ -102,39 +104,86 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="site-footer">
         <div class="container footer-content">
-            <div class="footer-logo">
-                <h3>源點身&心靈工作坊</h3>
-                <p>探索身心靈平衡的藝術</p>
-                <div class="social-links">
-                    <a href="https://facebook.com">FB</a>
-                    <a href="https://instagram.com">IG</a>
-                    <a href="https://youtube.com">YT</a>
+            <div class="footer-section">
+                <h4>訂閱電子報</h4>
+                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="您的電子信箱">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
+
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務 and 產品。</p>
+                <div class="contact-info">
+                    <p>手機：海音 Lisa 0918-735208</p>
+                    <p>手機：劉昆榮 0953-515901</p>
+                    <p>市話：02-2882-5123</p>
+                    <p>地址：台北市士林區中山北路五段 92 號</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/SourceHealth31" target="_blank" class="social-icon"
+                            title="Facebook">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCFX0_29xzNMo7PF_9UisWyw" target="_blank"
+                            class="social-icon" title="YouTube">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                                alt="YouTube">
+                        </a>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E6%8B%9B%E7%89%8C.jpg"
+                        alt="工作坊招牌" class="contact-signage">
                 </div>
             </div>
-            <div class="footer-info">
-                <h4>聯繫我們</h4>
-                <p>地址：台北市士林區忠誠路二段 123 號</p>
-                <p>郵件：info@spiritual-origin.com</p>
-                <p>電話：(02) 2882-5123</p>
-            </div>
-            <div class="footer-links">
-                <h4>快速連結</h4>
-                <a href="about.html">關於我們</a>
-                <a href="index.html">最新消息</a>
-                <a href="academy.html">課程列表</a>
-                <a href="shop.html">療癒服務</a>
-                <a href="gemini-page.html">AI 實驗室</a>
+
+            <div class="footer-section link-list">
+                <h4>客戶服務</h4>
+                <ul>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">預約政策</a></li>
+                    <li><a href="#">服務條款</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 源點身&心靈工作坊 版權所有 | <span style="color: #94A3B8; font-size: 10px;">Fix-v3.0</span></p>
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
+            </p>
         </div>
     </footer>
 
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
     <script src="script.js"></script>
-    <!-- 引入最新消息載入邏輯 -->
+    <script src="cart.js"></script>
     <script src="news.js"></script>
 </body>
 
