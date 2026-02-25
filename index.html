@@ -4,54 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>最新消息 | 源點身&心靈工作坊</title>
-    <meta name="description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
-    <link rel="stylesheet" href="style.css">
-    <!-- 緊急佈局修復 (Inlined Layout Fix) -->
-    <style>
-        .container {
-            max-width: 1200px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
-            width: 100% !important;
-            display: block !important;
-        }
-
-        .logo img {
-            height: 36px !important;
-            width: auto !important;
-            max-height: 36px !important;
-        }
-
-        .nav-content {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            width: 100% !important;
-        }
-    </style>
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="最新消息 - 源點身&心靈工作坊">
-    <meta property="og:description" content="獲取源點身&心靈工作坊的最新課程動態與靈性訊息。">
-    <meta property="og:image" content="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>源點身&心靈工作坊 | 探索內在的和諧與力量</title>
+    <!-- 字體與樣式 (Fonts & Styles) -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav class="navbar" style="width: 100% !important;">
-        <div class="container nav-content"
-            style="max-width: 1200px !important; margin: 0 auto !important; display: flex !important; justify-content: space-between !important; align-items: center !important;">
-            <a href="index.html" class="logo" style="display: flex !important; align-items: center !important;"><img
-                    src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo"
-                    style="height: 36px !important; width: auto !important; max-height: 36px !important;">源點<span
-                    class="logo-sub">身&心靈工作坊</span></a>
+    <!-- 導覽列 (Navbar) -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/logo.png" alt="源點 logo">
+                源點
+                <span class="logo-sub">身&心靈工作坊</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="about.html">關於我們</a></li>
                 <li><a href="index.html" class="active">最新消息</a></li>
@@ -60,44 +29,46 @@
                 <li><a href="gemini-page.html">AI 實驗室</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="#" class="login-btn">登入/註冊</a>
+                <a href="admin.html" class="login-btn">內部管理</a>
             </div>
             <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
+    <!-- 主視覺 (Hero Section) -->
     <header class="hero">
-        <div class="container hero-layout">
-            <div class="hero-content-box">
-                <h1 class="page-title">最新消息</h1>
-                <p class="page-subtitle">獲取源點身&心靈工作坊的最新課程動態與靈性訊息</p>
-                <div class="hero-buttons">
-                    <a href="academy.html" class="btn btn-primary">瀏覽所有課程</a>
-                    <a href="shop.html" class="btn btn-secondary">預約療癒服務</a>
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-content-box">
+                    <h1 class="page-title">探索內在的和諧與力量</h1>
+                    <p class="page-subtitle">最新的心靈動態、課程資訊與成長工作坊，邀請您一同踏上這場覺醒之旅。</p>
+                    <div class="hero-buttons">
+                        <a href="academy.html" class="btn btn-primary">探索課程</a>
+                        <a href="about.html" class="btn btn-secondary">了解我們</a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image-box">
-                <img src="https://raw.githubusercontent.com/cologne-0310/AG_TEST/main/assets/%E8%BA%AB%E5%BF%83%E9%9D%88%E6%AA%A2%E6%B8%AC.png"
-                    alt="最新消息" class="hero-featured-img">
+                <div class="hero-image-box">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200" alt="禪意空間"
+                        class="hero-featured-img">
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="container main-content" style="max-width: 1200px !important; margin: 0 auto !important;">
-        <div class="section-header">
-            <h2>近期動態與訊息</h2>
-            <div class="divider"></div>
-        </div>
+    <!-- 主要內容區 (News Grid) -->
+    <main class="main-content container">
         <div class="course-grid" id="news-grid">
-            <p style="text-align: center; color: #94a3b8; padding: 2rem;">新聞連接中...</p>
+            <!-- 由 news.js 動態載入 (Dynamically loaded by news.js) -->
+            <div class="loading-state">正在載入最新消息...</div>
         </div>
     </main>
 
+    <!-- 頁尾 (Footer) -->
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-section">
                 <h4>關於我們</h4>
-                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務 and 產品。</p>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
                 <div class="contact-info">
                     <p>手機：海音 Lisa 0918-735208</p>
                     <p>手機：劉昆榮 0953-515901</p>
@@ -117,6 +88,21 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-section">
+                <h4>快速連結</h4>
+                <ul>
+                    <li><a href="academy.html">身心靈課程</a></li>
+                    <li><a href="shop.html">預約服務</a></li>
+                    <li><a href="gemini-page.html">AI 諮詢</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>訂閱消息</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="輸入您的 Email">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 源點身&心靈工作坊. 版權所有. <span style="font-size: 0.7rem; color: #444; opacity: 0.5;">Fix-v3.0</span>
@@ -124,35 +110,10 @@
         </div>
     </footer>
 
-    <!-- Floating Cart Button -->
-    <div class="cart-floating-btn" id="cart-toggle">
-        <span>🛒</span>
-        <div class="cart-count">0</div>
-    </div>
-
-    <!-- Cart Sidebar -->
-    <aside class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>您的購物車</h3>
-            <button class="close-cart" id="cart-close">✕</button>
-        </div>
-        <div class="cart-items" id="cart-items-container">
-            <p style="text-align: center; color: #999; margin-top: 2rem;">購物車是空的</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>總計</span>
-                <span id="cart-total-amount">NT$ 0</span>
-            </div>
-            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
-        </div>
-    </aside>
-
-    <!-- Supabase SDK -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase-config.js"></script>
     <script src="script.js"></script>
-    <script src="cart.js"></script>
     <script src="news.js"></script>
 </body>
 
