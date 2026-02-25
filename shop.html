@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>療癒服務 | 源點身&心靈工作坊</title>
+    <meta name="description" content="預約源點身&心靈工作坊的各類專屬理療服務，包括八字諮詢、水晶療癒與頌缽理療。">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="療癒服務 - 源點身&心靈工作坊">
+    <meta property="og:description" content="預約專屬的靈性諮詢與理療服務。">
+    <meta property="og:image" content="https://knttkrxd.manus.space/assets/logo.png">
+    <meta property="og:url" content="https://knttkrxd.manus.space/shop.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="源點 logo">源點<span
+                    class="logo-sub">身&心靈工作坊</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="index.html">最新消息</a></li>
+                <li><a href="academy.html">各類課程</a></li>
+                <li><a href="shop.html" class="active">療癒服務</a></li>
+                <li><a href="gemini-page.html">AI 實驗室</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">登入/註冊</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background-image: url('assets/儀器.png');">
+        <div class="container">
+            <h1>療癒服務</h1>
+            <p>量身打造的預約制專業服務，找回您的身心平衡</p>
+        </div>
+    </header>
+
+    <!-- Service Listing -->
+    <main class="container main-content">
+        <div class="section-header">
+            <h2>個人化諮詢與理療</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="course-grid">
+            <!-- Service Card 1: Bazi -->
+            <article class="course-card">
+                <img src="assets/bazi.png" alt="八字諮詢" class="course-img">
+                <div class="card-body">
+                    <span class="tag">靈性諮詢</span>
+                    <h3>命理八字與靈魂藍圖解析</h3>
+                    <p>透過傳統八字結合新時代靈魂觀念，解析您的生命原型、天賦特質與人生大運。協助您在變動中看清方向。</p>
+                    <div class="price-box">
+                        <span class="price-label">服務費用：</span>
+                        <span class="price">NT$ 2,200</span>
+                    </div>
+                    <div class="product-options">
+                        <label for="bazi-type">諮詢型態：</label>
+                        <select id="bazi-type" class="product-select">
+                            <option value="single">單次精準諮詢 (45min)</option>
+                            <option value="detailed">深度流年解析 (90min) (+NT$1,800)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="service-bazi" data-name="八字靈魂藍圖解析"
+                        data-price="2200">加入預約</button>
+                </div>
+            </article>
+
+            <!-- Service Card 2: Crystal -->
+            <article class="course-card">
+                <img src="assets/身心靈檢測.png" alt="水晶檢測" class="course-img">
+                <div class="card-body">
+                    <span class="tag">能量理療</span>
+                    <h3>水晶能量場衡定與淨化服務</h3>
+                    <p>使用天然礦石與多頻檢測儀器，分析您目前的氣場狀態，並透過專業水晶排列幫助能量流通與穩定。</p>
+                    <div class="price-box">
+                        <span class="price-label">服務費用：</span>
+                        <span class="price">NT$ 3,800</span>
+                    </div>
+                    <div class="product-options">
+                        <label for="crystal-addon">服務升級：</label>
+                        <select id="crystal-addon" class="product-select">
+                            <option value="standard">標準淨化服務</option>
+                            <option value="plus">含個人專屬配對水晶組 (+NT$2,500)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-id="service-crystal" data-name="水晶能量場衡定服務"
+                        data-price="3800">加入預約</button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h4>訂閱電子報</h4>
+                <p>獲取最新的身心靈成長資訊、活動通知和專屬優惠。</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="您的電子信箱">
+                    <button type="submit">訂閱</button>
+                </form>
+            </div>
+
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>源點身&心靈工作坊致力於提供高品質的身心靈成長課程、理療服務和產品。</p>
+                <div class="contact-info">
+                    <p>電話：海音 Lisa 0918-735208</p>
+                    <p>地址：台北市士林區中山北路五段92號</p>
+                </div>
+            </div>
+
+            <div class="footer-section link-list">
+                <h4>客戶服務</h4>
+                <ul>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">預約政策</a></li>
+                    <li><a href="#">服務條款</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 源點身&心靈工作坊. 版權所有.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Cart Button -->
+    <div class="cart-floating-btn" id="cart-toggle">
+        <span>🛒</span>
+        <div class="cart-count">0</div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>您的購物車</h3>
+            <button class="close-cart" id="cart-close">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>總計</span>
+                <span id="cart-total-amount">NT$ 0</span>
+            </div>
+            <a href="checkout.html" class="btn checkout-btn" style="text-align: center; display: block;">前往結帳</a>
+        </div>
+    </aside>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>
