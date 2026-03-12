@@ -2,20 +2,28 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Prem Sajeev | 身心靈引路人 - 鼓聲、心靈閱讀與靜心</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Prem Sajeev 是一位接地氣的靈性實踐者。透過手碟演奏、心靈閱讀與動態靜心，帶領你回歸內在的寧靜與喜悅。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajeev 導師 | 小旺 - 全息生命系統與靈性引導</title>
+    <meta name="description" content="Prem Sajeev (高亦穎) 導師官方網站 - 致力於全息生命系統與靈性引導。專長於非洲鼓、手碟療癒、塔羅心靈、音樂舞蹈呼吸靜心。">
+    <meta name="keywords" content="Sajeev, 高亦穎, 小旺老師, 非洲鼓教學, 手碟療癒, 塔羅身心閱讀, 奧修禪卡, 靜心引導, 靈性成長, 呼吸引導">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Sajeev Site Style -->
     <link rel="stylesheet" href="sajeev-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     
-    <!-- Custom Scrollbar Style -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sajeev.source31.com/">
+    <meta property="og:title" content="Sajeev 導師 | 小旺 - 全息生命系統與靈性引導">
+    <meta property="og:description" content="接地氣的靈性實踐者，透過鼓聲、心靈閱讀與靜心帶你回歸內在的寧靜與喜悅。">
+    <meta property="og:image" content="https://sajeev.source31.com/sajeev/S__23994377.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sajeev.source31.com/">
+    <meta property="twitter:title" content="Sajeev 導師 | 小旺 - 全息生命系統與靈性引導">
+    <meta property="twitter:description" content="接地氣的靈性實踐者，透過鼓聲、心靈閱讀與靜心帶你回歸內在的寧靜與喜悅。">
+    <meta property="twitter:image" content="https://sajeev.source31.com/sajeev/S__23994377.jpg">
     <style>
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
@@ -63,181 +71,297 @@
                 <span class="tag">2004-2015 身心靈學習探索之旅</span>
                 <h2>Sajeev 暱稱小旺 <small>( 中文: 高亦穎 )</small></h2>
                 <p>
-                    2004那年的一個契機，讓我踏入了身心靈領域，從「奧修」的靜心出發，開啟了深入且漫長的探索。
-                    2008年更前往印度普那(Pune)，實踐了四個月的動態靜心，自此，「靜心」成為我生命中最重要的基石。
+                    非洲鼓 / 手碟 / 塔羅心靈 / 音樂舞蹈呼吸靜心
                 </p>
-                <div class="expertise-tags">
-                    <span>Osho Meditations</span>
-                    <span>Handpan Sound Healing</span>
-                    <span>Psychic Reading</span>
-                    <span>Human Design</span>
-                    <span>Shamanic Practice</span>
-                </div>
+                <p style="margin-top: 1rem; color: #64748b;">
+                    自助旅行 印度奧修國際靜心村 / 多元大學＆巴厘島期間：<br>
+                    完成多種身心靈療癒團體 & 創造性課程。
+                </p>
             </div>
-            <div class="bio-image animate-up">
+            <div class="bio-quote">
                 <div class="quote-block">
-                    <p>「我希望能成為一個管道，透過音樂與覺察，讓每個人都能找到自己生命中的定海神針。」</p>
+                    <p>「每一個靈魂都是一個完整的宇宙，我的任務是協助你點亮其中的星光。」</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Five Elements Logic Section -->
     <section id="elements" class="section-padding elements-section">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="title">The Five Elements</span>
+            <div class="section-header" style="text-align: center; margin-bottom: 5rem;">
+                <span class="tag">The Five Elements</span>
                 <h2>學習與療癒地圖</h2>
                 <p>我們從身體出發，穿過情感與心智，最終回歸於自性之愛。</p>
             </div>
-
             <div class="elements-grid">
-                <!-- Earth -->
                 <div class="element-card earth">
                     <h3>🌱 {地} 身體工作類</h3>
                     <p class="desc">連結大地，釋放儲存在身體裡的壓力與負擔。</p>
                     <ul>
                         <li>奧修新靈氣一階, 峇里島靈氣2階</li>
                         <li>峇里島頌缽師訓、宇宙銅鑼師訓</li>
-                        <li>中醫經絡穴道針灸、阿育吠陀按摩</li>
+                        <li>中醫經絡穴道針灸</li>
+                        <li>阿育吠陀草藥按摩</li>
+                        <li>頭薦骨工作坊</li>
                     </ul>
                 </div>
-                <!-- Water -->
                 <div class="element-card water">
                     <h3>🌊 {水} 情感療癒類</h3>
                     <p class="desc">如水般流動，清理情緒的積壓，找回內在和諧。</p>
                     <ul>
-                        <li>內在孩童療癒團體、譚催能量覺察</li>
-                        <li>脈輪聲音肢體表達、家族排列團體</li>
-                        <li>Kirten 唱頌團體、對感覺敞開團體</li>
+                        <li>內在孩童療癒團體</li>
+                        <li>譚催能量覺察團體</li>
+                        <li>脈輪聲音肢體表達團體</li>
+                        <li>家族排列團體, Kirten 唱頌團體</li>
+                        <li>Milarepa狂喜靜心營 I & II</li>
+                        <li>對感覺敞開團體</li>
                     </ul>
                 </div>
-                <!-- Fire -->
                 <div class="element-card fire">
                     <h3>🔥 {火} 舞蹈 & 動態類</h3>
                     <p class="desc">透過律動，點燃生命火花，轉化停滯能量。</p>
                     <ul>
-                        <li>覺知內在舞蹈、創造式呼吸舞蹈</li>
-                        <li>蘇非旋轉舞、接觸即興、五律舞</li>
-                        <li>內觀呼吸禪修、西藏脈動團體</li>
+                        <li>覺知內在舞蹈團體, 創造式呼吸舞蹈</li>
+                        <li>蘇非旋轉舞, Navanita 舞道</li>
+                        <li>接觸即興舞蹈訓練, Biodanza 生活舞蹈營</li>
+                        <li>5 rhythms 五律舞舞蹈營</li>
+                        <li>內觀呼吸禪修, 西藏脈動團體</li>
                     </ul>
                 </div>
-                <!-- Air -->
                 <div class="element-card air">
                     <h3>🌀 {風} 心智工具類</h3>
-                    <p class="desc">清明如風，開闊視野，打破慣性的思考模式。</p>
+                    <p class="desc">清明如風，透過覺察與洞見，消融大腦雜訊。</p>
                     <ul>
-                        <li>無念禪繪畫、戈齊福催眠諮商訓練</li>
-                        <li>生命靈數、靈魂占星、奧修禪卡</li>
-                        <li>奧修國際村蛻變靜心系列</li>
+                        <li>無念禪繪畫團體, No mind 無念靜心團體</li>
+                        <li>戈齊福催眠諮商訓練</li>
+                        <li>生命靈數、靈魂占星工作坊</li>
+                        <li>塔羅智慧-奧修禪卡能量閱讀</li>
+                        <li>奧修國際村- 蛻變靜心100種等</li>
                     </ul>
                 </div>
-                <!-- Love -->
                 <div class="element-card love">
-                    <h3>✨ {空} 空性 & 自性之愛</h3>
-                    <p class="desc">進入靜止與永恆，體悟無條件的平安與愛。</p>
+                    <h3>❤️ {愛與性}</h3>
+                    <p class="desc">以愛為核心，開啟真實的連結與表達。</p>
                     <ul>
-                        <li>心輪鍊金術、唱開你的心團體</li>
-                        <li>靜心營、空性智慧分享課程</li>
+                        <li>心輪鍊金術團體</li>
+                        <li>譚催能量覺察團體</li>
+                        <li>唱開你的心團體</li>
                     </ul>
+                    <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank" class="text-link" style="margin-top: 1rem; display: inline-block;">預約/詢問課程 →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Healing Services -->
     <section id="services" class="section-padding">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="title">Healing Services</span>
-                <h2>預約客製化療癒服務</h2>
-            </div>
-
+            <h2 style="text-align: center; margin-bottom: 4rem;">療癒專案與服務</h2>
             <div class="price-grid">
                 <div class="price-card">
-                    <h3>水晶/塔羅心靈閱讀</h3>
-                    <p class="desc">透過水晶能量與讀牌，看見你當下的能量狀態，並提供清晰指引。</p>
-                    <div class="price">NT$ 2,500 / 60min</div>
-                    <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank" class="btn-outline">預約諮詢</a>
+                    <h3>非洲鼓教學</h3>
+                    <p>從節奏中找回生命鼓動，釋放日常壓抑，連結原始生命力。</p>
+                    <span class="price-tag">NT$ 1,800 <small>起</small></span>
                 </div>
-
-                <div class="price-card spotlight">
-                    <h3>手碟音療 & 呼吸個案</h3>
-                    <p class="desc">深入的頻率療法，清理細胞記憶，讓身心處於全然的放鬆。</p>
-                    <div class="price">NT$ 3,600 / 90min</div>
-                    <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank" class="btn-glow">預約諮詢</a>
-                </div>
-
                 <div class="price-card">
-                    <h3>人類圖能量深度解析</h3>
-                    <p class="desc">回歸策略與權威，活出你最真實的本質，不再困於自我制約。</p>
-                    <div class="price">NT$ 4,500 / 120min</div>
-                    <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank" class="btn-outline">預約諮詢</a>
+                    <h3>手碟聲音療癒</h3>
+                    <p>透過手碟空靈如天籟般的音波，引領您進入深度放鬆的意識空間。</p>
+                    <span class="price-tag">NT$ 800 <small>/ 人</small></span>
+                </div>
+                <div class="price-card">
+                    <h3>塔羅身心閱讀</h3>
+                    <p>結合奧修禪卡與直覺感應，在迷惘中看見當下的挑戰與靈魂出口。</p>
+                    <span class="price-tag">NT$ 1,500 <small>起</small></span>
+                </div>
+                <div class="price-card spotlight">
+                    <h3>個人療癒深潛</h3>
+                    <p>整合靈氣、頌缽、呼吸與個人靜心指導，為您量身打造的覺醒旅程。</p>
+                    <span class="price-tag">NT$ 6,800 <small>起 (4堂)</small></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ongoing Classes -->
-    <section id="ongoing" class="section-padding bg-light">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2>進行中課程與工作坊</h2>
-                <p>近期動態與固定靜心活動，歡迎預約參與。</p>
+    <section id="workflow" class="section-padding" style="background: rgba(255,255,255,0.02);">
+        <div class="container grid-2">
+            <div>
+                <h2>療癒導向流程</h2>
+                <p style="color: #94a3b8;">我們不只是處理問題，而是創造一個讓您安全綻放的空間。</p>
             </div>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h4>初次諮詢</h4>
+                        <p>深入了解您的生命現狀需求與挑戰。</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h4>方案設計</h4>
+                        <p>根據五元素地圖，量身訂作專屬您的轉化計畫。</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h4>深度練習</h4>
+                        <p>包含療程實作、引導靜心與功課指引。</p>
+                    </div>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-num">4</div>
+                    <div>
+                        <h4>整合支持</h4>
+                        <p>持續追蹤回饋，將療癒帶入日常生活。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="experience" class="section-padding" style="background: #fff;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+                <span class="tag">Institutional Experience</span>
+                <h2>機構服務履歷</h2>
+                <p>深耕校園與社群，將靜心智慧與鼓樂能量傳遞至各個角落。</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="exp-column">
+                    <div class="exp-category">
+                        <div class="exp-cat-header">
+                            <span class="icon">🎓</span>
+                            <h3>大專院校邀約講師</h3>
+                        </div>
+                        <ul class="exp-list">
+                            <li><strong>台北藝術大學</strong> <span>遊戲非洲鼓，蛻變呼吸營 創課老師</span></li>
+                            <li><strong>文化大學</strong> <span>音樂靜心＆情緒轉化 / 塔羅（奧修禪卡＆意識溝通）</span></li>
+                            <li><strong>淡江大學</strong> <span>來自印度國際靜心村的靜心體驗</span></li>
+                            <li><strong>清華大學</strong> <span>非洲鼓迎新大會＆身心律動</span></li>
+                            <li><strong>中央大學</strong> <span>美洲樂曲吉他+手碟+非洲鼓户外分享音樂會</span></li>
+                            <li><strong>高雄樹德科大</strong> <span>世界音樂與身心健康 / 鼓圈的共振力量</span></li>
+                            <li><strong>蘆狄社大</strong> <span>樂活靜心系創課老師</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="exp-column">
+                    <div class="exp-category">
+                        <div class="exp-cat-header">
+                            <span class="icon">🌍</span>
+                            <h3>大型藝文盛事</h3>
+                        </div>
+                        <div class="exp-highlight">
+                            文化局 + 風潮音樂國際、華山文創、松菸藝展、世界音樂節等邀請作為<strong>非洲鼓樂團帶領人</strong>。
+                        </div>
+                    </div>
+                    
+                    <div class="exp-category" style="margin-top: 2rem;">
+                        <div class="exp-cat-header">
+                            <span class="icon">🤝</span>
+                            <h3>社群與社會服務</h3>
+                        </div>
+                        <ul class="exp-list">
+                            <li>文山特殊教育學校老師共學群</li>
+                            <li>新北貢寮福隆公共托老中心</li>
+                            <li>環球、白金、福興扶輪社</li>
+                            <li>三重婦女協會特聘老師</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-showcase" class="section-padding" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <span class="tag">Video Documentary</span>
+                <h2>影音紀實</h2>
+            </div>
+            <div class="video-spotlight">
+                <div class="video-container">
+                    <video controls poster="sajeev/S__23994377.jpg">
+                        <source src="sajeev/FE14436694F49790EE9133A9B6A5AE9BDD90686F.mp4" type="video/mp4">
+                        您的瀏覽器不支援影片播放。
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <div class="gallery-grid">
+                <img src="sajeev/S__24019050.jpg" alt="Sajeev 活動照片 1" class="gallery-image">
+                <img src="sajeev/S__24019051.jpg" alt="Sajeev 活動照片 2" class="gallery-image">
+                <img src="sajeev/S__24019055.jpg" alt="Sajeev 活動照片 3" class="gallery-image">
+                <img src="sajeev/S__24019059.jpg" alt="Sajeev 活動照片 4" class="gallery-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="ongoing" class="section-padding">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 4rem;">當下正在發生的流動</h2>
             <div class="course-schedule-grid">
                 <div class="schedule-item">
-                    <div class="time">每週一晚間</div>
-                    <div>
-                        <h4>動態靜心練習班</h4>
-                        <p>地點：桑德雅身心靈中心 | 打開身體的流動與能量</p>
+                    <span class="time">週一，週二，週六</span>
+                    <div class="course-info">
+                        <h4>手碟課</h4>
                     </div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">每週四下午</div>
-                    <div>
-                        <h4>空性手碟初級班</h4>
-                        <p>地點：永和社區大學 | 用頻率轉化心境</p>
+                    <span class="time">週三</span>
+                    <div class="course-info">
+                        <h4>非洲鼓課</h4>
                     </div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">每月一次</div>
-                    <div>
-                        <h4>大師靜心之夜</h4>
-                        <p>線上/實體同步 | 深度分享奧修靜心哲學</p>
+                    <span class="time">喬出時間 😄</span>
+                    <div class="course-info">
+                        <h4>塔羅奧修禪卡課</h4>
                     </div>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">每月 1 場</span>
+                    <div class="course-info">
+                        <h4>多元音樂由動入靜課</h4>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">每季 1 場</span>
+                    <div class="course-info">
+                        <h4>動態舞蹈靜心舞會</h4>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <span class="time">主題持續性社群</span>
+                    <div class="course-info">
+                        <h4>愛的能量圈</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 5rem;">
+                <p style="font-size: 1.1rem; color: var(--sajeev-secondary); font-style: italic; margin-bottom: 0.5rem;">#只想繼續傳遞光與愛</p>
+                <p style="font-size: 1.1rem; color: var(--sajeev-secondary); font-style: italic; margin-bottom: 0.5rem;">#共創喜樂後的內在和平</p>
+                <p style="font-size: 1.1rem; color: var(--sajeev-dark); font-weight: 500; margin-bottom: 2rem;">#新年度歡迎邀我帶合適你公司機構單位需求的內在潛力工作坊或課程😆</p>
+                <div class="cta-group" style="margin-top: 2rem;">
+                    <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank" class="btn-glow">我想邀約 Sajeev (企業/機構)</a>
+                    <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank" class="btn-outline" style="margin-left: 1rem;">靈性旅行導引諮詢</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="section-padding">
-        <div class="container text-center">
-            <div class="logo">Prem<span>.Sajeev</span></div>
-            <p style="margin: 2rem 0; color: #64748b;">
-                探索內在的邊界，遇見最真實的自己。<br>
-                © 2026 Prem Sajeev. All Rights Reserved.
-            </p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/sajeev38?locale=zh_TW" target="_blank">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">LINE@</a>
-            </div>
-        </div>
+    <footer class="section-padding" style="border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <p>&copy; 2026 Prem Sajeev Official | Powered by Source31 | <a href="teacher-portal.html" style="color: #64748b; text-decoration: none; font-size: 0.8rem;">老師後台</a></p>
     </footer>
 
-    <script>
-        // Smooth transitions on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
-    </script>
+    <script src="/supabase-config.js"></script>
+    <script src="sajeev.js"></script>
 </body>
 </html>

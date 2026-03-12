@@ -46,10 +46,11 @@ body.sajeev-site {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(10px);
-    background: rgba(240, 249, 255, 0.8);
-    border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+    backdrop-filter: blur(12px);
+    background: rgba(240, 249, 255, 0.9);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 
@@ -153,6 +154,16 @@ body.sajeev-site {
     -webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .hero-text p {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
 
 .hero-text .title {
     color: var(--sajeev-secondary);
@@ -216,28 +227,22 @@ body.sajeev-site {
 
 .elements-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
 
 .element-card {
-    grid-column: span 2;
     background: #fff;
     padding: 2.5rem 1.5rem;
     border-radius: 20px;
-    border: 2px solid rgba(59, 130, 246, 0.2); /* Darkened and thickened */
+    border: 2px solid #3b82f6; /* Solid primary color for visibility */
     transition: 0.4s ease;
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
 }
 
-/* 3-2 layout logic */
-.element-card:nth-child(4) { grid-column: 2 / span 2; }
-.element-card:nth-child(5) { grid-column: 4 / span 2; }
-
 @media (max-width: 1024px) {
-    .elements-grid { grid-template-columns: repeat(2, 1fr); }
-    .element-card, .element-card:nth-child(4), .element-card:nth-child(5) { grid-column: span 1; }
+    .elements-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 }
 
 @media (max-width: 640px) {
@@ -266,7 +271,7 @@ body.sajeev-site {
 .element-card ul li {
     font-size: 0.95rem;
     margin-bottom: 0.85rem;
-    color: #475569; /* Darkened for accessibility */
+    color: #334155; /* Even darker for better contrast */
     position: relative;
     padding-left: 1.25rem;
 }
@@ -388,6 +393,12 @@ body.sajeev-site {
     z-index: 10;
 }
 
+@media (max-width: 480px) {
+    .price-card.spotlight::after {
+        display: none; /* Hide ribbon on very small screens to avoid clutter */
+    }
+}
+
 .experience-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -409,7 +420,7 @@ body.sajeev-site {
     margin-bottom: 2rem;
 }
 
-.exp-cat-header icon {
+.exp-cat-header .icon {
     font-size: 2rem;
 }
 
@@ -525,7 +536,7 @@ body.sajeev-site {
         padding: 0 1rem;
     }
     
-    .hero-btns .btn-glow, .hero-btns .btn-outline {
+.hero-btns .btn-glow, .hero-btns .btn-outline {
         text-align: center;
         width: 100%;
         margin: 0 !important;
@@ -537,6 +548,15 @@ body.sajeev-site {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     padding: 2rem 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
 }
 
 .price-card {
