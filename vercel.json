@@ -1,25 +1,18 @@
 {
   "cleanUrls": true,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
+      "src": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "sajeev.source31.com"
         }
       ],
-      "destination": "/diagnostic-404.html"
+      "dest": "/sajeev-site/$1"
     },
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "sajeev.source31.com"
-        }
-      ],
-      "destination": "/sajeev-site/$1"
+      "handle": "filesystem"
     }
   ]
 }
