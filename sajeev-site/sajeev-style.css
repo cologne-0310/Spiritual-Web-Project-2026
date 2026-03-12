@@ -1,51 +1,258 @@
-/* --- Spiritual Workflow Section --- */
-#workflow {
-    position: relative;
-    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+:root {
+    --sajeev-primary: #3b82f6;
+    --sajeev-secondary: #93c5fd;
+    --sajeev-dark: #1e3a8a;
+    --sajeev-bg: #f0f9ff;
+    --sajeev-text: #1e293b;
+    --sajeev-text-light: #64748b;
+    --sajeev-glass: rgba(240, 249, 255, 0.9);
 }
 
-.workflow-steps {
+/* --- Global Reset & Stability --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+body.sajeev-site {
+    background-color: var(--sajeev-bg);
+    color: var(--sajeev-text);
+    font-family: 'Noto Sans TC', 'Outfit', sans-serif;
+    line-height: 1.6;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding { padding: 4rem 0; }
+}
+
+/* --- Navigation --- */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(12px);
+    background: var(--sajeev-glass);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
-    flex-direction: column;
-    gap: 0;
-    max-width: 800px;
-    margin: 3rem auto 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--sajeev-dark);
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+.logo span { color: var(--sajeev-primary); }
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a:not(.btn-glow) {
+    text-decoration: none;
+    color: var(--sajeev-dark);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover:not(.btn-glow) { color: var(--sajeev-primary); }
+
+@media (max-width: 991px) {
+    .nav-links { display: none; }
+}
+
+/* --- Hero Section --- */
+.hero-personal {
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7rem 2rem 3rem;
+    gap: 4rem;
+}
+
+.hero-text .title {
+    color: var(--sajeev-secondary);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    margin: 0;
+    line-height: 1.1;
+    background: linear-gradient(to bottom, var(--sajeev-dark), var(--sajeev-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-image {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+@media (max-width: 991px) {
+    .hero-personal { grid-template-columns: 1fr; text-align: center; }
+    .hero-text h1 { font-size: 3.5rem; }
+    .hero-image { max-width: 450px; margin: 0 auto; }
+}
+
+/* --- Buttons --- */
+.btn-glow {
+    padding: 0.8rem 2rem;
+    background: var(--sajeev-primary);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-outline {
+    padding: 0.8rem 2rem;
+    border: 1px solid var(--sajeev-primary);
+    border-radius: 50px;
+    color: var(--sajeev-primary);
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-outline:hover { background: rgba(59, 130, 246, 0.05); }
+
+/* --- Five Elements Grid --- */
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.element-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid #e2e8f0;
+    transition: 0.4s;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.element-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--sajeev-primary);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
+}
+
+.element-card.earth h3 { color: #52525b; }
+.element-card.water h3 { color: #2563eb; }
+.element-card.fire h3 { color: #dc2626; }
+.element-card.air h3 { color: #7c3aed; }
+.element-card.love h3 { color: #db2777; }
+
+.element-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+}
+
+.element-card ul li {
+    font-size: 0.95rem;
+    color: var(--sajeev-text-light);
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.element-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--sajeev-primary);
+}
+
+/* --- Workflow Section --- */
+.workflow-steps {
     position: relative;
     padding-left: 20px;
+    margin-top: 2rem;
 }
 
-/* Central flowing line */
 .workflow-steps::before {
     content: '';
     position: absolute;
     left: 45px;
-    top: 40px;
-    bottom: 40px;
+    top: 0;
+    bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, 
-        transparent, 
-        rgba(59, 130, 246, 0.4) 15%, 
-        rgba(147, 197, 253, 0.4) 85%, 
-        transparent
-    );
-    z-index: 0;
+    background: linear-gradient(to bottom, transparent, var(--sajeev-secondary), transparent);
 }
 
 .workflow-step {
     display: flex;
-    align-items: flex-start;
-    gap: 3rem;
+    gap: 2.5rem;
     padding: 2rem 0;
-    position: relative;
-    z-index: 1;
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateX(-20px);
+    transition: 0.6s ease-out;
 }
 
 .workflow-step.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .step-num {
@@ -59,66 +266,76 @@
     justify-content: center;
     font-weight: 700;
     color: var(--sajeev-primary);
+    z-index: 2;
     flex-shrink: 0;
     position: relative;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
-    font-family: 'Outfit', sans-serif;
-    transition: 0.4s ease;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
 }
 
-/* Spiritual glow effect */
 .step-num::after {
     content: '';
     position: absolute;
     inset: -6px;
     border: 1px dashed var(--sajeev-secondary);
     border-radius: 50%;
-    animation: rotateSlow 10s linear infinite;
-    opacity: 0.6;
+    animation: rotate 10s linear infinite;
+    opacity: 0.5;
 }
 
-@keyframes rotateSlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* --- Services (Price Cards) --- */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-.workflow-step:hover .step-num {
-    background: var(--sajeev-primary);
-    color: #fff;
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+.price-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    transition: 0.4s;
+    text-align: center;
 }
 
-.workflow-step h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.4rem;
-    color: var(--sajeev-dark);
-    font-weight: 600;
+.price-card:hover { border-color: var(--sajeev-primary); transform: translateY(-5px); }
+.price-card.spotlight { background: #f0f7ff; border-color: var(--sajeev-primary); }
+
+/* --- Gallery & Video --- */
+.video-container {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.workflow-step p {
-    margin: 0;
-    color: #64748b;
-    line-height: 1.7;
-    font-size: 1.05rem;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
-@media (max-width: 768px) {
-    .workflow-steps {
-        padding-left: 0;
-    }
-    .workflow-steps::before {
-        left: 24px;
-    }
-    .workflow-step {
-        gap: 1.5rem;
-    }
-    .step-num {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
-    }
-    .workflow-step h4 {
-        font-size: 1.2rem;
-    }
+.gallery-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* --- Utility Animations --- */
+.animate-up { opacity: 0; transform: translateY(30px); animation: up 0.8s forwards; }
+@keyframes up { to { opacity: 1; transform: translateY(0); } }
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+/* --- Mobile Specific Fixes --- */
+@media (max-width: 640px) {
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-btns { flex-direction: column; gap: 1rem; }
+    .workflow-step { gap: 1rem; }
+    .workflow-steps::before { left: 20px; }
+    .step-num { width: 40px; height: 40px; }
+    .grid-2 { display: flex; flex-direction: column; gap: 2rem; }
 }
