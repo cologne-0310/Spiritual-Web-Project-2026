@@ -1,14 +1,14 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "sajeev.source31.com"
         }
       ],
-      "destination": "/sajeev-site/$1"
+      "destination": "/sajeev-site/:path*"
     }
   ]
 }
