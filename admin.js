@@ -76,7 +76,10 @@ function renderOrdersTable(orders) {
                 </td>
                 <td><div style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${itemsSummary}">${itemsSummary}</div></td>
                 <td style="font-weight: 600;">NT$ ${Number(order.total_amount).toLocaleString()}</td>
-                <td><span class="status-badge" style="background: #f1f5f9; color: #475569;">${order.referral_id || '直接'}</span></td>
+                <td>
+                    <div class="status-badge" style="background: #f1f5f9; color: #475569;">${order.referral_id || '直接'}</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8; margin-top: 4px;">${order.source_domain || 'source31.com'}</div>
+                </td>
                 <td><span class="status-badge status-${order.status || 'pending'}">${translateStatus(order.status)}</span></td>
             </tr>
         `;

@@ -128,6 +128,7 @@
                     items: cart,
                     total_amount: total,
                     referral_id: referralId || null,
+                    source_domain: window.location.hostname, // Track which site the order came from
                     status: 'pending'
                 };
 

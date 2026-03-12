@@ -13,8 +13,11 @@ function detectTeacherReferral() {
     const urlParams = new URLSearchParams(window.location.search);
     const ref = urlParams.get('ref');
     if (ref) {
-        // Shared storage with source31 if using same domain or manual sync
         localStorage.setItem('yuan_point_ref', ref);
         console.log('Teacher Referral detected:', ref);
+    } else if (!localStorage.getItem('yuan_point_ref')) {
+        // Default to Sajeev himself if visiting his official partner site
+        localStorage.setItem('yuan_point_ref', 'SAJEEV');
+        console.log('Defaulting to Sajeev referral');
     }
 }
