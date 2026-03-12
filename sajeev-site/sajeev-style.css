@@ -510,6 +510,26 @@ body.sajeev-site {
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
 }
 
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+@media (max-width: 640px) {
+    .hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-btns .btn-glow, .hero-btns .btn-outline {
+        text-align: center;
+        width: 100%;
+    }
+}
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -523,14 +543,19 @@ body.sajeev-site {
     background: #fff;
     padding: 2.5rem;
     border-radius: 20px;
-    border: 2px solid rgba(59, 130, 246, 0.2); /* Darkened and thickened */
+    border: 3px solid rgba(59, 130, 246, 0.4); /* Thicker and much darker */
     position: relative;
     overflow: hidden;
-    transition: 0.3s;
-    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.15); /* Stronger shadow */
 }
 
-.price-card:hover { transform: translateY(-10px); background: #f8fafc; }
+.price-card:hover { 
+    transform: translateY(-12px); 
+    background: #fff; 
+    border-color: var(--sajeev-primary);
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+}
 
 .video-spotlight {
     max-width: 1000px;
