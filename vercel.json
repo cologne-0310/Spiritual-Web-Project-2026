@@ -5,14 +5,14 @@
       "destination": "/sajeev-site/index.html"
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "sajeev.source31.com"
         }
       ],
-      "destination": "/sajeev-site/:path*"
+      "destination": "/sajeev-site/$1"
     }
   ]
 }
