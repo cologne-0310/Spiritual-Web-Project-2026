@@ -2,6 +2,16 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "sajeev.source31.com"
+        }
+      ],
+      "destination": "/diagnostic-404.html"
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
