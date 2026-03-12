@@ -1,8 +1,24 @@
 {
   "rewrites": [
     {
-      "source": "/test-rewrite",
+      "source": "/test-sajeev-host",
+      "has": [
+        {
+          "type": "host",
+          "value": "sajeev.source31.com"
+        }
+      ],
       "destination": "/sajeev-site/index.html"
+    },
+    {
+      "source": "/test-main-host",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.source31.com"
+        }
+      ],
+      "destination": "/index.html"
     },
     {
       "source": "/(.*)",
