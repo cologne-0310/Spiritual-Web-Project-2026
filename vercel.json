@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/test-rewrite",
+      "destination": "/sajeev-site/index.html"
+    },
+    {
       "source": "/:path*",
       "has": [
         {
