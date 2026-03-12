@@ -2,6 +2,10 @@
   "cleanUrls": true,
   "routes": [
     {
+      "src": "^/(assets/.*|style\\.css|supabase-config\\.js)$",
+      "dest": "/$1"
+    },
+    {
       "src": "/(.*)",
       "has": [
         {
