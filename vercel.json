@@ -16,6 +16,16 @@
       "dest": "/sajeev-site/$1"
     },
     {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "crm.source31.com"
+        }
+      ],
+      "dest": "/crm-site/$1"
+    },
+    {
       "handle": "filesystem"
     }
   ]

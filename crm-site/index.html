@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI CRM 身心靈生態管理系統 (晨曦柔和美學版)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: 引入優雅溫潤的 Outfit 與 Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    colors: {
+                        wellness: {
+                            bg: '#FAF8F5',       // 溫潤莫蘭迪米杏底色
+                            card: '#FFFFFF',     // 純淨白
+                            border: '#EAE4DC',   // 柔和邊框
+                            textMain: '#3E3832', // 沉穩深褐文字
+                            textSub: '#7E766C',  // 溫柔次要文字
+                            accent: '#D4928E',   // 晨曦玫瑰粉
+                            lavender: '#B59CD4', // 薰衣草紫
+                            mint: '#76BFA6',     // 舒心薄荷綠
+                            sun: '#E6B875',      // 溫暖晨光黃
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 16s linear infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Outfit', 'Noto Sans TC', sans-serif; background-color: #FAF8F5; }
+        /* 溫潤柔和玻璃質感 (Warm Muted Glassmorphism) */
+        .glass-warm { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px); 
+            border: 1px solid rgba(234, 228, 220, 0.8); 
+        }
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border: 1px solid rgba(234, 228, 220, 0.9); 
+        }
+        .glass-modal { 
+            background: rgba(250, 248, 245, 0.95); 
+            backdrop-filter: blur(28px); 
+            -webkit-backdrop-filter: blur(28px); 
+            border: 1px solid rgba(212, 146, 142, 0.3); 
+        }
+        /* 柔和卷軸 */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #FAF8F5; }
+        ::-webkit-scrollbar-thumb { background: #D4928E; border-radius: 3px; opacity: 0.5; }
+        ::-webkit-scrollbar-thumb:hover { background: #B59CD4; }
+    </style>
+</head>
+<body class="text-wellness-textMain flex flex-col min-h-screen relative overflow-x-hidden selection:bg-wellness-accent/20">
+
+    <!-- 晨曦舒心光暈背景 (Calm Sunrise Ambient Gradients) -->
+    <div class="absolute top-[-10%] left-[10%] w-[600px] h-[600px] rounded-full bg-[#E8C5C8]/30 blur-[140px] pointer-events-none z-0"></div>
+    <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#D5C6E0]/35 blur-[120px] pointer-events-none z-0"></div>
+    <div class="absolute bottom-[-5%] left-[25%] w-[700px] h-[700px] rounded-full bg-[#C9E0D5]/30 blur-[150px] pointer-events-none z-0"></div>
+
+    <!-- 頂部系統導覽與雙前台切換列 -->
+    <header class="glass-warm sticky top-0 z-50 px-8 py-4 flex items-center justify-between shadow-sm shadow-wellness-border/50">
+        <div class="flex items-center space-x-3.5">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender flex items-center justify-center shadow-md shadow-wellness-accent/20 animate-float">
+                <i data-lucide="flower" class="w-6 h-6 text-white animate-spin-slow"></i>
+            </div>
+            <div>
+                <div class="flex items-center space-x-2">
+                    <h1 id="sysTitle" class="text-xl font-bold tracking-tight text-wellness-textMain font-['Outfit']">
+                        AI CRM 身心靈生態中台
+                    </h1>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20">雲端 SaaS 中台</span>
+                </div>
+                <p id="sysSubTitle" class="text-xs text-wellness-textSub mt-0.5 font-medium">前台一：B端私有客戶與動態標籤管理台</p>
+            </div>
+        </div>
+
+        <!-- 商業營運視角與角色切換 -->
+        <div class="flex items-center space-x-4 z-10">
+            <div class="flex items-center space-x-2 bg-wellness-bg/90 border border-wellness-border rounded-2xl p-1.5 shadow-inner">
+                <span class="text-xs text-wellness-textSub px-2 font-medium flex items-center space-x-1">
+                    <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                    <span>營運視角切換：</span>
+                </span>
+                <select id="tenantSelect" onchange="switchSystemMode(this.value)" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-3 py-1.5 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm">
+                    <optgroup label="前台一：健康據點與健管師專用 (SaaS)">
+                        <option value="B1">B1端：松山社區照護據點 (管理員)</option>
+                        <option value="B2">B2端：林智健 - 獨立健康管理師</option>
+                        <option value="B3">B3端：源點身心靈工作坊</option>
+                    </optgroup>
+                    <optgroup label="前台二：大平台生態串接中台 (Platform)">
+                        <option value="PLATFORM">身心靈生態媒合管理中台 (超級管理員)</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="h-8 w-px bg-wellness-border"></div>
+            <div class="flex items-center space-x-2">
+                <span class="inline-flex relative h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-wellness-mint opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-wellness-mint"></span>
+                </span>
+                <span class="text-xs font-semibold text-wellness-mint">系統隔離運作中</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main class="flex-1 p-8 max-w-7xl w-full mx-auto grid grid-cols-12 gap-8 relative z-10">
+
+        <!-- 左側：動態功能導覽列 -->
+        <aside class="col-span-12 md:col-span-3 flex flex-col space-y-6">
+            <!-- 租戶狀態卡片：溫潤明亮的磨砂卡片 -->
+            <div class="glass-card rounded-[2rem] p-6 border border-wellness-border shadow-xl shadow-wellness-border/30 flex flex-col space-y-4 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-wellness-accent/10 to-transparent rounded-full blur-2xl group-hover:scale-110 transition-all"></div>
+                <div class="flex items-center justify-between relative z-10">
+                    <span id="tenantTypeLabel" class="text-xs font-semibold text-wellness-textSub uppercase tracking-wider">獨立營運資料庫</span>
+                    <span id="tenantBadge" class="px-3 py-1 rounded-full text-xs font-bold bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20 shadow-sm">B1 據點</span>
+                </div>
+                <h2 id="tenantTitle" class="text-xl font-bold text-wellness-textMain relative z-10 tracking-wide">松山社區照護據點</h2>
+                <div class="grid grid-cols-2 gap-3 pt-3 border-t border-wellness-border relative z-10">
+                    <div class="bg-wellness-bg rounded-2xl p-3.5 border border-wellness-border/60 flex flex-col">
+                        <span id="statLabel1" class="text-xs text-wellness-textSub font-medium flex items-center space-x-1">
+                            <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                            <span>私有客戶池</span>
+                        </span>
+                        <span id="clientCount" class="text-2xl font-extrabold text-wellness-textMain mt-1">128</span>
+                    </div>
+                    <div class="bg-wellness-bg rounded-2xl p-3.5 border border-wellness-border/60 flex flex-col">
+                        <span id="statLabel2" class="text-xs text-wellness-textSub font-medium flex items-center space-x-1">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-wellness-accent"></i>
+                            <span>本月轉介數</span>
+                        </span>
+                        <span id="referralCount" class="text-2xl font-extrabold text-wellness-accent mt-1">14</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 前台一選單：健康據點與健管師專用 -->
+            <div id="menuSaaS" class="glass-card rounded-[2rem] p-3 border border-wellness-border flex flex-col space-y-1 shadow-xl shadow-wellness-border/20">
+                <div class="px-4 py-3 text-[10px] font-bold text-wellness-accent uppercase tracking-widest flex items-center space-x-1.5">
+                    <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+                    <span>前台一：私有 SaaS 模組</span>
+                </div>
+                <button onclick="switchTab('crm')" id="tab-crm" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-accent via-[#DB9DB8] to-wellness-lavender text-white shadow-md shadow-wellness-accent/20 font-semibold">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
+                        <span>B 端客戶標籤管理台</span>
+                    </div>
+                    <span class="text-xs bg-white text-wellness-accent px-2.5 py-0.5 rounded-full font-bold shadow-sm">SaaS</span>
+                </button>
+                <button onclick="switchTab('nlp')" id="tab-nlp" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm text-wellness-textSub hover:bg-wellness-bg hover:text-wellness-textMain">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="message-circle-heart" class="w-5 h-5 text-wellness-lavender"></i>
+                        <span>LINE OA 對話意圖解析</span>
+                    </div>
+                    <span class="text-xs bg-wellness-lavender/10 text-wellness-lavender border border-wellness-lavender/20 px-2.5 py-0.5 rounded-full font-semibold">NLP</span>
+                </button>
+            </div>
+
+            <!-- 前台二選單：大平台生態串接中台 -->
+            <div id="menuPlatform" class="glass-card rounded-[2rem] p-3 border border-wellness-border hidden flex-col space-y-1 shadow-xl shadow-wellness-border/20">
+                <div class="px-4 py-3 text-[10px] font-bold text-wellness-sun uppercase tracking-widest flex items-center space-x-1.5">
+                    <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+                    <span>前台二：大平台串接模組</span>
+                </div>
+                <button onclick="switchTab('matching')" id="tab-matching" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-sun via-[#E3A39A] to-wellness-accent text-white shadow-md shadow-wellness-sun/20 font-semibold">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="network" class="w-5 h-5 text-white"></i>
+                        <span>跨 B 端生態轉介中台</span>
+                    </div>
+                    <span class="text-xs bg-white text-wellness-sun font-extrabold px-2.5 py-0.5 rounded-full shadow-sm">中轉</span>
+                </button>
+                <button onclick="switchTab('incentive')" id="tab-incentive" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm text-wellness-textSub hover:bg-wellness-bg hover:text-wellness-textMain">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="award" class="w-5 h-5 text-wellness-mint"></i>
+                        <span>專業轉介與激勵模組</span>
+                    </div>
+                    <span class="text-xs bg-wellness-mint/10 text-wellness-mint border border-wellness-mint/20 px-2.5 py-0.5 rounded-full font-semibold">合約</span>
+                </button>
+                <button onclick="switchTab('analytics')" id="tab-analytics" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm text-wellness-textSub hover:bg-wellness-bg hover:text-wellness-textMain">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-wellness-lavender"></i>
+                        <span>營運與 ESG 數據看板</span>
+                    </div>
+                    <span class="text-xs bg-wellness-lavender/10 text-wellness-lavender border border-wellness-lavender/20 px-2.5 py-0.5 rounded-full font-semibold">BI</span>
+                </button>
+            </div>
+
+            <!-- 系統商業運營說明框 -->
+            <div class="bg-gradient-to-br from-wellness-accent/10 via-wellness-card to-wellness-lavender/10 border border-wellness-border rounded-3xl p-5 shadow-md flex flex-col space-y-2">
+                <div class="flex items-center space-x-2 text-wellness-textMain font-bold text-xs">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-wellness-accent"></i>
+                    <span>多視角安全隔離說明</span>
+                </div>
+                <p class="text-xs text-wellness-textSub leading-relaxed font-medium">
+                    本系統具備嚴謹之多租戶資料庫隔離；各社區據點享有獨立客戶資產，大平台僅作去識別化需求匹配與生態轉介。
+                </p>
+            </div>
+        </aside>
+
+        <!-- 右側：主要視圖切換區 -->
+        <section class="col-span-12 md:col-span-9 flex flex-col">
+
+            <!-- 視圖一：B 端客戶標籤管理台 (前台一) -->
+            <div id="view-crm" class="flex flex-col space-y-8">
+                <!-- 頂部篩選列 -->
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 glass-card p-6 rounded-3xl border border-wellness-border shadow-xl shadow-wellness-border/30">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3.5 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender text-white shadow-md shadow-wellness-accent/20">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-wellness-textMain tracking-wide">私有客戶標籤篩選器 <span class="text-xs font-normal text-wellness-textSub">(SaaS 獨立資產)</span></h3>
+                            <p class="text-xs text-wellness-textSub mt-0.5 font-medium">快速洞察長者潛在需求，支援身體與心靈三色燈號獨立監控</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                        <button onclick="filterTag('all')" class="px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-wellness-accent to-wellness-lavender text-white shadow-md shadow-wellness-accent/20 transition-all">全部客戶</button>
+                        <button onclick="filterTag('失眠困擾')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-wellness-bg text-wellness-textSub hover:bg-wellness-border/50 border border-wellness-border transition-all">失眠困擾</button>
+                        <button onclick="filterTag('孤獨感')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-wellness-bg text-wellness-textSub hover:bg-wellness-border/50 border border-wellness-border transition-all">孤獨感</button>
+                        <button onclick="filterTag('關節痛')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-wellness-bg text-wellness-textSub hover:bg-wellness-border/50 border border-wellness-border transition-all">關節痛</button>
+                    </div>
+                </div>
+
+                <div id="clientGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 客戶卡片透過 JS 動態產生 (包含身體與心靈三種燈號) -->
+                </div>
+            </div>
+
+            <!-- 視圖二：LINE OA 對話意圖解析模擬器 (前台一) -->
+            <div id="view-nlp" class="hidden flex flex-col space-y-6">
+                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-8 flex flex-col md:flex-row gap-8 shadow-xl shadow-wellness-border/30">
+                    <!-- 左側手機殼模擬器 -->
+                    <div class="w-full md:w-80 border-[10px] border-[#3E3832] bg-[#FAF8F5] rounded-[3rem] flex flex-col h-[540px] shadow-2xl relative overflow-hidden">
+                        <div class="bg-[#FFFFFF] px-6 py-4 border-b border-wellness-border flex items-center justify-between">
+                            <span class="text-xs font-bold text-wellness-textMain flex items-center space-x-1.5">
+                                <i data-lucide="message-circle" class="w-4 h-4 text-wellness-mint"></i>
+                                <span>LINE OA 康養小秘書</span>
+                            </span>
+                            <span class="text-xs text-wellness-textSub">10:45 AM</span>
+                        </div>
+                        <div id="chatHistory" class="flex-1 p-4 space-y-4 overflow-y-auto text-sm bg-wellness-bg">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-wellness-accent to-wellness-lavender flex items-center justify-center text-xs font-bold text-white shadow">AI</div>
+                                <div class="bg-white text-wellness-textMain p-3.5 rounded-2xl rounded-tl-none max-w-[80%] text-xs leading-relaxed shadow-sm border border-wellness-border">
+                                    王大伯您好！今天身體感覺怎麼樣？社區下午有音樂頌缽沙龍，要過來坐坐嗎？
+                                </div>
+                            </div>
+                            <div class="flex items-start justify-end space-x-2">
+                                <div class="bg-gradient-to-r from-wellness-accent via-[#DC91B6] to-wellness-lavender text-white p-3.5 rounded-2xl rounded-tr-none max-w-[80%] text-xs leading-relaxed shadow-md font-medium">
+                                    唉，最近晚上都睡不著，翻來覆去一直想東想西。白天頭很暈，而且膝蓋痠痛得要命，實在不想出門啦。
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-wellness-textSub flex items-center justify-center text-xs font-bold text-white shadow">王</div>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-white border-t border-wellness-border flex items-center space-x-2">
+                            <input id="lineInput" type="text" value="最近血壓偏高，心情好煩躁，想找人聊聊" class="flex-1 bg-wellness-bg border border-wellness-border rounded-xl px-3 py-2.5 text-xs text-wellness-textMain focus:outline-none focus:border-wellness-accent">
+                            <button onclick="sendLineMessage()" class="p-2.5 bg-wellness-mint hover:opacity-90 rounded-xl text-white font-bold transition-all shadow-md shadow-wellness-mint/20">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側 NLP 分析資訊 -->
+                    <div class="flex-1 flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center space-x-3 pb-5 border-b border-wellness-border">
+                                <div class="p-3 rounded-2xl bg-wellness-lavender/10 text-wellness-lavender border border-wellness-lavender/20 shadow-md">
+                                    <i data-lucide="brain" class="w-7 h-7"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-wellness-textMain tracking-wide font-['Outfit']">NLP 語意解析與動態標籤引擎</h3>
+                                    <p class="text-xs text-wellness-textSub mt-1 font-medium">將非結構化對話即時轉化為結構化客戶需求標籤</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 space-y-4">
+                                <div class="bg-wellness-bg rounded-2xl p-5 border border-wellness-border flex flex-col space-y-3 shadow-sm">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs font-semibold text-wellness-textSub uppercase tracking-wider flex items-center space-x-1">
+                                            <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+                                            <span>最新語意提取源</span>
+                                        </span>
+                                        <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-white text-wellness-textSub border border-wellness-border shadow-sm">來源：王大伯 (C端)</span>
+                                    </div>
+                                    <div id="nlpSourceText" class="p-4 bg-white rounded-xl text-xs text-wellness-textMain italic font-medium leading-relaxed border border-wellness-border shadow-sm">
+                                        "唉，最近晚上都睡不著，翻來覆去一直想東想西。白天頭很暈，而且膝蓋痠痛得要命..."
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div class="bg-white rounded-2xl p-4 border border-wellness-border flex flex-col items-center text-center justify-center space-y-2 shadow-sm">
+                                        <span class="text-[10px] font-bold text-[#D96B64] uppercase tracking-widest bg-[#D96B64]/10 px-2.5 py-0.5 rounded-full border border-[#D96B64]/20">意圖警示</span>
+                                        <span id="nlpIntention" class="text-sm font-extrabold text-wellness-textMain">重度失眠困擾</span>
+                                    </div>
+                                    <div class="bg-white rounded-2xl p-4 border border-wellness-border flex flex-col items-center text-center justify-center space-y-2 shadow-sm">
+                                        <span class="text-[10px] font-bold text-wellness-sun uppercase tracking-widest bg-wellness-sun/10 px-2.5 py-0.5 rounded-full border border-wellness-sun/20">情緒壓力</span>
+                                        <span id="nlpStress" class="text-sm font-extrabold text-wellness-textMain">焦慮 / 孤獨感</span>
+                                    </div>
+                                    <div class="bg-white rounded-2xl p-4 border border-wellness-border flex flex-col items-center text-center justify-center space-y-2 shadow-sm">
+                                        <span class="text-[10px] font-bold text-wellness-mint uppercase tracking-widest bg-wellness-mint/10 px-2.5 py-0.5 rounded-full border border-wellness-mint/20">生理需求</span>
+                                        <span id="nlpPhysical" class="text-sm font-extrabold text-wellness-textMain">關節勞損</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-gradient-to-r from-wellness-accent/10 via-wellness-lavender/10 to-wellness-mint/10 rounded-2xl border border-wellness-border flex flex-col space-y-4 shadow-md">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-base font-bold text-wellness-textMain tracking-wide">AI 引流處方建議</h4>
+                                    <p class="text-xs text-wellness-textSub mt-0.5 font-medium">已自動歸戶至 B1 據點客戶庫，建議啟動關懷引流</p>
+                                </div>
+                                <button onclick="saveNlpTags()" class="px-5 py-3 bg-gradient-to-r from-wellness-accent to-wellness-lavender font-bold text-xs rounded-xl text-white shadow-md shadow-wellness-accent/20 flex items-center space-x-2 hover:scale-105 transition-all">
+                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                    <span>儲存標籤並分發引流</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 視圖三：跨 B 端生態轉介中台 (前台二) -->
+            <div id="view-matching" class="hidden flex flex-col space-y-6">
+                <div class="glass-card rounded-3xl border border-wellness-border p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-wellness-sun/10 via-wellness-card to-wellness-accent/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-[20%] w-64 h-64 bg-wellness-sun/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex items-center space-x-5 relative z-10">
+                        <div class="p-4 rounded-2xl bg-gradient-to-tr from-wellness-sun to-wellness-accent text-white shadow-md shadow-wellness-sun/20">
+                            <i data-lucide="network" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-wellness-textMain tracking-tight font-['Outfit']">大平台生態圈：跨 B 端專業轉介中台</h3>
+                            <p class="text-xs text-wellness-textSub mt-1 font-medium">去識別化需求中轉，媒合全台北社區據點、專業健管師與合作診所</p>
+                        </div>
+                    </div>
+                    <button onclick="requestReferral()" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-wellness-sun via-[#E3A39A] to-wellness-accent hover:opacity-90 text-white font-bold text-xs flex items-center space-x-2 shadow-md shadow-wellness-sun/30 transition-all z-10">
+                        <i data-lucide="user-plus" class="w-4 h-4"></i>
+                        <span>提出跨據點轉介申請</span>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border flex flex-col space-y-4 shadow-md hover:border-wellness-sun transition-all duration-300">
+                        <div class="flex items-center justify-between border-b border-wellness-border pb-4">
+                            <span class="text-xs font-bold text-wellness-textMain">轉診請求 #TR-882</span>
+                            <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold bg-wellness-sun/10 text-wellness-sun border border-wellness-sun/20 shadow-sm">待媒合承接</span>
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <div class="text-xs text-wellness-textSub">轉出方：<span class="text-wellness-textMain font-semibold">松山照護據點 (B1)</span></div>
+                            <div class="text-xs text-wellness-textSub">需求標籤：<span class="text-wellness-accent font-bold">[深度失眠] [音頻療癒]</span></div>
+                            <div class="p-3.5 bg-wellness-bg rounded-xl text-xs text-wellness-textSub mt-3 font-medium leading-relaxed border border-wellness-border shadow-inner">
+                                "個案長期失眠，據點缺乏專業音頻設備，申請轉介專業工作坊。"
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-wellness-border flex items-center justify-between">
+                            <span class="text-xs text-wellness-mint font-bold flex items-center space-x-1">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                                <span>匹配度 98%</span>
+                            </span>
+                            <button onclick="acceptReferral('TR-882', '源點身心靈工作坊 (B3)')" class="px-4 py-2 bg-gradient-to-r from-wellness-accent to-wellness-lavender hover:opacity-90 text-white rounded-xl font-bold text-xs shadow-md shadow-wellness-accent/20 transition-all">
+                                承接轉介
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border flex flex-col space-y-4 shadow-md hover:border-wellness-lavender transition-all duration-300">
+                        <div class="flex items-center justify-between border-b border-wellness-border pb-4">
+                            <span class="text-xs font-bold text-wellness-textMain">轉診請求 #TR-885</span>
+                            <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold bg-wellness-lavender/10 text-wellness-lavender border border-wellness-lavender/20 shadow-sm">合作診所承接</span>
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <div class="text-xs text-wellness-textSub">轉出方：<span class="text-wellness-textMain font-semibold">林智健健管師 (B2)</span></div>
+                            <div class="text-xs text-wellness-textSub">需求標籤：<span class="text-[#D96B64] font-bold">[微循環異常警示]</span></div>
+                            <div class="p-3.5 bg-wellness-bg rounded-xl text-xs text-wellness-textSub mt-3 font-medium leading-relaxed border border-wellness-border shadow-inner">
+                                "日常檢測指標波動大，建議至基層醫療診所進行心電圖與醫學檢查。"
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-wellness-border flex items-center justify-between">
+                            <span class="text-xs text-wellness-lavender font-bold flex items-center space-x-1">
+                                <i data-lucide="stethoscope" class="w-3.5 h-3.5"></i>
+                                <span>家醫科診所對接</span>
+                            </span>
+                            <button disabled class="px-4 py-2 bg-wellness-bg text-wellness-textSub/50 rounded-xl font-bold text-xs cursor-not-allowed border border-wellness-border">
+                                轉介成功
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border flex flex-col space-y-4 shadow-md hover:border-wellness-mint transition-all duration-300">
+                        <div class="flex items-center justify-between border-b border-wellness-border pb-4">
+                            <span class="text-xs font-bold text-wellness-textMain">轉診請求 #TR-889</span>
+                            <span class="px-2.5 py-0.5 rounded text-[10px] font-extrabold bg-wellness-mint/10 text-wellness-mint border border-wellness-mint/20 shadow-sm">待媒合承接</span>
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <div class="text-xs text-wellness-textSub">轉出方：<span class="text-wellness-textMain font-semibold">信義康養中心 (B1)</span></div>
+                            <div class="text-xs text-wellness-textSub">需求標籤：<span class="text-wellness-mint font-bold">[社交處方] [太極拳]</span></div>
+                            <div class="p-3.5 bg-wellness-bg rounded-xl text-xs text-wellness-textSub mt-3 font-medium leading-relaxed border border-wellness-border shadow-inner">
+                                "長者希望參與晨間運動與社交活動，申請轉介具備戶外活動之據點。"
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-wellness-border flex items-center justify-between">
+                            <span class="text-xs text-wellness-mint font-bold flex items-center space-x-1">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                                <span>匹配度 95%</span>
+                            </span>
+                            <button onclick="acceptReferral('TR-889', '松山照護據點 (B1)')" class="px-4 py-2 bg-gradient-to-r from-wellness-accent to-wellness-lavender hover:opacity-90 text-white rounded-xl font-bold text-xs shadow-md shadow-wellness-accent/20 transition-all">
+                                承接轉介
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 視圖四：專業轉介與生態貢獻激勵模組 (前台二) -->
+            <div id="view-incentive" class="hidden flex flex-col space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-wellness-mint/10 rounded-full blur-xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between relative z-10">
+                            <span class="text-xs font-bold text-wellness-textSub uppercase tracking-wider">大平台總轉介流通數</span>
+                            <i data-lucide="refresh-cw" class="w-5 h-5 text-wellness-mint"></i>
+                        </div>
+                        <div class="mt-6 flex items-baseline space-x-2 relative z-10">
+                            <span class="text-4xl font-extrabold text-wellness-textMain font-['Outfit']">1,428</span>
+                            <span class="text-xs text-wellness-mint font-bold">+12.5% 本月</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-wellness-accent/10 rounded-full blur-xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between relative z-10">
+                            <span class="text-xs font-bold text-wellness-textSub uppercase tracking-wider">結算生態貢獻點數 (健康幣)</span>
+                            <i data-lucide="award" class="w-5 h-5 text-wellness-accent"></i>
+                        </div>
+                        <div class="mt-6 flex items-baseline space-x-2 relative z-10">
+                            <span class="text-4xl font-extrabold text-wellness-accent font-['Outfit']">88,500</span>
+                            <span class="text-xs text-wellness-textSub font-bold">已結算池</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex flex-col justify-between relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-wellness-sun/10 rounded-full blur-xl pointer-events-none"></div>
+                        <div class="flex items-center justify-between relative z-10">
+                            <span class="text-xs font-bold text-wellness-textSub uppercase tracking-wider">ESG 宣傳減碳貢獻</span>
+                            <i data-lucide="leaf" class="w-5 h-5 text-wellness-mint"></i>
+                        </div>
+                        <div class="mt-6 flex items-baseline space-x-2 relative z-10">
+                            <span class="text-4xl font-extrabold text-wellness-mint font-['Outfit']">425 kg</span>
+                            <span class="text-xs text-wellness-textSub font-medium">節省紙本宣傳</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl border border-wellness-border shadow-md overflow-hidden flex flex-col">
+                    <div class="px-6 py-5 border-b border-wellness-border flex items-center justify-between bg-wellness-bg">
+                        <div>
+                            <h3 class="text-base font-bold text-wellness-textMain tracking-wide font-['Outfit']">專業轉介與生態貢獻結算帳本</h3>
+                            <p class="text-xs text-wellness-textSub mt-0.5">多維度服務價值貢獻自動結算引擎 (生態合約)</p>
+                        </div>
+                        <span class="px-3 py-1 bg-wellness-mint/10 text-wellness-mint border border-wellness-mint/20 text-xs font-bold rounded-xl shadow-sm">自動結算中</span>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm divide-y divide-wellness-border">
+                            <thead class="bg-wellness-bg text-wellness-textSub text-xs uppercase tracking-wider font-semibold">
+                                <tr>
+                                    <th class="px-6 py-4">轉介編號</th>
+                                    <th class="px-6 py-4">轉出方 (需求發掘)</th>
+                                    <th class="px-6 py-4">承接方 (專業服務)</th>
+                                    <th class="px-6 py-4">成效指標 (改善度)</th>
+                                    <th class="px-6 py-4">生態貢獻點數獎勵</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-wellness-border/60 font-medium bg-white">
+                                <tr class="hover:bg-wellness-bg/50 transition-all">
+                                    <td class="px-6 py-4 text-xs font-bold text-wellness-textMain">#TR-882</td>
+                                    <td class="px-6 py-4 text-wellness-textSub">松山照護據點 <span class="text-[10px] bg-wellness-bg px-1.5 py-0.5 rounded text-wellness-textSub border border-wellness-border">B1</span></td>
+                                    <td class="px-6 py-4 text-wellness-textSub">源點身心靈工作坊 <span class="text-[10px] bg-wellness-accent/10 text-wellness-accent px-1.5 py-0.5 rounded border border-wellness-accent/20">B3</span></td>
+                                    <td class="px-6 py-4"><span class="text-xs text-wellness-mint font-bold">睡眠進步 45%</span></td>
+                                    <td class="px-6 py-4 text-wellness-accent font-bold">+1,500 幣 (已發放)</td>
+                                </tr>
+                                <tr class="hover:bg-wellness-bg/50 transition-all">
+                                    <td class="px-6 py-4 text-xs font-bold text-wellness-textMain">#TR-875</td>
+                                    <td class="px-6 py-4 text-wellness-textSub">林智健健管師 <span class="text-[10px] bg-wellness-bg px-1.5 py-0.5 rounded text-wellness-textSub border border-wellness-border">B2</span></td>
+                                    <td class="px-6 py-4 text-wellness-textSub">信義家醫診所 <span class="text-[10px] bg-wellness-lavender/10 text-wellness-lavender px-1.5 py-0.5 rounded border border-wellness-lavender/20">B4</span></td>
+                                    <td class="px-6 py-4"><span class="text-xs text-wellness-lavender font-bold">醫養閉環轉診完成</span></td>
+                                    <td class="px-6 py-4 text-wellness-accent font-bold">+2,000 幣 (已發放)</td>
+                                </tr>
+                                <tr class="hover:bg-wellness-bg/50 transition-all">
+                                    <td class="px-6 py-4 text-xs font-bold text-wellness-textMain">#TR-869</td>
+                                    <td class="px-6 py-4 text-wellness-textSub">松山照護據點 <span class="text-[10px] bg-wellness-bg px-1.5 py-0.5 rounded text-wellness-textSub border border-wellness-border">B1</span></td>
+                                    <td class="px-6 py-4 text-wellness-textSub">林智健健管師 <span class="text-[10px] bg-wellness-bg px-1.5 py-0.5 rounded text-wellness-textSub border border-wellness-border">B2</span></td>
+                                    <td class="px-6 py-4"><span class="text-xs text-wellness-mint font-bold">生活關懷滿意度 5星</span></td>
+                                    <td class="px-6 py-4 text-wellness-accent font-bold">+800 幣 (已發放)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 視圖五：營運與 ESG 數據看板 (前台二) -->
+            <div id="view-analytics" class="hidden flex flex-col space-y-6">
+                <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-wellness-textMain tracking-tight font-['Outfit']">大平台 BI 商業智慧與 ESG 減碳數據庫</h3>
+                        <p class="text-xs text-wellness-textSub mt-1">追蹤全區域身心靈生態能量流動與淨零永續指標</p>
+                    </div>
+                    <span class="px-3 py-1 bg-wellness-lavender/10 text-wellness-lavender border border-wellness-lavender/20 text-xs font-bold rounded-xl shadow-sm">即時運算中</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex flex-col space-y-4">
+                        <h4 class="text-sm font-bold text-wellness-textMain flex items-center space-x-2">
+                            <i data-lucide="pie-chart" class="w-4 h-4 text-wellness-accent"></i>
+                            <span>跨 B 端轉介專業能量分佈</span>
+                        </h4>
+                        <div class="h-64 flex items-center justify-center relative">
+                            <canvas id="chartReferralEnergy"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex flex-col space-y-4">
+                        <h4 class="text-sm font-bold text-wellness-textMain flex items-center space-x-2">
+                            <i data-lucide="leaf" class="w-4 h-4 text-wellness-mint"></i>
+                            <span>ESG 精準推播減碳貢獻 (kg)</span>
+                        </h4>
+                        <div class="h-64 flex items-center justify-center relative">
+                            <canvas id="chartEsgCarbon"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6 border border-wellness-border shadow-md flex flex-col space-y-4 lg:col-span-2">
+                        <h4 class="text-sm font-bold text-wellness-textMain flex items-center space-x-2">
+                            <i data-lucide="trending-up" class="w-4 h-4 text-wellness-lavender"></i>
+                            <span>各 B 端據點客戶引流與留存成長趨勢</span>
+                        </h4>
+                        <div class="h-72 flex items-center justify-center relative">
+                            <canvas id="chartGrowthTrends"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="border-t border-wellness-border mt-12 py-8 text-center text-xs text-wellness-textSub relative z-10">
+        <p class="font-medium">AI CRM 身心靈生態管理系統 • SaaS 賦能與跨 B 端大平台中台</p>
+    </footer>
+
+    <!-- AI 智能處方與陪伴計畫彈窗 (Smart Modal)：晨曦莫蘭迪磨砂彈窗 -->
+    <div id="smartModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-wellness-textMain/40 backdrop-blur-md p-4">
+        <div class="glass-modal rounded-[2.5rem] p-8 max-w-lg w-full shadow-2xl flex flex-col space-y-6 transform transition-all scale-100 border border-wellness-accent/30 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-48 h-48 bg-wellness-accent/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="flex items-center justify-between border-b border-wellness-border pb-4 relative z-10">
+                <div class="flex items-center space-x-3">
+                    <div class="p-3 bg-wellness-accent/10 text-wellness-accent rounded-2xl border border-wellness-accent/20 shadow-sm">
+                        <i data-lucide="sparkles" class="w-6 h-6 animate-spin-slow"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-wellness-textMain tracking-wide font-['Outfit']">AI 智能轉介處方與陪伴計畫</h3>
+                        <p class="text-xs text-wellness-textSub mt-0.5 font-medium">依據客戶多維度潛在標籤，大平台演算法自動匹配</p>
+                    </div>
+                </div>
+                <button onclick="closeSmartModal()" class="text-wellness-textSub hover:text-wellness-textMain p-1 rounded-xl bg-white hover:bg-wellness-bg border border-wellness-border transition-all">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-col space-y-4 relative z-10">
+                <div class="bg-white rounded-2xl p-4 border border-wellness-border flex items-center justify-between shadow-sm">
+                    <div class="flex items-center space-x-3">
+                        <div id="modalClientAvatar" class="w-11 h-11 bg-gradient-to-tr from-wellness-accent to-wellness-lavender rounded-2xl flex items-center justify-center font-bold text-white shadow-md shadow-wellness-accent/20">
+                            王
+                        </div>
+                        <div>
+                            <h4 id="modalClientName" class="font-bold text-wellness-textMain text-base">王大伯 <span class="text-xs text-wellness-textSub">(72歲)</span></h4>
+                            <div id="modalClientTags" class="flex flex-wrap gap-1 mt-1">
+                                <span class="px-2 py-0.5 bg-[#D96B64]/10 text-[#D96B64] rounded text-[10px] font-semibold border border-[#D96B64]/20">失眠困擾</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-wellness-mint font-extrabold bg-wellness-mint/10 px-3 py-1 rounded-full border border-wellness-mint/20 shadow-sm">匹配度 98%</span>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="p-5 bg-white/80 rounded-2xl border border-wellness-accent/30 flex flex-col space-y-2 shadow-sm">
+                        <span class="text-[10px] font-bold text-wellness-accent uppercase tracking-wider flex items-center space-x-1">
+                            <i data-lucide="target" class="w-3.5 h-3.5"></i>
+                            <span>專業 B 端轉診建議</span>
+                        </span>
+                        <h5 class="text-base font-bold text-wellness-textMain tracking-wide">源點身心靈工作坊 (B3)</h5>
+                        <p class="text-xs text-wellness-textSub leading-relaxed font-medium">
+                            針對深度失眠困擾，大平台自動化媒合專業頌缽與音頻腦波療癒，協助平衡自律神經。
+                        </p>
+                    </div>
+
+                    <div class="p-5 bg-white/80 rounded-2xl border border-wellness-lavender/30 flex flex-col space-y-2 shadow-sm">
+                        <span class="text-[10px] font-bold text-wellness-lavender uppercase tracking-wider flex items-center space-x-1">
+                            <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
+                            <span>時間銀行互助陪伴建議</span>
+                        </span>
+                        <h5 class="text-base font-bold text-wellness-textMain tracking-wide">松山青年志工隊陪伴散步計畫</h5>
+                        <p class="text-xs text-wellness-textSub leading-relaxed font-medium">
+                            針對孤獨感與關節痛，媒合時間銀行青年志工進行每週二次的公園陪伴散步與談心。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-5 border-t border-wellness-border flex items-center justify-end space-x-3 relative z-10">
+                <button onclick="closeSmartModal()" class="px-5 py-2.5 bg-white hover:bg-wellness-bg text-wellness-textSub font-bold text-xs rounded-xl border border-wellness-border transition-all">取消</button>
+                <button onclick="submitSmartReferral()" class="px-6 py-3 bg-gradient-to-r from-wellness-accent via-[#DC91B6] to-wellness-lavender hover:opacity-90 text-white font-bold text-xs rounded-xl shadow-md shadow-wellness-accent/20 transition-all flex items-center space-x-2">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                    <span>一鍵發送大平台媒合轉介</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanilla JS 系統邏輯與圖表渲染 -->
+    <script>
+        lucide.createIcons();
+
+        // 升級假資料庫：身體(Body)與心靈(Mind)三色燈號獨立監控
+        let clientsData = [
+            { id: 'C001', name: '王大伯', age: 72, gender: '男', tags: ['失眠困擾', '關節痛', '孤獨感'], lastActive: '今天 10:45', bodyStatus: 'red', bodyNote: '關節退化', mindStatus: 'red', mindNote: '重度失眠' },
+            { id: 'C002', name: '林阿姨', age: 68, gender: '女', tags: ['孤獨感', '社交偏好', '太極拳'], lastActive: '昨天', bodyStatus: 'green', bodyNote: '體能良好', mindStatus: 'yellow', mindNote: '缺乏社交' },
+            { id: 'C003', name: '張爺爺', age: 78, gender: '男', tags: ['失眠困擾', '血壓警示'], lastActive: '3天前', bodyStatus: 'yellow', bodyNote: '血壓波動', mindStatus: 'green', mindNote: '心境穩定' },
+            { id: 'C004', name: '陳奶奶', age: 75, gender: '女', tags: ['關節痛', '芳療愛好'], lastActive: '剛剛', bodyStatus: 'red', bodyNote: '慢性痠痛', mindStatus: 'green', mindNote: '喜愛芳療' },
+            { id: 'C005', name: '劉伯伯', age: 71, gender: '男', tags: ['孤獨感', '棋藝交流'], lastActive: '5天前', bodyStatus: 'green', bodyNote: '生理健康', mindStatus: 'yellow', mindNote: '孤單感' },
+            { id: 'C006', name: '黃阿婆', age: 82, gender: '女', tags: ['失眠困擾', '生活照護'], lastActive: '今天 08:20', bodyStatus: 'yellow', bodyNote: '行動緩慢', mindStatus: 'red', mindNote: '焦慮失眠' },
+        ];
+
+        let currentFilter = 'all';
+        let chartsInitialized = false;
+
+        function getStatusBadge(type, status, note) {
+            const icon = type === 'body' ? '🫀 身體' : '🧠 心靈';
+            if (status === 'red') {
+                return `<span class="flex items-center space-x-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-[#D96B64]/10 text-[#D96B64] border border-[#D96B64]/20 shadow-sm">
+                            <span class="h-2 w-2 rounded-full bg-[#D96B64] animate-pulse"></span>
+                            <span>${icon}: 🔴 ${note}</span>
+                        </span>`;
+            } else if (status === 'yellow') {
+                return `<span class="flex items-center space-x-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-wellness-sun/10 text-[#D9A354] border border-wellness-sun/20 shadow-sm">
+                            <span class="h-2 w-2 rounded-full bg-wellness-sun animate-pulse"></span>
+                            <span>${icon}: 🟡 ${note}</span>
+                        </span>`;
+            } else {
+                return `<span class="flex items-center space-x-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-wellness-mint/10 text-wellness-mint border border-wellness-mint/20 shadow-sm">
+                            <span class="h-2 w-2 rounded-full bg-wellness-mint"></span>
+                            <span>${icon}: 🟢 ${note}</span>
+                        </span>`;
+            }
+        }
+
+        function renderClientGrid() {
+            const grid = document.getElementById('clientGrid');
+            grid.innerHTML = '';
+
+            const filtered = currentFilter === 'all' 
+                ? clientsData 
+                : clientsData.filter(c => c.tags.includes(currentFilter));
+
+            filtered.forEach(client => {
+                const tagSpanHtml = client.tags.map(t => `<span class="px-3 py-1 bg-wellness-bg border border-wellness-border rounded-xl text-xs font-semibold text-wellness-textSub shadow-sm">${t}</span>`).join('');
+                const bodyBadge = getStatusBadge('body', client.bodyStatus, client.bodyNote);
+                const mindBadge = getStatusBadge('mind', client.mindStatus, client.mindNote);
+
+                grid.innerHTML += `
+                    <div class="glass-card rounded-3xl border border-wellness-border p-6 shadow-md hover:shadow-xl hover:border-wellness-accent/40 hover:scale-[1.02] transition-all duration-300 group relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-wellness-accent/5 rounded-full blur-2xl group-hover:bg-wellness-accent/10 transition-all pointer-events-none"></div>
+                        <div>
+                            <div class="flex items-center justify-between pb-4 border-b border-wellness-border relative z-10">
+                                <div class="flex items-center space-x-3.5">
+                                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-wellness-bg to-wellness-border/50 flex items-center justify-center font-bold text-wellness-textMain group-hover:from-wellness-accent group-hover:to-wellness-lavender group-hover:text-white transition-all shadow-sm border border-wellness-border font-['Outfit'] text-lg">
+                                        ${client.name.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-bold text-wellness-textMain tracking-wide">${client.name} <span class="text-xs text-wellness-textSub font-normal">(${client.age}歲)</span></h4>
+                                        <span class="text-[10px] text-wellness-textSub font-medium">ID: ${client.id} • 互動: ${client.lastActive}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 flex flex-wrap gap-2 relative z-10">
+                                ${bodyBadge}
+                                ${mindBadge}
+                            </div>
+                            <div class="mt-5 flex flex-wrap gap-2 relative z-10">
+                                ${tagSpanHtml}
+                            </div>
+                        </div>
+                        <div class="pt-5 mt-6 border-t border-wellness-border flex flex-col space-y-3 relative z-10">
+                            <button onclick="openSmartModal('${client.name}', '${client.age}', '${client.tags.join(',')}')" class="w-full py-2.5 bg-wellness-bg hover:bg-wellness-border/40 border border-wellness-border rounded-2xl text-wellness-accent text-xs font-bold flex items-center justify-center space-x-2 shadow-sm transition-all">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-wellness-accent animate-spin-slow"></i>
+                                <span>AI 智能處方與轉介建議</span>
+                            </button>
+                            <button onclick="triggerPush('${client.name}')" class="w-full py-2.5 bg-gradient-to-r from-wellness-accent via-[#DC91B6] to-wellness-lavender hover:opacity-90 rounded-2xl text-white text-xs font-bold shadow-md shadow-wellness-accent/20 flex items-center justify-center space-x-2 transition-all font-semibold">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                <span>發送精準療癒引流推播</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            lucide.createIcons();
+        }
+
+        function filterTag(tag) { currentFilter = tag; renderClientGrid(); }
+
+        function switchSystemMode(val) {
+            const title = document.getElementById('sysTitle');
+            const subTitle = document.getElementById('sysSubTitle');
+            const menuSaaS = document.getElementById('menuSaaS');
+            const menuPlatform = document.getElementById('menuPlatform');
+
+            const tenantTitle = document.getElementById('tenantTitle');
+            const tenantBadge = document.getElementById('tenantBadge');
+            const tenantTypeLabel = document.getElementById('tenantTypeLabel');
+            const statLabel1 = document.getElementById('statLabel1');
+            const statLabel2 = document.getElementById('statLabel2');
+            const clientCount = document.getElementById('clientCount');
+            const refCount = document.getElementById('referralCount');
+
+            if(val === 'PLATFORM') {
+                title.innerText = "身心靈生態媒合管理中台";
+                subTitle.innerText = "前台二：跨 B 端轉介中轉池與營運數據庫";
+                menuSaaS.classList.add('hidden'); menuSaaS.classList.remove('flex');
+                menuPlatform.classList.remove('hidden'); menuPlatform.classList.add('flex');
+
+                tenantTypeLabel.innerText = "生態圈全局視角"; tenantBadge.innerText = "中轉中心";
+                tenantTitle.innerText = "台北市跨界轉介中轉池";
+                statLabel1.innerHTML = `<i data-lucide="network" class="w-3.5 h-3.5"></i><span>總轉介流通數</span>`; clientCount.innerText = "1,428";
+                statLabel2.innerHTML = `<i data-lucide="award" class="w-3.5 h-3.5 text-wellness-accent"></i><span>已結算健康幣</span>`; refCount.innerText = "88.5k";
+
+                switchTab('matching');
+            } else {
+                title.innerText = "AI CRM 身心靈生態中台";
+                subTitle.innerText = "前台一：B端私有客戶與動態標籤管理台";
+                menuPlatform.classList.add('hidden'); menuPlatform.classList.remove('flex');
+                menuSaaS.classList.remove('hidden'); menuSaaS.classList.add('flex');
+
+                tenantTypeLabel.innerText = "獨立營運資料庫"; 
+                statLabel1.innerHTML = `<i data-lucide="users" class="w-3.5 h-3.5"></i><span>私有客戶池</span>`; 
+                statLabel2.innerHTML = `<i data-lucide="sparkles" class="w-3.5 h-3.5 text-wellness-accent"></i><span>本月轉介數</span>`;
+
+                if(val === 'B1') {
+                    tenantTitle.innerText = "松山社區照護據點"; tenantBadge.innerText = "B1 據點"; clientCount.innerText = "128"; refCount.innerText = "14";
+                } else if(val === 'B2') {
+                    tenantTitle.innerText = "林智健 - 健康管理師"; tenantBadge.innerText = "B2 健管師"; clientCount.innerText = "45"; refCount.innerText = "8";
+                } else if(val === 'B3') {
+                    tenantTitle.innerText = "源點身心靈工作坊"; tenantBadge.innerText = "B3 工作坊"; clientCount.innerText = "62"; refCount.innerText = "19";
+                }
+
+                switchTab('crm'); renderClientGrid();
+            }
+            lucide.createIcons();
+        }
+
+        function switchTab(tabId) {
+            ['crm', 'nlp', 'matching', 'incentive', 'analytics'].forEach(t => {
+                document.getElementById(`view-${t}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-${t}`);
+                if(btn) btn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm text-wellness-textSub hover:bg-wellness-bg hover:text-wellness-textMain";
+            });
+
+            document.getElementById(`view-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            if(activeBtn) {
+                if(tabId === 'crm' || tabId === 'nlp') {
+                    activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-accent via-[#DB9DB8] to-wellness-lavender text-white shadow-md shadow-wellness-accent/20 font-semibold";
+                } else if(tabId === 'matching') {
+                    activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-sun via-[#E3A39A] to-wellness-accent text-white shadow-md shadow-wellness-sun/20 font-semibold";
+                } else {
+                    activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-textSub/20 to-wellness-textSub/10 text-wellness-textMain border border-wellness-border shadow-sm font-semibold";
+                }
+            }
+
+            if(tabId === 'analytics' && !chartsInitialized) { initCharts(); chartsInitialized = true; }
+        }
+
+        function openSmartModal(name, age, tagsStr) {
+            document.getElementById('modalClientAvatar').innerText = name.charAt(0);
+            document.getElementById('modalClientName').innerHTML = `${name} <span class="text-xs text-wellness-textSub">(${age}歲)</span>`;
+            const tagsArr = tagsStr.split(',');
+            const tagsHtml = tagsArr.map(t => `<span class="px-3 py-1 bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20 rounded-xl text-xs font-bold shadow-sm">${t}</span>`).join('');
+            document.getElementById('modalClientTags').innerHTML = tagsHtml;
+            const modal = document.getElementById('smartModal');
+            modal.classList.remove('hidden'); modal.classList.add('flex');
+        }
+
+        function closeSmartModal() {
+            const modal = document.getElementById('smartModal'); modal.classList.add('hidden'); modal.classList.remove('flex');
+        }
+
+        function submitSmartReferral() {
+            closeSmartModal();
+            alert('🚀 去識別化轉診單已成功發送至大平台中轉池！系統已切換至【前台二：身心靈生態媒合管理】進行媒合承接展示...');
+            document.getElementById('tenantSelect').value = 'PLATFORM'; switchSystemMode('PLATFORM');
+        }
+
+        function sendLineMessage() {
+            const input = document.getElementById('lineInput'); const history = document.getElementById('chatHistory');
+            if(!input.value.trim()) return;
+            history.innerHTML += `
+                <div class="flex items-start justify-end space-x-2">
+                    <div class="bg-gradient-to-r from-wellness-accent via-[#DC91B6] to-wellness-lavender text-white p-3.5 rounded-2xl rounded-tr-none max-w-[80%] text-xs leading-relaxed shadow-md font-medium">${input.value}</div>
+                    <div class="w-8 h-8 rounded-full bg-wellness-textSub flex items-center justify-center text-xs font-bold text-white shadow">王</div>
+                </div>
+            `;
+            document.getElementById('nlpSourceText').innerText = `"${input.value}"`; document.getElementById('nlpIntention').innerText = "血壓異常 / 孤獨關懷";
+            document.getElementById('nlpStress').innerText = "煩躁 / 社交渴望"; document.getElementById('nlpPhysical').innerText = "心血管警示";
+            input.value = ''; history.scrollTop = history.scrollHeight;
+        }
+
+        function saveNlpTags() { alert('🎉 標籤已成功更新至 B1 松山據點私有客戶庫！'); switchTab('crm'); }
+        function triggerPush(name) { alert(`📨 已成功發送專屬療癒推播至 ${name} 的 LINE OA！`); }
+        function requestReferral() { alert('🔄 大平台去識別化中轉引擎啟動中...'); }
+        function acceptReferral(id, bName) { alert(`🤝 媒合成功！${bName} 順利承接 ${id}。智慧合約已發放健康幣！`); switchTab('incentive'); }
+
+        function initCharts() {
+            Chart.defaults.color = '#7E766C'; Chart.defaults.borderColor = 'rgba(234, 228, 220, 0.8)'; Chart.defaults.font.family = "'Outfit', 'Noto Sans TC', sans-serif";
+            const ctx1 = document.getElementById('chartReferralEnergy').getContext('2d');
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: { labels: ['音頻/頌缽療癒', '太極/晨間社交', '芳療/微循環', '基層診所醫學檢測'], datasets: [{ data: [38, 25, 22, 15], backgroundColor: ['#D4928E', '#76BFA6', '#B59CD4', '#E6B875'], borderWidth: 0 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { boxWidth: 12, font: { size: 12, weight: '600' } } } } }
+            });
+            const ctx2 = document.getElementById('chartEsgCarbon').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                data: { labels: ['1月', '2月', '3月', '4月', '5月'], datasets: [{ label: '節省紙本減碳數 (kg)', data: [65, 80, 92, 115, 142], backgroundColor: '#76BFA6', borderRadius: 12 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            });
+            const ctx3 = document.getElementById('chartGrowthTrends').getContext('2d');
+            new Chart(ctx3, {
+                type: 'line',
+                data: { labels: ['一月', '二月', '三月', '四月', '五月'], datasets: [{ label: '松山據點 (B1) 引流人數', data: [45, 62, 85, 102, 128], borderColor: '#D4928E', backgroundColor: 'rgba(212, 146, 142, 0.15)', fill: true, tension: 0.4 }, { label: '源點身心靈工作坊 (B3) 承接人數', data: [20, 31, 44, 52, 62], borderColor: '#76BFA6', tension: 0.4 }] },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        renderClientGrid();
+    </script>
+</body>
+</html>
