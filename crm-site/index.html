@@ -37,15 +37,15 @@
                         },
                         colors: {
                             wellness: {
-                                bg: '#F4F6F9',       // 科技淺灰藍背景
+                                bg: '#FAF9F6',       // 雪花暖白背景
                                 card: '#FFFFFF',     // 卡片白
-                                border: '#E2E8F0',   // 現代 Slate 灰色邊框
-                                textMain: '#0F172A', // SaaS 標準深藍灰
-                                textSub: '#475569',  // SaaS 標準中藍灰
-                                accent: '#2563EB',   // 高級皇家藍 (Royal Blue)
-                                lavender: '#6366F1', // 靛藍色 (Indigo)
-                                mint: '#10B981',     // 翡翠綠 (Emerald)
-                                sun: '#F59E0B',      // 琥珀黃 (Amber)
+                                border: '#EAE5DB',   // 現代暖沙色邊框
+                                textMain: '#4A3E3D', // 暖黑咖啡 (極具心理照護與健康信賴感)
+                                textSub: '#7C6E6D',  // 中咖啡灰
+                                accent: '#C97A75',   // 大地陶土暖紅 (Accent)
+                                lavender: '#9C8BB5', // 柔和莫蘭迪紫
+                                mint: '#60A38D',     // 靜謐森林綠 (健康綠)
+                                sun: '#D99B4E',      // 琥珀暖陽黃 (警告黃)
                             }
                         },
                         animation: {
@@ -71,9 +71,9 @@
 <body class="text-wellness-textMain flex flex-col min-h-screen relative overflow-x-hidden selection:bg-wellness-accent/20">
 
     <!-- 背景柔和漸層光暈 (Calm Sunrise Ambient Gradients) -->
-    <div class="absolute top-[-10%] left-[10%] w-[600px] h-[600px] rounded-full bg-[#3B82F6]/10 blur-[140px] pointer-events-none z-0"></div>
-    <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#6366F1]/12 blur-[120px] pointer-events-none z-0"></div>
-    <div class="absolute bottom-[-5%] left-[25%] w-[700px] h-[700px] rounded-full bg-[#10B981]/8 blur-[150px] pointer-events-none z-0"></div>
+    <div class="absolute top-[-10%] left-[10%] w-[600px] h-[600px] rounded-full bg-[#D99B4E]/5 blur-[140px] pointer-events-none z-0"></div>
+    <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] rounded-full bg-[#C97A75]/6 blur-[120px] pointer-events-none z-0"></div>
+    <div class="absolute bottom-[-5%] left-[25%] w-[700px] h-[700px] rounded-full bg-[#60A38D]/4 blur-[150px] pointer-events-none z-0"></div>
 
     <!-- 頂部 sticky 導覽列 -->
     <header class="glass-warm sticky top-0 z-50 px-8 py-4 flex items-center justify-between shadow-sm shadow-wellness-border/50">
@@ -323,13 +323,13 @@
                         <table class="w-full text-left text-xs border-collapse">
                             <thead>
                                 <tr class="bg-wellness-bg border-b border-wellness-border text-wellness-textSub font-bold">
-                                    <th class="px-4 py-3.5">個案 ID</th>
-                                    <th class="px-4 py-3.5">姓名</th>
-                                    <th class="px-4 py-3.5">身心風險燈號</th>
-                                    <th class="px-4 py-3.5 min-w-[170px]">五核心人生動力比重</th>
-                                    <th class="px-4 py-3.5">健康標籤 (點擊可篩選)</th>
-                                    <th class="px-4 py-3.5">最近活動</th>
-                                    <th class="px-4 py-3.5 text-center">詳細資料</th>
+                                    <th class="px-4 py-3.5 whitespace-nowrap">個案 ID</th>
+                                    <th class="px-4 py-3.5 min-w-[120px] whitespace-nowrap">個案姓名與屬性</th>
+                                    <th class="px-4 py-3.5 min-w-[190px] whitespace-nowrap">身心風險燈號</th>
+                                    <th class="px-4 py-3.5 min-w-[185px] whitespace-nowrap">五核心人生動力比重</th>
+                                    <th class="px-4 py-3.5 min-w-[200px] whitespace-nowrap">健康標籤 (點擊可篩選)</th>
+                                    <th class="px-4 py-3.5 whitespace-nowrap">最近活動</th>
+                                    <th class="px-4 py-3.5 text-center whitespace-nowrap">詳細資料</th>
                                 </tr>
                             </thead>
                             <tbody id="clientTableBody" class="divide-y divide-wellness-border/50 text-wellness-textMain font-medium">

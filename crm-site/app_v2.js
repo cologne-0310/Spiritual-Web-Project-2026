@@ -121,13 +121,13 @@
                     return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(62, 56, 50, 0.08)" stroke-width="0.8" />`;
                 }).join('')}
                 <!-- 數據多邊形 -->
-                <polygon points="${dataPoints}" fill="rgba(99, 102, 241, 0.26)" stroke="#2563EB" stroke-width="1.5" />
+                <polygon points="${dataPoints}" fill="rgba(201, 122, 117, 0.26)" stroke="#C97A75" stroke-width="1.5" />
                 <!-- 頂點小圓點 -->
                 ${angles.map((a, i) => {
                     const val = vals[i];
                     const x = cx + r * val * Math.cos(a);
                     const y = cy + r * val * Math.sin(a);
-                    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2" fill="#6366F1" />`;
+                    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2" fill="#9C8BB5" />`;
                 }).join('')}
                 <!-- 頂點文字與圖示標籤 -->
                 ${angles.map((a, i) => {
@@ -135,7 +135,7 @@
                     const gridY = cy + r * Math.sin(a);
                     const textX = gridX + textOffsets[i].x;
                     const textY = gridY + textOffsets[i].y;
-                    return `<text x="${textX.toFixed(1)}" y="${textY.toFixed(1)}" text-anchor="${textOffsets[i].anchor}" font-size="8.5" font-weight="900" fill="#0F172A">${labelNames[i]}</text>`;
+                    return `<text x="${textX.toFixed(1)}" y="${textY.toFixed(1)}" text-anchor="${textOffsets[i].anchor}" font-size="8.5" font-weight="900" fill="#4A3E3D">${labelNames[i]}</text>`;
                 }).join('')}
             </svg>`;
         }
@@ -380,17 +380,19 @@
                 tr.onclick = () => openClientDetailModal(client.id);
                 
                 tr.innerHTML = `
-                    <td class="px-4 py-3 font-bold text-wellness-textMain font-mono">${client.id}</td>
-                    <td class="px-4 py-3">
-                        <div class="font-bold text-sm">${client.name}</div>
-                        <div class="text-[10px] text-wellness-textSub">${client.gender} / ${client.age}歲</div>
+                    <td class="px-4 py-3 font-bold text-wellness-textMain font-mono whitespace-nowrap">${client.id}</td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <span class="font-bold text-sm text-wellness-textMain">${client.name}</span>
+                        <span class="text-[10px] text-wellness-textSub ml-1.5 font-bold">(${client.gender}, ${client.age}歲)</span>
                     </td>
-                    <td class="px-4 py-3 space-y-1">${bodyBadge}<br>${mindBadge}</td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <div class="flex items-center space-x-1.5">${bodyBadge}${mindBadge}</div>
+                    </td>
                     <td class="px-4 py-3">${driveHtml}</td>
-                    <td class="px-4 py-3">${tagsHtml || '<span class="text-wellness-textSub/50 italic">無</span>'}</td>
-                    <td class="px-4 py-3 text-[10px] text-wellness-textSub font-semibold">${client.lastActive}</td>
-                    <td class="px-4 py-3 text-center" onclick="event.stopPropagation()">
-                        <button onclick="openClientDetailModal('${client.id}')" class="px-3 py-1.5 bg-wellness-bg hover:bg-wellness-border text-wellness-accent font-bold text-[10px] rounded-lg transition-all border border-wellness-border shadow-xs">
+                    <td class="px-4 py-3">${tagsHtml || '<span class="text-wellness-textSub/50 italic whitespace-nowrap">無</span>'}</td>
+                    <td class="px-4 py-3 text-[10px] text-wellness-textSub font-semibold whitespace-nowrap">${client.lastActive}</td>
+                    <td class="px-4 py-3 text-center whitespace-nowrap" onclick="event.stopPropagation()">
+                        <button onclick="openClientDetailModal('${client.id}')" class="px-3 py-1.5 bg-wellness-bg hover:bg-wellness-border text-wellness-accent font-bold text-[10px] rounded-lg transition-all border border-wellness-border shadow-xs whitespace-nowrap">
                             <i data-lucide="eye" class="w-3.5 h-3.5 inline mr-1"></i>查看
                         </button>
                     </td>
