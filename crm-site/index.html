@@ -76,9 +76,9 @@
     <div class="absolute bottom-[-5%] left-[25%] w-[700px] h-[700px] rounded-full bg-[#60A38D]/4 blur-[150px] pointer-events-none z-0"></div>
 
     <!-- 頂部 sticky 導覽列 -->
-    <header class="glass-warm sticky top-0 z-50 px-8 py-4 flex items-center justify-between shadow-sm shadow-wellness-border/50">
-        <div class="flex items-center space-x-3.5">
-            <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender flex items-center justify-center shadow-md shadow-wellness-accent/20 animate-float">
+    <header class="glass-warm sticky top-0 z-50 px-4 md:px-8 py-4 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-sm shadow-wellness-border/50">
+        <div class="flex items-center space-x-3.5 w-full lg:w-auto">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender flex items-center justify-center shadow-md shadow-wellness-accent/20 animate-float shrink-0">
                 <i data-lucide="flower" class="w-6 h-6 text-white animate-spin-slow"></i>
             </div>
             <div>
@@ -86,20 +86,20 @@
                     <h1 id="sysTitle" class="text-xl font-bold tracking-tight text-wellness-textMain font-['Outfit']">
                         AI CRM 健管師個案中心
                     </h1>
-                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20">租戶端 SaaS</span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20 shrink-0">租戶端 SaaS</span>
                 </div>
                 <p id="sysSubTitle" class="text-xs text-wellness-textSub mt-0.5 font-medium">B1源點身心靈 / B2暖光苑 / B3綠野健管 連接埠</p>
             </div>
         </div>
 
         <!-- 租戶與系統狀態切換 -->
-        <div class="flex items-center space-x-4 z-10">
-            <div class="flex items-center space-x-2 bg-wellness-bg/90 border border-wellness-border rounded-2xl p-1.5 shadow-inner">
+        <div class="flex flex-wrap items-center gap-3 z-10 w-full lg:w-auto justify-start lg:justify-end">
+            <div class="flex items-center space-x-2 bg-wellness-bg/90 border border-wellness-border rounded-2xl p-1.5 shadow-inner flex-1 sm:flex-none justify-between sm:justify-start">
                 <span class="text-xs text-wellness-textSub px-2 font-medium flex items-center space-x-1">
                     <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-                    <span>目前租戶/系統：</span>
+                    <span class="hidden sm:inline">目前租戶/系統：</span>
                 </span>
-                <select id="tenantSelect" onchange="switchSystemMode(this.value)" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-3 py-1.5 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm">
+                <select id="tenantSelect" onchange="switchSystemMode(this.value)" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-2 py-1.5 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm w-full sm:w-auto">
                     <optgroup label="SaaS 健管師個案管理 (SaaS)">
                         <option value="B1">B1：源點身心靈管理中心 (個案系統)</option>
                         <option value="B2">B2：暖光苑 - 亞健康身心調理據點</option>
@@ -110,14 +110,14 @@
                     </optgroup>
                 </select>
             </div>
-            <div class="h-8 w-px bg-wellness-border"></div>
+            <div class="h-8 w-px bg-wellness-border hidden md:block"></div>
             <!-- 登入健管師個人頭像與資訊 -->
-            <div class="flex items-center space-x-2 bg-white/80 border border-wellness-border rounded-xl px-2.5 py-1 shadow-sm select-none">
+            <div class="flex items-center space-x-2 bg-white/80 border border-wellness-border rounded-xl px-2.5 py-1 shadow-sm select-none shrink-0">
                 <div class="w-6 h-6 rounded-full bg-wellness-accent flex items-center justify-center font-bold text-white text-[10px] shadow-sm">榮</div>
                 <span class="text-xs font-bold text-wellness-textMain">健管師阿榮</span>
             </div>
-            <div class="h-8 w-px bg-wellness-border"></div>
-            <div class="flex items-center space-x-2">
+            <div class="h-8 w-px bg-wellness-border hidden md:block"></div>
+            <div class="flex items-center space-x-2 shrink-0">
                 <span class="inline-flex relative h-3 w-3">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-wellness-mint opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-3 w-3 bg-wellness-mint"></span>
@@ -128,7 +128,7 @@
     </header>
 
     <!-- 主要內容區 -->
-    <main class="flex-1 p-8 max-w-7xl w-full mx-auto grid grid-cols-12 gap-8 relative z-10">
+    <main class="flex-1 p-4 md:p-8 max-w-7xl w-full mx-auto grid grid-cols-12 gap-6 md:gap-8 relative z-10">
 
         <!-- 左側邊欄 -->
         <aside class="col-span-12 md:col-span-3 flex flex-col space-y-6">
@@ -241,14 +241,14 @@
             <!-- 頁面一：個案資料表格化管理 (SaaS) -->
             <div id="view-crm" class="flex flex-col space-y-6">
                 <!-- Google Sheets 同步控制面板 -->
-                <div class="glass-card p-6 rounded-3xl border border-wellness-border shadow-xl shadow-wellness-border/30 flex flex-col md:flex-row items-center justify-between gap-5 relative overflow-hidden">
+                <div class="glass-card p-4 md:p-6 rounded-3xl border border-wellness-border shadow-xl shadow-wellness-border/30 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-wellness-accent/5 rounded-full blur-xl pointer-events-none"></div>
                     <div class="flex items-center space-x-3.5 relative z-10 shrink-0">
                         <div class="p-3 rounded-2xl bg-gradient-to-tr from-wellness-mint to-[#5CA68D] text-white shadow-md shadow-wellness-mint/20">
                             <i data-lucide="database" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <h3 class="text-base font-bold text-wellness-textMain tracking-wide flex items-center space-x-2">
+                            <h3 class="text-base font-bold text-wellness-textMain tracking-wide flex flex-wrap items-center gap-2">
                                 <span>Google Sheets 試算表資料來源同步</span>
                                 <span id="syncStatusIndicator" class="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-semibold bg-wellness-sun/10 text-wellness-sun border border-wellness-sun/20 shadow-xs">
                                     <span class="h-1.5 w-1.5 rounded-full bg-wellness-sun mr-1 animate-pulse"></span>
@@ -259,23 +259,25 @@
                         </div>
                     </div>
 
-                    <div class="flex items-center space-x-3.5 w-full md:w-auto relative z-10">
-                        <div class="flex items-center space-x-2 w-full md:w-64 bg-wellness-bg rounded-xl px-3 py-2.5 border border-wellness-border shadow-inner">
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto relative z-10">
+                        <div class="flex items-center space-x-2 flex-1 sm:w-64 bg-wellness-bg rounded-xl px-3 py-2.5 border border-wellness-border shadow-inner">
                             <i data-lucide="link" class="w-4 h-4 text-wellness-textSub"></i>
                             <input id="sheetIdInput" type="text" value="1Z_6yJ3Fv-8P4p7K6_yWbE1A2C3d4e5f6g7h8i9j0k" placeholder="輸入 Google 試算表 ID..." class="bg-transparent border-0 text-xs text-wellness-textMain font-semibold w-full focus:outline-none">
                         </div>
-                        <a href="https://docs.google.com/spreadsheets/d/1Z_6yJ3Fv-8P4p7K6_yWbE1A2C3d4e5f6g7h8i9j0k/edit?usp=sharing" target="_blank" title="在新分頁開啟 Google 試算表編輯" class="p-2.5 bg-wellness-bg hover:bg-wellness-border/40 text-wellness-textSub border border-wellness-border rounded-xl transition-all shadow-sm">
-                            <i data-lucide="external-link" class="w-4 h-4"></i>
-                        </a>
-                        <button onclick="syncWithGoogleSheet()" id="syncBtn" class="px-5 py-2.5 bg-gradient-to-r from-wellness-mint to-[#5CA68D] hover:opacity-90 rounded-xl text-white font-bold text-xs shadow-md shadow-wellness-mint/20 flex items-center space-x-1.5 transition-all">
-                            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-                            <span>一鍵同步</span>
-                        </button>
+                        <div class="flex items-center space-x-2 justify-end">
+                            <a href="https://docs.google.com/spreadsheets/d/1Z_6yJ3Fv-8P4p7K6_yWbE1A2C3d4e5f6g7h8i9j0k/edit?usp=sharing" target="_blank" title="在新分頁開啟 Google 試算表編輯" class="p-2.5 bg-wellness-bg hover:bg-wellness-border/40 text-wellness-textSub border border-wellness-border rounded-xl transition-all shadow-sm shrink-0">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                            <button onclick="syncWithGoogleSheet()" id="syncBtn" class="flex-1 sm:flex-initial px-5 py-2.5 bg-gradient-to-r from-wellness-mint to-[#5CA68D] hover:opacity-90 rounded-xl text-white font-bold text-xs shadow-md shadow-wellness-mint/20 flex items-center justify-center space-x-1.5 transition-all whitespace-nowrap">
+                                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                                <span>一鍵同步</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 快速標籤篩選列 -->
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 glass-card p-6 rounded-3xl border border-wellness-border shadow-xl shadow-wellness-border/30">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 glass-card p-4 md:p-6 rounded-3xl border border-wellness-border shadow-xl shadow-wellness-border/30">
                     <div class="flex items-center space-x-4">
                         <div class="p-3.5 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender text-white shadow-md shadow-wellness-accent/20">
                             <i data-lucide="sparkles" class="w-6 h-6"></i>
@@ -285,7 +287,7 @@
                             <p class="text-xs text-wellness-textSub mt-0.5 font-medium">點擊下方高頻標籤，快速篩選出有相同健康狀態或習慣的個案</p>
                         </div>
                     </div>
-                    <div class="flex items-center space-x-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+                    <div class="flex items-center space-x-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 flex-nowrap">
                         <button onclick="filterTag('all')" class="px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-wellness-accent to-wellness-lavender text-white shadow-md shadow-wellness-accent/20 transition-all shrink-0">全部個案</button>
                         <button onclick="filterTag('睡眠不足')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-wellness-bg text-wellness-textSub hover:bg-wellness-border/50 border border-wellness-border transition-all shrink-0">睡眠不足</button>
                         <button onclick="filterTag('焦慮不振')" class="px-4 py-2 text-xs font-semibold rounded-xl bg-wellness-bg text-wellness-textSub hover:bg-wellness-border/50 border border-wellness-border transition-all shrink-0">焦慮不振</button>
@@ -295,7 +297,7 @@
                 </div>
 
                 <!-- 搜尋、排序控制列與客戶 Table 列表 -->
-                <div class="glass-card rounded-[2rem] border border-wellness-border p-6 shadow-xl shadow-wellness-border/20 flex flex-col space-y-4">
+                <div class="glass-card rounded-[2rem] border border-wellness-border p-4 md:p-6 shadow-xl shadow-wellness-border/20 flex flex-col space-y-4">
                     <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                         <!-- 搜尋輸入框 -->
                         <div class="flex items-center space-x-2 w-full md:w-80 bg-wellness-bg rounded-xl px-3.5 py-2.5 border border-wellness-border shadow-inner">
@@ -303,9 +305,9 @@
                             <input id="crmSearchInput" type="text" placeholder="搜尋姓名、個案 ID 或標籤..." class="bg-transparent border-0 text-xs text-wellness-textMain font-semibold w-full focus:outline-none" oninput="handleSearchSort()">
                         </div>
                         <!-- 排序選擇 -->
-                        <div class="flex items-center space-x-2 w-full md:w-auto">
+                        <div class="flex items-center space-x-2 w-full md:w-auto justify-between sm:justify-start">
                             <span class="text-xs text-wellness-textSub font-semibold whitespace-nowrap">項目排列：</span>
-                            <select id="crmSortSelect" onchange="handleSearchSort()" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-3 py-2 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm">
+                            <select id="crmSortSelect" onchange="handleSearchSort()" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-3 py-2 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm w-full md:w-auto">
                                 <option value="id">按 ID 順序</option>
                                 <option value="age-desc">按年齡 (高到低)</option>
                                 <option value="age-asc">按年齡 (低到高)</option>
@@ -342,9 +344,9 @@
 
             <!-- 頁面二：LINE OA 對話分析 (SaaS) -->
             <div id="view-nlp" class="hidden flex flex-col space-y-6">
-                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-8 flex flex-col md:flex-row gap-8 shadow-xl shadow-wellness-border/30">
+                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-4 md:p-8 flex flex-col lg:flex-row gap-6 md:gap-8 shadow-xl shadow-wellness-border/30">
                     <!-- 左側手機模擬器 -->
-                    <div class="w-full md:w-80 border-[10px] border-[#3E3832] bg-[#FAF8F5] rounded-[3rem] flex flex-col h-[540px] shadow-2xl relative overflow-hidden shrink-0">
+                    <div class="w-full lg:w-80 border-[10px] border-[#3E3832] bg-[#FAF8F5] rounded-[3rem] flex flex-col h-[540px] shadow-2xl relative overflow-hidden shrink-0">
                         <div class="bg-[#FFFFFF] px-6 py-4 border-b border-wellness-border flex items-center justify-between">
                             <span class="text-xs font-bold text-wellness-textMain flex items-center space-x-1.5">
                                 <i data-lucide="message-circle" class="w-4 h-4 text-wellness-mint"></i>
@@ -374,7 +376,7 @@
                         </div>
                     </div>
 
-                    <!-- 右側 NLP 診斷與分析結果 -->
+                    <!-- 右側 NLP 診斷與 analysis 結果 -->
                     <div class="flex-1 flex flex-col justify-between space-y-6">
                         <div>
                             <div class="flex items-center space-x-3 pb-5 border-b border-wellness-border">
@@ -401,7 +403,7 @@
                                     </div>
                                 </div>
 
-                                <div class="grid grid-cols-3 gap-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <div class="bg-white rounded-2xl p-4 border border-wellness-border flex flex-col items-center text-center justify-center space-y-2 shadow-sm">
                                         <span class="text-[10px] font-bold text-[#D96B64] uppercase tracking-widest bg-[#D96B64]/10 px-2.5 py-0.5 rounded-full border border-[#D96B64]/20">AI 識別燈號</span>
                                         <span id="nlpIntention" class="text-sm font-extrabold text-wellness-textMain">身體：紅燈 (睡眠障礙)</span>
@@ -418,17 +420,17 @@
                             </div>
                         </div>
 
-                        <div class="p-6 bg-gradient-to-r from-wellness-accent/10 via-wellness-lavender/10 to-wellness-mint/10 rounded-2xl border border-wellness-border flex flex-col space-y-4 shadow-md">
-                            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                        <div class="p-4 md:p-6 bg-gradient-to-r from-wellness-accent/10 via-wellness-lavender/10 to-wellness-mint/10 rounded-2xl border border-wellness-border flex flex-col space-y-4 shadow-md">
+                            <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4">
                                 <div>
                                     <h4 class="text-base font-bold text-wellness-textMain tracking-wide">AI 自動標籤與燈號同步</h4>
                                     <p class="text-xs text-wellness-textSub mt-0.5 font-medium">將上述對話自動產生的標籤與風險燈號更新至個案 CRM 資料</p>
                                 </div>
-                                <div class="flex items-center space-x-2 shrink-0 w-full md:w-auto">
-                                    <select id="nlpClientSelect" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm">
+                                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0 w-full xl:w-auto">
+                                    <select id="nlpClientSelect" class="bg-white border border-wellness-border text-wellness-textMain text-xs font-semibold rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-wellness-accent focus:outline-none cursor-pointer shadow-sm w-full sm:w-auto">
                                         <!-- 由 JS 動態生成 -->
                                     </select>
-                                    <button onclick="saveNlpTags()" class="px-5 py-3 bg-gradient-to-r from-wellness-accent to-wellness-lavender font-bold text-xs rounded-xl text-white shadow-md shadow-wellness-accent/20 flex items-center space-x-2 hover:scale-105 transition-all shrink-0">
+                                    <button onclick="saveNlpTags()" class="px-5 py-3 bg-gradient-to-r from-wellness-accent to-wellness-lavender font-bold text-xs rounded-xl text-white shadow-md shadow-wellness-accent/20 flex items-center justify-center space-x-2 hover:scale-105 transition-all w-full sm:w-auto whitespace-nowrap">
                                         <i data-lucide="check-circle" class="w-4 h-4"></i>
                                         <span>同步回 CRM 個案列表</span>
                                     </button>
@@ -441,7 +443,7 @@
 
             <!-- 頁面三：語音口述記錄與 AI 診斷 (SaaS) -->
             <div id="view-voice" class="hidden flex flex-col space-y-6">
-                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-8 flex flex-col md:flex-row gap-8 shadow-xl shadow-wellness-border/30">
+                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-4 md:p-8 flex flex-col lg:flex-row gap-6 md:gap-8 shadow-xl shadow-wellness-border/30">
                     <!-- 左側錄音控制面板 -->
                     <div class="flex-1 flex flex-col space-y-5">
                         <div class="flex items-center space-x-3 pb-4 border-b border-wellness-border">
@@ -779,7 +781,7 @@
                         <!-- 頁面六：轉介激勵與分成 (Platform) - 升級 Q-Value 照護成效加權分配機制 -->
             <div id="view-incentive" class="hidden flex flex-col space-y-6">
                 <!-- 頂部區塊 -->
-                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-8 shadow-xl shadow-wellness-border/30">
+                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-4 md:p-8 shadow-xl shadow-wellness-border/30">
                     <div class="flex items-center space-x-3 pb-5 border-b border-wellness-border mb-6">
                         <div class="p-3 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender text-white shadow-md">
                             <i data-lucide="award" class="w-7 h-7"></i>
@@ -878,13 +880,13 @@
                                 <table class="w-full text-left text-xs border-collapse premium-table">
                                     <thead>
                                         <tr class="bg-wellness-bg border-b border-wellness-border text-wellness-textSub font-bold">
-                                            <th class="px-4 py-3">合作租戶</th>
-                                            <th class="px-4 py-3 text-center">滿意度 (S)</th>
-                                            <th class="px-4 py-3 text-center">改善率 (C)</th>
-                                            <th class="px-4 py-3 text-center">活躍度 (A)</th>
-                                            <th class="px-4 py-3 text-center">計算 Q-Value</th>
-                                            <th class="px-4 py-3 text-right">分配比例</th>
-                                            <th class="px-4 py-3 text-right">當期激勵分配金</th>
+                                            <th class="px-4 py-3 whitespace-nowrap">合作租戶</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">滿意度 (S)</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">改善率 (C)</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">活躍度 (A)</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">計算 Q-Value</th>
+                                            <th class="px-4 py-3 text-right whitespace-nowrap">分配比例</th>
+                                            <th class="px-4 py-3 text-right whitespace-nowrap">當期激勵分配金</th>
                                         </tr>
                                     </thead>
                                     <tbody id="qValueTableBody" class="text-wellness-textMain font-semibold">
@@ -907,7 +909,7 @@
 
             <!-- 頁面七：健管生態 ESG 碳排放 (Platform) -->
             <div id="view-analytics" class="hidden flex flex-col space-y-6">
-                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-8 shadow-xl shadow-wellness-border/30">
+                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-4 md:p-8 shadow-xl shadow-wellness-border/30">
                     <div class="flex items-center space-x-3 pb-5 border-b border-wellness-border mb-6">
                         <div class="p-3 rounded-2xl bg-wellness-lavender/10 text-wellness-lavender border border-wellness-lavender/20 shadow-md">
                             <i data-lucide="bar-chart-3" class="w-7 h-7"></i>

@@ -1799,16 +1799,16 @@ C006,憂鬱伯爵,82,男,水分不足;日常久坐,焦慮不振;失眠困擾,古
 
                 tableBody.innerHTML += `
                     <tr class="hover:bg-wellness-bg/40 transition-all border-b border-wellness-border/40">
-                        <td class="px-4 py-3.5 flex items-center space-x-2">
-                            <span class="w-2 h-2 rounded-full bg-wellness-accent"></span>
+                        <td class="px-4 py-3.5 flex items-center space-x-2 whitespace-nowrap">
+                            <span class="w-2 h-2 rounded-full bg-wellness-accent shrink-0"></span>
                             <span class="text-wellness-textMain font-bold">${m.name}</span>
                         </td>
-                        <td class="px-4 py-3.5 text-center text-wellness-textSub">${m.satisfaction} / 5.0</td>
-                        <td class="px-4 py-3.5 text-center text-wellness-mint">${Math.round(m.improvement * 100)}%</td>
-                        <td class="px-4 py-3.5 text-center text-wellness-lavender">${Math.round(m.activeRate * 100)}%</td>
-                        <td class="px-4 py-3.5 text-center font-mono text-wellness-textMain bg-wellness-bg/50 rounded-lg qvalue-badge">${r.qValue}</td>
-                        <td class="px-4 py-3.5 text-right font-bold text-wellness-accent">${sharePctStr}</td>
-                        <td class="px-4 py-3.5 text-right font-bold text-wellness-mint font-mono">${payoutStr}</td>
+                        <td class="px-4 py-3.5 text-center text-wellness-textSub whitespace-nowrap">${m.satisfaction} / 5.0</td>
+                        <td class="px-4 py-3.5 text-center text-wellness-mint whitespace-nowrap">${Math.round(m.improvement * 100)}%</td>
+                        <td class="px-4 py-3.5 text-center text-wellness-lavender whitespace-nowrap">${Math.round(m.activeRate * 100)}%</td>
+                        <td class="px-4 py-3.5 text-center font-mono text-wellness-textMain bg-wellness-bg/50 rounded-lg qvalue-badge whitespace-nowrap">${r.qValue}</td>
+                        <td class="px-4 py-3.5 text-right font-bold text-wellness-accent whitespace-nowrap">${sharePctStr}</td>
+                        <td class="px-4 py-3.5 text-right font-bold text-wellness-mint font-mono whitespace-nowrap">${payoutStr}</td>
                     </tr>
                 `;
             }
