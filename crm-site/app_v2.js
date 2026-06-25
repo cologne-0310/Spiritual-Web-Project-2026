@@ -433,7 +433,7 @@
 
         // 系統分頁切換
         function switchTab(tabId) {
-            ['crm', 'nlp', 'matching', 'incentive', 'analytics', 'voice', 'stats'].forEach(t => {
+            ['crm', 'nlp', 'matching', 'incentive', 'analytics', 'voice', 'stats', 'powerteam'].forEach(t => {
                 const view = document.getElementById(`view-${t}`);
                 if (view) view.classList.add('hidden');
                 const btn = document.getElementById(`tab-${t}`);
@@ -449,6 +449,8 @@
                     activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-accent via-[#DB9DB8] to-wellness-lavender text-white shadow-md shadow-wellness-accent/20 font-semibold";
                 } else if (tabId === 'matching') {
                     activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-sun via-[#E3A39A] to-wellness-accent text-white shadow-md shadow-wellness-sun/20 font-semibold";
+                } else if (tabId === 'powerteam') {
+                    activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-accent via-wellness-lavender to-wellness-mint text-white shadow-md shadow-wellness-accent/20 font-semibold";
                 } else {
                     activeBtn.className = "flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm bg-gradient-to-r from-wellness-textSub/20 to-wellness-textSub/10 text-wellness-textMain border border-wellness-border shadow-sm font-semibold";
                 }
@@ -468,6 +470,9 @@
             }
             if (tabId === 'incentive') {
                 initQValueCalculator();
+            }
+            if (tabId === 'powerteam') {
+                initPowerTeamCalculator();
             }
         }
 
@@ -1807,6 +1812,123 @@ C006,憂鬱伯爵,82,男,水分不足;日常久坐,焦慮不振;失眠困擾,古
                         <td class="px-4 py-3.5 text-center text-wellness-mint whitespace-nowrap">${Math.round(m.improvement * 100)}%</td>
                         <td class="px-4 py-3.5 text-center text-wellness-lavender whitespace-nowrap">${Math.round(m.activeRate * 100)}%</td>
                         <td class="px-4 py-3.5 text-center font-mono text-wellness-textMain bg-wellness-bg/50 rounded-lg qvalue-badge whitespace-nowrap">${r.qValue}</td>
+                        <td class="px-4 py-3.5 text-right font-bold text-wellness-accent whitespace-nowrap">${sharePctStr}</td>
+                        <td class="px-4 py-3.5 text-right font-bold text-wellness-mint font-mono whitespace-nowrap">${payoutStr}</td>
+                    </tr>
+                `;
+            }
+            
+            // 刷新可能動態插入的 Lucide 圖示
+            if (typeof safeCreateIcons === 'function') {
+                safeCreateIcons();
+            }
+        }
+
+        // ==========================================================================
+        // 最小群組 Power Team 數據串接與 P-Value 協作貢獻演算法
+        // ==========================================================================
+        let powerTeamWeights = { w1: 0.40, w2: 0.40, w3: 0.20 };
+        const powerTeamPoolAmount = 120000; // 協作激勵金總額
+
+        // 模擬三個性質互補成員的原始協作指標
+        const powerTeamMetrics = {
+            'B1': { name: 'B1 源點身心靈中心', ro: 0.45, ti: 0.80, ts: 4.8 },
+            'B2': { name: 'B2 暖光苑亞健康據點', ro: 0.30, ti: 0.85, ts: 4.6 },
+            'B3': { name: 'B3 綠野健管個人工作室', ro: 0.25, ti: 0.90, ts: 4.9 }
+        };
+
+        function initPowerTeamCalculator() {
+            const s1 = document.getElementById('pSliderW1');
+            const s2 = document.getElementById('pSliderW2');
+            const s3 = document.getElementById('pSliderW3');
+            if (s1 && s2 && s3) {
+                s1.value = powerTeamWeights.w1 * 100;
+                s2.value = powerTeamWeights.w2 * 100;
+                s3.value = powerTeamWeights.w3 * 100;
+                
+                document.getElementById('pWeightVal1').innerText = (powerTeamWeights.w1 * 100) + '%';
+                document.getElementById('pWeightVal2').innerText = (powerTeamWeights.w2 * 100) + '%';
+                document.getElementById('pWeightVal3').innerText = (powerTeamWeights.w3 * 100) + '%';
+            }
+            updatePowerTeamCalculation();
+        }
+
+        // 滑桿變動時的重平衡演算法，確保 w_pt1 + w_pt2 + w_pt3 = 100%
+        function handlePowerTeamWeightChange(changedSlider, val) {
+            let v = parseInt(val);
+            if (changedSlider === 1) {
+                powerTeamWeights.w1 = v / 100;
+                let remain = 100 - v;
+                powerTeamWeights.w2 = Math.round(remain * 0.67) / 100;
+                powerTeamWeights.w3 = (100 - v - Math.round(remain * 0.67)) / 100;
+            } else if (changedSlider === 2) {
+                powerTeamWeights.w2 = v / 100;
+                let remain = 100 - v;
+                powerTeamWeights.w1 = Math.round(remain * 0.67) / 100;
+                powerTeamWeights.w3 = (100 - v - Math.round(remain * 0.67)) / 100;
+            } else if (changedSlider === 3) {
+                powerTeamWeights.w3 = v / 100;
+                let remain = 100 - v;
+                powerTeamWeights.w1 = Math.round(remain * 0.50) / 100;
+                powerTeamWeights.w2 = (100 - v - Math.round(remain * 0.50)) / 100;
+            }
+
+            // 更新介面滑桿與顯示值
+            document.getElementById('pSliderW1').value = Math.round(powerTeamWeights.w1 * 100);
+            document.getElementById('pSliderW2').value = Math.round(powerTeamWeights.w2 * 100);
+            document.getElementById('pSliderW3').value = Math.round(powerTeamWeights.w3 * 100);
+
+            document.getElementById('pWeightVal1').innerText = Math.round(powerTeamWeights.w1 * 100) + '%';
+            document.getElementById('pWeightVal2').innerText = Math.round(powerTeamWeights.w2 * 100) + '%';
+            document.getElementById('pWeightVal3').innerText = Math.round(powerTeamWeights.w3 * 100) + '%';
+
+            updatePowerTeamCalculation();
+        }
+
+        // 實時計算 P-Value 並渲染至 HTML 表格
+        function updatePowerTeamCalculation() {
+            const tableBody = document.getElementById('pValueTableBody');
+            if (!tableBody) return;
+            tableBody.innerHTML = '';
+
+            let rawScores = {};
+            let sumContribution = 0;
+
+            // 計算各成員加權後的 P-Value 分值
+            for (let tid in powerTeamMetrics) {
+                let m = powerTeamMetrics[tid];
+                let normSat = m.ts / 5.0; // 滿意度標準化 (0~1)
+                
+                // P-Value = w1 * RO + w2 * TI + w3 * TS
+                let pVal = (powerTeamWeights.w1 * m.ro) + (powerTeamWeights.w2 * m.ti) + (powerTeamWeights.w3 * normSat);
+                pVal = Math.round(pVal * 1000) / 1000; // 四捨五入至小數三位
+
+                rawScores[tid] = { pValue: pVal };
+                sumContribution += pVal;
+            }
+
+            // 依加權貢獻度分值計算分成比例與金額，並渲染表格
+            for (let tid in powerTeamMetrics) {
+                let m = powerTeamMetrics[tid];
+                let r = rawScores[tid];
+                
+                // 分成比例 = 該成員 P-Value / 總 P-Value
+                let sharePct = sumContribution > 0 ? (r.pValue / sumContribution) : 0;
+                let payout = Math.round(powerTeamPoolAmount * sharePct);
+                
+                let sharePctStr = (sharePct * 100).toFixed(1) + '%';
+                let payoutStr = '$' + payout.toLocaleString();
+
+                tableBody.innerHTML += `
+                    <tr class="hover:bg-wellness-bg/40 transition-all border-b border-wellness-border/40">
+                        <td class="px-4 py-3.5 flex items-center space-x-2 whitespace-nowrap">
+                            <span class="w-2 h-2 rounded-full ${tid === 'B1' ? 'bg-wellness-accent' : (tid === 'B2' ? 'bg-wellness-lavender' : 'bg-wellness-mint')} shrink-0"></span>
+                            <span class="text-wellness-textMain font-bold">${m.name}</span>
+                        </td>
+                        <td class="px-4 py-3.5 text-center text-wellness-textSub whitespace-nowrap">${Math.round(m.ro * 100)}%</td>
+                        <td class="px-4 py-3.5 text-center text-wellness-mint whitespace-nowrap">${Math.round(m.ti * 100)}%</td>
+                        <td class="px-4 py-3.5 text-center text-wellness-lavender whitespace-nowrap">${m.ts} / 5.0</td>
+                        <td class="px-4 py-3.5 text-center font-mono text-wellness-textMain bg-wellness-bg/50 rounded-lg qvalue-badge whitespace-nowrap">${r.pValue.toFixed(3)}</td>
                         <td class="px-4 py-3.5 text-right font-bold text-wellness-accent whitespace-nowrap">${sharePctStr}</td>
                         <td class="px-4 py-3.5 text-right font-bold text-wellness-mint font-mono whitespace-nowrap">${payoutStr}</td>
                     </tr>

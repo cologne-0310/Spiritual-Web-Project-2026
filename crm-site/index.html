@@ -214,6 +214,13 @@
                     </div>
                     <span class="text-xs bg-wellness-mint/10 text-wellness-mint border border-wellness-mint/20 px-2.5 py-0.5 rounded-full font-semibold">分成</span>
                 </button>
+                <button onclick="switchTab('powerteam')" id="tab-powerteam" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm text-wellness-textSub hover:bg-wellness-bg hover:text-wellness-textMain">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="users-round" class="w-5 h-5 text-wellness-accent"></i>
+                        <span>最小群組 Power Team</span>
+                    </div>
+                    <span class="text-xs bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20 px-2.5 py-0.5 rounded-full font-semibold">互補</span>
+                </button>
                 <button onclick="switchTab('analytics')" id="tab-analytics" class="flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all font-medium text-sm text-wellness-textSub hover:bg-wellness-bg hover:text-wellness-textMain">
                     <div class="flex items-center space-x-3">
                         <i data-lucide="bar-chart-3" class="w-5 h-5 text-wellness-lavender"></i>
@@ -900,6 +907,239 @@
                                 <div>
                                     <span class="font-bold text-wellness-textMain">計畫書合規宣告：</span>
                                     本機制完全排除盲目拉人頭的傳銷模式，而是以個案實質「照護成效改善率」及「滿意度」作為分配加權，將收益以非營利激勵基金的形式分配給第一線的健康管理師與社區中心，完全符合臺北市產業發展創業補助（SITI）對於服務創新及促進社會公共利益之嚴謹審查標準。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 頁面六之二：最小群組 Power Team (Platform) -->
+            <div id="view-powerteam" class="hidden flex flex-col space-y-6">
+                <div class="glass-card rounded-[2.5rem] border border-wellness-border p-4 md:p-8 shadow-xl shadow-wellness-border/30">
+                    <div class="flex items-center space-x-3 pb-5 border-b border-wellness-border mb-6">
+                        <div class="p-3 rounded-2xl bg-gradient-to-tr from-wellness-accent to-wellness-lavender text-white shadow-md">
+                            <i data-lucide="users-round" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-wellness-textMain tracking-wide">最小群組 Power Team 協作中心</h3>
+                            <p class="text-xs text-wellness-textSub mt-1 font-medium">性質互補的健康據點與專業角色組成黃金三角，串接跨店服務數據，並以 P-Value 演算法量化彼此的付出貢獻</p>
+                        </div>
+                    </div>
+
+                    <!-- Power Team 成員與性質互補黃金三角 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <!-- 成員 1 -->
+                        <div class="bg-gradient-to-tr from-white to-wellness-bg rounded-3xl p-5 border border-wellness-border shadow-xs flex flex-col justify-between relative overflow-hidden group">
+                            <div class="absolute -right-4 -bottom-4 w-16 h-16 bg-wellness-accent/5 rounded-full blur-xl group-hover:scale-120 transition-all"></div>
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[9px] font-bold text-wellness-accent uppercase tracking-widest bg-wellness-accent/10 px-2.5 py-0.5 rounded-full border border-wellness-accent/20">Power Team 隊長</span>
+                                    <span class="text-xs font-bold text-wellness-textSub">B1 據點</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-wellness-textMain">源點身心靈管理中心</h4>
+                                <p class="text-[11px] text-wellness-textSub mt-2 leading-relaxed font-medium"><b>互補專長：</b>芳香療癒、脈輪能量分析、心理諮商輔導。</p>
+                                <p class="text-[11px] text-wellness-textSub mt-1 leading-relaxed font-medium"><b>上下游定位：</b>前端身心評估與日常關懷，篩選轉介指標。</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-wellness-border/60 flex items-center justify-between text-[10px] text-wellness-textSub font-semibold">
+                                <span>角色：身心評估端</span>
+                                <span class="text-wellness-accent">在大安區</span>
+                            </div>
+                        </div>
+                        <!-- 成員 2 -->
+                        <div class="bg-gradient-to-tr from-white to-wellness-bg rounded-3xl p-5 border border-wellness-border shadow-xs flex flex-col justify-between relative overflow-hidden group">
+                            <div class="absolute -right-4 -bottom-4 w-16 h-16 bg-wellness-lavender/5 rounded-full blur-xl group-hover:scale-120 transition-all"></div>
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[9px] font-bold text-wellness-lavender uppercase tracking-widest bg-wellness-lavender/10 px-2.5 py-0.5 rounded-full border border-wellness-lavender/20">互補合作夥伴</span>
+                                    <span class="text-xs font-bold text-wellness-textSub">B2 據點</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-wellness-textMain">暖光苑亞健康據點</h4>
+                                <p class="text-[11px] text-wellness-textSub mt-2 leading-relaxed font-medium"><b>互補專長：</b>432Hz/528Hz 頌缽與手盤音療、正念禪修指導。</p>
+                                <p class="text-[11px] text-wellness-textSub mt-1 leading-relaxed font-medium"><b>上下游定位：</b>承接情緒高壓轉介，執行深層音頻放鬆調和。</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-wellness-border/60 flex items-center justify-between text-[10px] text-wellness-textSub font-semibold">
+                                <span>角色：音頻療癒端</span>
+                                <span class="text-wellness-lavender">在信義區</span>
+                            </div>
+                        </div>
+                        <!-- 成員 3 -->
+                        <div class="bg-gradient-to-tr from-white to-wellness-bg rounded-3xl p-5 border border-wellness-border shadow-xs flex flex-col justify-between relative overflow-hidden group">
+                            <div class="absolute -right-4 -bottom-4 w-16 h-16 bg-wellness-mint/5 rounded-full blur-xl group-hover:scale-120 transition-all"></div>
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-[9px] font-bold text-wellness-mint uppercase tracking-widest bg-wellness-mint/10 px-2.5 py-0.5 rounded-full border border-wellness-mint/20">互補合作夥伴</span>
+                                    <span class="text-xs font-bold text-wellness-textSub">B3 據點</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-wellness-textMain">綠野健管個人工作室</h4>
+                                <p class="text-[11px] text-wellness-textSub mt-2 leading-relaxed font-medium"><b>互補專長：</b>經絡按摩、物理運動防護、生理數值體力量測。</p>
+                                <p class="text-[11px] text-wellness-textSub mt-1 leading-relaxed font-medium"><b>上下游定位：</b>承接身體疲勞不適，提供經絡舒緩與運動防護。</p>
+                            </div>
+                            <div class="mt-4 pt-3 border-t border-wellness-border/60 flex items-center justify-between text-[10px] text-wellness-textSub font-semibold">
+                                <span>角色：身體健護端</span>
+                                <span class="text-wellness-mint">在松山區</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 產業鏈數據串接與去識別化個案跨店服務鏈條 (Client Journey) -->
+                    <div class="bg-white rounded-3xl p-6 border border-wellness-border shadow-xs mb-8">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <i data-lucide="git-commit" class="w-5 h-5 text-wellness-accent"></i>
+                            <span class="text-xs font-bold text-wellness-textMain uppercase tracking-wider">個案跨店互補服務鏈條與數據串接展示 (以個案 林大仙 為例)</span>
+                        </div>
+                        
+                        <div class="flex flex-col lg:flex-row items-stretch justify-between gap-6">
+                            <!-- 步驟 1 -->
+                            <div class="flex-1 bg-wellness-bg/50 rounded-2xl p-4 border border-wellness-border relative flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-wellness-accent/15 text-wellness-accent border border-wellness-accent/25">步驟一：前端口語評估</span>
+                                        <span class="text-[10px] font-mono text-wellness-textSub">B1 源點身心靈</span>
+                                    </div>
+                                    <p class="text-xs font-semibold text-wellness-textMain">林大仙口述睡眠4小時且工作高壓失眠</p>
+                                    <p class="text-[11px] text-wellness-textSub mt-1.5 leading-relaxed font-medium">系統經由本地 RoBERTa 類神經網路自動打上 <b>#焦慮不振、#嚴重失眠</b> 情緒軟標籤，判定為<b>「心理紅燈」</b>。</p>
+                                </div>
+                                <div class="mt-3 text-[9px] font-bold text-wellness-accent flex items-center space-x-1">
+                                    <i data-lucide="shield" class="w-3 h-3"></i>
+                                    <span>去識別化 Token: User_S31_X905</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 箭頭 -->
+                            <div class="hidden lg:flex items-center justify-center text-wellness-border shrink-0">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                            
+                            <!-- 步驟 2 -->
+                            <div class="flex-1 bg-wellness-bg/50 rounded-2xl p-4 border border-wellness-border relative flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-wellness-lavender/15 text-wellness-lavender border border-wellness-lavender/25">步驟二：去識別化跨店轉介</span>
+                                        <span class="text-[10px] font-mono text-wellness-textSub">B1 ➔ B2 據點</span>
+                                    </div>
+                                    <p class="text-xs font-semibold text-wellness-textMain">大平台一鍵推送 432Hz 頌缽放鬆課程邀請卡</p>
+                                    <p class="text-[11px] text-wellness-textSub mt-1.5 leading-relaxed font-medium">健管師代理轉發，林大仙點選並前往 <b>B2 暖光苑</b> 體驗音療課程。B2 在無敏感個資流轉前提下，共享個案情緒標籤。</p>
+                                </div>
+                                <div class="mt-3 text-[9px] font-bold text-wellness-lavender flex items-center space-x-1">
+                                    <i data-lucide="activity" class="w-3 h-3"></i>
+                                    <span>情緒數據無縫串接，個案隱私安全合規</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 箭頭 -->
+                            <div class="hidden lg:flex items-center justify-center text-wellness-border shrink-0">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                            
+                            <!-- 步驟 3 -->
+                            <div class="flex-1 bg-wellness-bg/50 rounded-2xl p-4 border border-wellness-border relative flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-wellness-mint/15 text-wellness-mint border border-wellness-mint/25">步驟三：追蹤改善與二度轉介</span>
+                                        <span class="text-[10px] font-mono text-wellness-textSub">B2 ➔ B3 據點</span>
+                                    </div>
+                                    <p class="text-xs font-semibold text-wellness-textMain">追蹤音療改善，並轉介經絡按摩紓解身體不適</p>
+                                    <p class="text-[11px] text-wellness-textSub mt-1.5 leading-relaxed font-medium">林大仙自訴失眠好轉但肩膀緊繃，B2 將其二度轉介至 <b>B3 綠野健管</b> 進行經絡舒緩。最終身心完全恢復<b>「健康綠燈」</b>。</p>
+                                </div>
+                                <div class="mt-3 text-[9px] font-bold text-wellness-mint flex items-center space-x-1">
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                                    <span>實現互補式全人照護與業績協同成長</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P-Value 團隊協作貢獻與獎勵金試算 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <!-- 左側：演算法權重與控制係數 -->
+                        <div class="lg:col-span-5 flex flex-col space-y-6 bg-wellness-bg/60 p-6 rounded-[2rem] border border-wellness-border">
+                            <div>
+                                <h4 class="text-sm font-bold text-wellness-textMain flex items-center space-x-1.5">
+                                    <i data-lucide="sliders-horizontal" class="w-4 h-4 text-wellness-accent"></i>
+                                    <span>P-Value 協作權重分配設定</span>
+                                </h4>
+                                <p class="text-[10px] text-wellness-textSub mt-1">調整互補協作指標在 P-Value 貢獻算法中的加權比重 (總和須為 100%)</p>
+                            </div>
+
+                            <div class="space-y-4 pt-2">
+                                <!-- 滑桿一 -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between text-xs font-semibold">
+                                        <span class="text-wellness-textMain">w_pt₁ 轉介出量權重 (利他付出)</span>
+                                        <span id="pWeightVal1" class="text-wellness-accent font-bold">40%</span>
+                                    </div>
+                                    <input id="pSliderW1" type="range" min="0" max="100" value="40" oninput="handlePowerTeamWeightChange(1, this.value)" class="w-full h-1.5 bg-wellness-border rounded-lg appearance-none cursor-pointer accent-wellness-accent">
+                                </div>
+
+                                <!-- 滑桿二 -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between text-xs font-semibold">
+                                        <span class="text-wellness-textMain">w_pt₂ 承接改善率權重 (成效執行力)</span>
+                                        <span id="pWeightVal2" class="text-wellness-lavender font-bold">40%</span>
+                                    </div>
+                                    <input id="pSliderW2" type="range" min="0" max="100" value="40" oninput="handlePowerTeamWeightChange(2, this.value)" class="w-full h-1.5 bg-wellness-border rounded-lg appearance-none cursor-pointer accent-wellness-lavender">
+                                </div>
+
+                                <!-- 滑桿三 -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between text-xs font-semibold">
+                                        <span class="text-wellness-textMain">w_pt₃ 協作滿意度權重 (團隊互評)</span>
+                                        <span id="pWeightVal3" class="text-wellness-mint font-bold">20%</span>
+                                    </div>
+                                    <input id="pSliderW3" type="range" min="0" max="100" value="20" oninput="handlePowerTeamWeightChange(3, this.value)" class="w-full h-1.5 bg-wellness-border rounded-lg appearance-none cursor-pointer accent-wellness-mint">
+                                </div>
+                            </div>
+
+                            <!-- 數學公式展示卡片 -->
+                            <div class="formula-card rounded-2xl p-4 text-[11px] font-medium text-wellness-textSub space-y-2.5">
+                                <span class="text-xs font-bold text-wellness-textMain block">💻 P-Value 團隊協作貢獻演算法：</span>
+                                <div class="bg-white/80 p-2.5 rounded-lg text-center font-mono border border-wellness-border text-wellness-textMain shadow-xs">
+                                    P_i = (w_pt₁ × RO_i) + (w_pt₂ × TI_i) + (w_pt₃ × TS_i)
+                                </div>
+                                <div class="leading-relaxed space-y-1">
+                                    <p>• <b class="text-wellness-textMain">RO_i (轉介出量)</b>：成員主動將客戶轉單給隊友的次數比例 (利他度)</p>
+                                    <p>• <b class="text-wellness-textMain">TI_i (承接改善)</b>：承接隊友轉診個案後，成功使其身心指標好轉的比例</p>
+                                    <p>• <b class="text-wellness-textMain">TS_i (協作互評)</b>：Power Team 隊友間對其日常協作的滿意度匿名互評分</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 右側：動態重算之生態系貢獻度分配清單 -->
+                        <div class="lg:col-span-7 flex flex-col space-y-4">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-sm font-bold text-wellness-textMain flex items-center space-x-1.5">
+                                    <i data-lucide="line-chart" class="w-4 h-4 text-wellness-mint"></i>
+                                    <span>Power Team 協作貢獻與激勵金分配試算</span>
+                                </h4>
+                                <span class="px-2 py-0.5 rounded-full text-[9px] font-extrabold bg-wellness-accent/10 text-wellness-accent border border-wellness-accent/20 shadow-xs animate-pulse">協作機制運作中</span>
+                            </div>
+
+                            <!-- 表格 -->
+                            <div class="overflow-x-auto rounded-2xl border border-wellness-border bg-white shadow-sm">
+                                <table class="w-full text-left text-xs border-collapse premium-table">
+                                    <thead>
+                                        <tr class="bg-wellness-bg border-b border-wellness-border text-wellness-textSub font-bold">
+                                            <th class="px-4 py-3 whitespace-nowrap">Power Team 成員</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">轉介出量 (RO)</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">承接改善 (TI)</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">協作互評 (TS)</th>
+                                            <th class="px-4 py-3 text-center whitespace-nowrap">P-Value 指數</th>
+                                            <th class="px-4 py-3 text-right whitespace-nowrap">貢獻佔比</th>
+                                            <th class="px-4 py-3 text-right whitespace-nowrap">分配協作激勵金</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="pValueTableBody" class="text-wellness-textMain font-semibold">
+                                        <!-- JS 動態計算並渲染 -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="bg-wellness-accent/5 rounded-2xl p-4 border border-wellness-accent/15 flex items-start space-x-2.5 text-[11px] leading-relaxed text-wellness-textSub">
+                                <i data-lucide="shield-alert" class="w-4 h-4 text-wellness-accent shrink-0 mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-wellness-textMain">量化協作機制價值：</span>
+                                    本機制將性質互補成員的「利他轉介付出」與「執行照護成效」具體量化為規則系統。透過公正透明的分配，能徹底消除合作夥伴因資訊不透明而產生的心結，強化了上下游產業鏈的粘合度，真正建立起社區微型康養機構的永續協同網絡。
                                 </div>
                             </div>
                         </div>
